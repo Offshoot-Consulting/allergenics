@@ -1471,20 +1471,13 @@ body:before {
 
 }
 
-
-
 #main-nav {
-
-	float: right;
-
-	font-weight: 600;
-
-	font-size: 14px;
-
-	line-height: 1.2;
-
-	max-width: 500px;
-
+    float: right;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.2;
+    max-width: 520px;
+    position: relative;
 }
 
 
@@ -1533,9 +1526,9 @@ body:before {
 
 	text-decoration: none;
 
-	-webkit-transition: background .3s ease;
+	/*-webkit-transition: background .3s ease;
 
-	transition: background .3s ease;
+	transition: background .3s ease;  */
 
 	color: #00253d;
 
@@ -1553,7 +1546,8 @@ body:before {
 
 
 
-#main-nav .opener {
+#main-nav .opener,
+.searcher {
 
 	display: none;
 
@@ -4777,6 +4771,31 @@ body .form-section .ginput_container img.ui-datepicker-trigger {
 }
 
 
+/* new search in the header */
+
+li#menu-item-474 {}
+
+li#menu-item-474 a {
+    background: rgba(0, 0, 0, 0) url("images/search.png") no-repeat scroll 11px 44px;
+    text-indent: -9999px;
+    transform: none !important;
+    width: 25px;
+}
+
+li#menu-item-474 a:hover {
+  background: #73C7AD url("images/search.png") no-repeat scroll 11px 44px;}
+
+#hidden-search {
+    background: white none repeat scroll 0 0;
+    box-shadow: 2px 4px 6px 0 rgba(1, 1, 1, 0.4);
+    padding: 24px 24px 0;
+    position: absolute;
+    right: 0;
+    top: 75px;
+}
+
+#hidden-search .search-form input[type="search"]  { border: none }
+
 
 @media all and (max-width: 1179px) {
 
@@ -4850,17 +4869,16 @@ body .form-section .ginput_container img.ui-datepicker-trigger {
 
 
 
-	#header.active #main-nav .drop {
+#header.active #main-nav .drop {
+    height: auto;
+    margin-left: -200px;
+    opacity: 1;
+    width: 230px;
+    z-index: 1000;
+}
 
-		opacity: 1;
-
-		z-index: 1000;
-
-		height: auto;
-
-	}
-
-
+#menu-item-474 {
+ display:none}
 
 	#main-nav {
 
@@ -4896,13 +4914,31 @@ body .form-section .ginput_container img.ui-datepicker-trigger {
 
 
 
-	#main-nav .opener {
+	#main-nav .opener,
+  .searcher {
 
 		display: block;
 
 	}
 
-
+  .searcher {
+   display:block;
+   float:right;
+   margin-left:10px;
+   width:31px;
+   height:31px;
+   text-indent:-9999px;
+   background:url(images/s2.png) no-repeat
+   }
+   
+   .searcher:hover {
+    opacity:0.8}
+   
+   #hidden-search {
+    top: 36px;
+    width: 300px;
+    border:1px solid #ccc
+}
 
 	#main-nav .drop {
 
@@ -5713,12 +5749,11 @@ color:grey}
 .search-results h2 {
  clear:both}
  
-.search-results #content .page,
-.search-results #content .post {
+.search-results #content .page, .search-results #content .post {
     border-bottom: 1px dotted lightgrey;
     clear: both;
     margin-bottom: 40px;
-    padding-bottom: 60px;
+    padding-bottom: 20px;
 }
 
 .testimonial-widget {}
@@ -5748,3 +5783,5 @@ color:grey}
 .testimonial-widget .carousel-block .carousel .btn-next {
     right: -50px;
 }
+
+
