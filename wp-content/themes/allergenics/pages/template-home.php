@@ -31,7 +31,8 @@ get_header(); ?>
                 <?php $pract = new WP_Query( array( 'page_id' => $pract_page->ID ) ); ?>
                     <?php while ( $pract->have_posts()) : $pract->the_post(); ?>
                         <?php the_title( '<h2>','</h2>' ); ?>
-                        <?php echo apply_filters('the_excerpt',get_the_excerpt().' <a href="'. get_permalink() .'">'. __( 'Read More', 'allergenics' ) .'</a>')?>
+                        <?php echo apply_filters('the_excerpt',get_the_excerpt())?>
+                        <p><a href="<?php echo get_permalink(); ?>"><?php echo __( 'Read More', 'allergenics' ) ?></a></p>
                     <?php endwhile; ?>
                 <?php wp_reset_postdata(); ?>
             </section>
@@ -96,7 +97,8 @@ get_header(); ?>
                 <?php $about = new WP_Query( array( 'page_id' => $about_page->ID ) ); ?>
                     <?php while ( $about->have_posts()) : $about->the_post(); ?>
                         <?php the_title( '<h2>','</h2>' ); ?>
-                        <?php echo apply_filters('the_excerpt',get_the_excerpt().' <a href="'. get_permalink() .'">'. __( 'Read More', 'allergenics' ) .'</a>')?>
+               <?php echo apply_filters('the_excerpt',get_the_excerpt())?>
+                        <p><a href="<?php echo get_permalink(); ?>"><?php echo __( 'Read More', 'allergenics' ) ?></a></p>
                     <?php endwhile; ?>
                 <?php wp_reset_postdata(); ?>
             </section>
@@ -128,6 +130,7 @@ get_header(); ?>
                             <a class="btn-prev" href="#"><span class="icon-btn-left"></span></a>
                             <a class="btn-next" href="#"><span class="icon-btn-right"></span></a>
                         </div>
+                        <p><a href="/testimonials/"><?php echo __( 'Read More', 'allergenics' ) ?></a></p>
                     <?php endif; ?>
                 </div>
             </section>
