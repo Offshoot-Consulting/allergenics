@@ -211,7 +211,7 @@ I have found their intolerance testing to be incredibly accurate.</q>           
 
                                                                                     </ul>
 
-                                                                <a class="btn" href="http://allergenicstesting.com/order-your-test-now/">ORDER YOUR TEST NOW</a>
+                                                                <a class="btn" href="/order-your-test-now/">ORDER YOUR TEST NOW</a>
 
 
 
