@@ -1,0 +1,12 @@
+/* =WordPress Core
+-------------------------------------------------------------- */
+.full-width #content{
+	width:auto;
+}
+.post-edit-link{
+	margin-bottom:20px;
+	display:block;
+}
+.meta ul{
+	padding-left:1em;
+}

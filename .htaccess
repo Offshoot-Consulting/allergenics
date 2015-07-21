@@ -1,0 +1,105 @@
+# FORCE HTTPS
+
+#RewriteRule ^dev/.*$ - [PT]
+
+#RewriteEngine On
+#RewriteCond %{HTTPS} !=on
+#RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+
+
+# BEGIN W3TC Browser Cache
+<IfModule mod_deflate.c>
+    <IfModule mod_headers.c>
+        Header append Vary User-Agent env=!dont-vary
+    </IfModule>
+        AddOutputFilterByType DEFLATE text/css text/x-component application/x-javascript application/javascript text/javascript text/x-js text/html text/richtext image/svg+xml text/plain text/xsd text/xsl text/xml image/x-icon application/json
+    <IfModule mod_mime.c>
+        # DEFLATE by extension
+        AddOutputFilter DEFLATE js css htm html xml
+    </IfModule>
+</IfModule>
+# END W3TC Browser Cache
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# END WordPress
+#AuthType Basic
+#AuthName "Public website"
+#AuthUserFile "/home/allergen/.htpasswds/public_html/passwd"
+#require valid-user
+
+# compress text, html, javascript, css, xml:
+AddOutputFilterByType DEFLATE text/plain
+AddOutputFilterByType DEFLATE text/html
+AddOutputFilterByType DEFLATE text/xml
+AddOutputFilterByType DEFLATE text/css
+AddOutputFilterByType DEFLATE application/xml
+AddOutputFilterByType DEFLATE application/xhtml+xml
+AddOutputFilterByType DEFLATE application/rss+xml
+AddOutputFilterByType DEFLATE application/javascript
+AddOutputFilterByType DEFLATE application/x-javascript
+
+# Or, compress certain file types by extension:
+<files *.html>
+SetOutputFilter DEFLATE
+</files>
+
+## EXPIRES CACHING ##
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/jpg "access 1 year"
+ExpiresByType image/jpeg "access 1 year"
+ExpiresByType image/gif "access 1 year"
+ExpiresByType image/png "access 1 year"
+ExpiresByType text/css "access 1 month"
+ExpiresByType text/html "access 1 month"
+ExpiresByType application/pdf "access 1 month"
+ExpiresByType text/x-javascript "access 1 month"
+ExpiresByType application/x-shockwave-flash "access 1 month"
+ExpiresByType image/x-icon "access 1 year"
+ExpiresDefault "access 1 month"
+</IfModule>
+## EXPIRES CACHING ##
+
+Redirect 301 /SampleReports/OrganReportSample.htm http://allergenicstesting.com
+Redirect 301 /SampleReports/AllergyReportSample.htm http://allergenicstesting.com/testing-services/
+Redirect 301 /Why-Allergenics/Testimonials http://allergenicstesting.com/about-us/
+Redirect 301 /Why-Allergenics/Terms-and-Conditions http://allergenicstesting.com/terms-and-conditions/
+Redirect 301 /Why-Allergenics/Your-Privacy http://allergenicstesting.com/privacy/
+Redirect 301 /Why-Allergenics/Our-History http://allergenicstesting.com/about-us/
+Redirect 301 /Why-Allergenics/Meet-the-Team http://allergenicstesting.com/about-us/
+Redirect 301 /Why-Allergenics/Your-lock-of-hair http://allergenicstesting.com/about-us/
+Redirect 301 /Practitioner-Service/Request-Information-Pack http://allergenicstesting.com/practitioners-area/
+Redirect 301 /Allergy-Test/Allergies http://allergenicstesting.com/testing-services/food-and-environmental-sensitivity-assessment/
+Redirect 301 /Allergy-Test/Results-you-can-expect http://allergenicstesting.com/testing-services/
+Redirect 301 /Allergy-Test/What-we-test-for http://allergenicstesting.com/testing-services/
+Redirect 301 /Allergy-Test/About-the-hair-test http://allergenicstesting.com/testing-services/
+Redirect 301 /Allergy-Test/Allergy-test-for-children http://allergenicstesting.com/testing-services/
+Redirect 301 /Organ-Assessment-Test/Order-Now http://allergenicstesting.com/order-your-test-now/
+Redirect 301 /Order-Hair-Test/Test-Your-Pet http://allergenicstesting.com/order-your-test-now/
+Redirect 301 /Order-Hair-Test/Food-Allergies-Test http://allergenicstesting.com/order-your-test-now/
+Redirect 301 /Order-Hair-Test/Your-Lock-of-Hair http://allergenicstesting.com/order-your-test-now/
+Redirect 301 /Vitamin-and-Mineral-Test/Results-you-can-expect http://allergenicstesting.com/testing-services/vitamin-and-mineral-assessment/
+Redirect 301 /Vitamin-and-Mineral-Test/Vitamin/Mineral-deficiency http://allergenicstesting.com/testing-services/vitamin-and-mineral-assessment/
+Redirect 301 /Vitamin-and-Mineral-Test/Order-Now http://allergenicstesting.com/order-your-test-now/
+Redirect 301 /Vitamin-and-Mineral-Test/7-great-reasons-to-test http://allergenicstesting.com/testing-services/vitamin-and-mineral-assessment/
+Redirect 301 /Organ-Assessment-Test/Results-you-can-expect http://allergenicstesting.com/testing-services/organ-stress-assesment/
+Redirect 301 /Organ-Assessment-Test/7-great-reasons-to-test http://allergenicstesting.com/testing-services/organ-stress-assesment/
+Redirect 301 /Contact http://allergenicstesting.com/
+Redirect 301 /Why-Allergenics http://allergenicstesting.com/about-us/
+Redirect 301 /Allergy-Test http://allergenicstesting.com/testing-services/
+Redirect 301 /Practitioner-Service http://allergenicstesting.com/practitioners-area/
+Redirect 301 /SampleReports/VitaminReportSample.htm http://allergenicstesting.com/testing-services/
+Redirect 301 /Organ-Assessment-Test http://allergenicstesting.com/testing-services/organ-stress-assesment/
+Redirect 301 /Order-Hair-Test http://allergenicstesting.com/order-your-test-now/
+Redirect 301 /Vitamin-and-Mineral-Test http://allergenicstesting.com/testing-services/vitamin-and-mineral-assessment/
+Redirect 301 /Default.aspx?pageID=2145881912 http://allergenicstesting.com/order-your-test-now/
+Redirect 301 /Default.aspx?pageID=2145882592 http://allergenicstesting.com/order-your-test-now/
