@@ -4775,14 +4775,16 @@ body .form-section .ginput_container img.ui-datepicker-trigger {
 
 li#menu-item-474 {}
 
-li#menu-item-474 a {
+li#menu-item-474 a,
+li#menu-item-470 a {
     background: rgba(0, 0, 0, 0) url("images/search.png") no-repeat scroll 11px 44px;
     text-indent: -9999px;
     transform: none !important;
     width: 25px;
 }
 
-li#menu-item-474 a:hover {
+li#menu-item-474 a:hover,
+li#menu-item-470 a:hover {
   background: #73C7AD url("images/search.png") no-repeat scroll 11px 44px;}
 
 #hidden-search {
@@ -4881,7 +4883,8 @@ outline: none }
     z-index: 1000;
 }
 
-#menu-item-474 {
+#menu-item-474,
+#menu-item-470 {
  display:none}
 
 	#main-nav {

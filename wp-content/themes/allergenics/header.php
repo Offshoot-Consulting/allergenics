@@ -72,6 +72,11 @@ jQuery(document).ready(function(){
         jQuery("#hidden-search").toggle();
         jQuery("#hidden-search input[type=search]").focus();
     });
+    jQuery("li#menu-item-470 a").click(function(event){
+        event.preventDefault();
+        jQuery("#hidden-search").toggle();
+        jQuery("#hidden-search input[type=search]").focus();
+    });
     
     // SUBMIT FORM ON ENTER
 
