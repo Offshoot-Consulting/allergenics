@@ -339,7 +339,7 @@ $returnUrl =$server_url."/wp-content/plugins/paymentexpress/return.php";
 		$_SESSION['succurl']=$fld_succ_url_val;
 		$_SESSION['failurl']=$fld_fail_url_val;
 		$_SESSION['paytype']="FUSION";
-		//mail('syedaliahmad@gmail.com', 'Getting the Gravity Form Field IDs 4', $_SESSION['fstname'].$_SESSION['lstname']);	
+		mail('syedaliahmad@gmail.com', 'Final txn details', $_SESSION['txnid']." ".$_SESSION['sessid']);	
 
 		//must be redirected from gravity form notification
 		
