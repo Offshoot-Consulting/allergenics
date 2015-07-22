@@ -4794,7 +4794,11 @@ li#menu-item-474 a:hover {
     top: 75px;
 }
 
-#hidden-search .search-form input[type="search"]  { border: none }
+#hidden-search .search-form input[type="search"],
+#hidden-search .search-form input[type="search"]:focus  
+
+{ border: none !important;
+outline: none }
 
 
 @media all and (max-width: 1179px) {

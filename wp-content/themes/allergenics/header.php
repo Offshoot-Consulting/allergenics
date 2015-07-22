@@ -65,11 +65,23 @@ jQuery(document).ready(function(){
     jQuery("li#menu-item-474 a").click(function(event){
         event.preventDefault();
         jQuery("#hidden-search").toggle();
+        jQuery("#hidden-search input[type=search]").focus();
     });
     jQuery(".searcher").click(function(event){
         event.preventDefault();
         jQuery("#hidden-search").toggle();
+        jQuery("#hidden-search input[type=search]").focus();
     });
+    
+    // SUBMIT FORM ON ENTER
+
+    jQuery("#hidden-search input[type=search]").keypress(function(event) {
+        if (event.which == 13) {
+            event.preventDefault();
+            jQuery(".search-form").submit();
+        }
+    });
+   
 });
 
 </script>
