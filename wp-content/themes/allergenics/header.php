@@ -152,9 +152,7 @@ document.readyState != "complete" ? (window.attachEvent ? window.attachEvent('on
 
 	</head>
 
-	<body <?php body_class(); ?>>
-	
-<!-- Google Tag Manager -->
+	<body <?php body_class(); ?>><!-- Google Tag Manager -->
 <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KDLF7T"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

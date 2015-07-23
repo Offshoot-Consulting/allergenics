@@ -197,7 +197,7 @@ function base_scripts_styles() {
 
 	// Loads our main stylesheet.
 	wp_enqueue_style( 'base-style', get_stylesheet_uri(), array() );
-	wp_enqueue_style( 'font-open-sans', 'http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700', array() );
+	wp_enqueue_style( 'font-open-sans', '//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700', array() );
 	
 	// Implementation stylesheet.
 	wp_enqueue_style( 'base-theme', get_template_directory_uri() . '/theme.css', array() );	
@@ -261,7 +261,7 @@ add_action("gform_post_submission", "set_post_content", 10, 2);
  $message = print_r($entry, true);
  // In case any of our lines are larger than 70 characters, we should use wordwrap()
  $message = wordwrap($message, 70);
- mail('syedaliahmad@gmail.com', 'Getting the Gravity Form Fields', $message);
+ //mail('syedaliahmad@gmail.com', 'Getting the Gravity Form Fields', $message);
  // Send
 
 	$fld_user_name = 'mt_user_name';
@@ -339,7 +339,7 @@ $returnUrl =$server_url."/wp-content/plugins/paymentexpress/return.php";
 		$_SESSION['succurl']=$fld_succ_url_val;
 		$_SESSION['failurl']=$fld_fail_url_val;
 		$_SESSION['paytype']="FUSION";
-		mail('syedaliahmad@gmail.com', 'Final txn details', $_SESSION['txnid']." ".$_SESSION['sessid']);	
+		//mail('syedaliahmad@gmail.com', 'Final txn details', $_SESSION['txnid']." ".$_SESSION['sessid']);	
 
 		//must be redirected from gravity form notification
 		
