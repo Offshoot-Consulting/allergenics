@@ -93,7 +93,8 @@ get_header(); ?>
         
         <?php ///////// About Section /////////// ?>
         <?php if ( $about_page = get_field( 'about_page' )) : ?>
-            <section class="text-info-block">
+            <section class="services-block text-info-block">
+              <div class="about-home">  
                 <?php $about = new WP_Query( array( 'page_id' => $about_page->ID ) ); ?>
                     <?php while ( $about->have_posts()) : $about->the_post(); ?>
                         <?php the_title( '<h2>','</h2>' ); ?>
@@ -101,8 +102,71 @@ get_header(); ?>
                         <p><a href="<?php echo get_permalink(); ?>"><?php echo __( 'Read More', 'allergenics' ) ?></a></p>
                     <?php endwhile; ?>
                 <?php wp_reset_postdata(); ?>
+              </div>
+              
+              <ul class="services-list">
+                                    <li>
+                                        <div class="holder">
+                                            <div class="front">
+                                                    <div class="bg-stretch">
+                                                      <img src="<?php bloginfo('template_url');?>/images/team1.jpg" alt="Natasha Berman" />
+                                                    </div>
+                                                    <div class="text-area">
+                                                       <h3>Natasha Berman</h3>
+                                                       <p>Managing Director/Naturopath/Medical Herbalist</p>
+                                                    </div>
+                                            </div>
+                                                <div class="back">
+                                                    <div class="text-box">
+                                                        Natasha is the Managing Director of Allergenics – Health Assessment Services, Australasia's leading Hair Testing Service. She is also the founder of Qbaby.
+                                                    </div>
+                                                </div>
+                                        </div>
+                                    </li>
+                                    
+                                    <li>
+                                        <div class="holder">
+                                            <div class="front">
+                                                    <div class="bg-stretch">
+                                                      <img src="<?php bloginfo('template_url');?>/images/team2.jpg" alt="Brett Friedman" />
+                                                    </div>
+                                                    <div class="text-area">
+                                                       <h3>Brett Friedman</h3>
+                                                       <p>Allergenics Chief Health Officer/Nutritional Medicine Practitioner</p>
+                                                    </div>
+                                            </div>
+                                                <div class="back">
+                                                    <div class="text-box">
+                                                        Brett Friedman is a qualified Nutritional Medicine Practitioner with a Master's Degree in Medical Research. He has over 17 years experience in the natural health industry.
+                                                    </div>
+                                                </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <li>
+                                        <div class="holder">
+                                            <div class="front">
+                                                    <div class="bg-stretch">
+                                                      <img src="<?php bloginfo('template_url');?>/images/team3.jpg" alt="Stephanie Kercher" />
+                                                    </div>
+                                                    <div class="text-area">
+                                                       <h3>Stephanie Kercher</h3>
+                                                       <p>Practitioner Support Representative/Naturopath</p>
+                                                    </div>
+                                            </div>
+                                                <div class="back">
+                                                    <div class="text-box">
+                                                        Stephanie is a qualified Naturopath and and has a degree in Health Science from Charles Stuart University (N.S.W. Australia).
+                                                    </div>
+                                                </div>
+                                        </div>
+                                    </li>
+            </ul>
             </section>
         <?php endif; ?>
+        
+        
         <?php ///////// FAQs Section /////////// ?>
         <?php $faqs_heading = get_field( 'faqs_heading' ); ?>
         <?php if ( $faqs_heading || have_rows( 'faqs' )) : ?>
