@@ -30,7 +30,7 @@ require_once(dirname(__FILE__) . '/soap_submission.php');
     <link rel='stylesheet' id='base-style-css' href='/wp-content/themes/allergenics/style.css?ver=4.1.4' type='text/css'
           media='all'/>
     <link rel='stylesheet' id='font-open-sans-css'
-          href='http://fonts.googleapis.com/css?family=Open+Sans%3A400%2C300%2C600%2C700&#038;ver=4.1.4' type='text/css'
+          href='//fonts.googleapis.com/css?family=Open+Sans%3A400%2C300%2C600%2C700&#038;ver=4.1.4' type='text/css'
           media='all'/>
     <link rel='stylesheet' id='base-theme-css' href='/wp-content/themes/allergenics/theme.css?ver=4.1.4' type='text/css'
           media='all'/>
@@ -107,7 +107,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div id="wrapper" class="full-width">
 <header id="header">
     <div class="holder">
-        <div class="logo"><a href="http://allergenicstesting.com"><img src="/wp-content/themes/allergenics/images/logo.png"
+        <div class="logo"><a href="https://allergenicstesting.com"><img src="/wp-content/themes/allergenics/images/logo.png"
                                           alt="Allergenics"></a></div>
         <strong class="slogan">Health Assessment Services</strong>
         <nav id="main-nav">
@@ -160,10 +160,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
                 <div class='gform_page_footer top_label'>
 
-                    <input onclick="javascript:location.href='http://allergenicstesting.com'" type="button"
+                    <input onclick="javascript:location.href='https://allergenicstesting.com'" type="button"
                            tabindex="29" value="Go back to homepage"
                            class="gform_previous_button button successbtn1" id="gform_previous_button_1_18">
-                    <input onclick="javascript:location.href='http://allergenicstesting.com/order-your-test-now/'"
+                    <input onclick="javascript:location.href='https://allergenicstesting.com/order-your-test-now/'"
                            type='submit' id='gform_submit_button_1' class='gform_button button successbtn2'
                            value='Order more tests' tabindex='134'/>
 
@@ -223,7 +223,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     });
                 });</script>
             <script
-                type='text/javascript'> if (typeof gf_global == 'undefined') var gf_global = {"gf_currency_config": {"name": "U.S. Dollar", "symbol_left": "$", "symbol_right": "", "symbol_padding": "", "thousand_separator": ",", "decimal_separator": ".", "decimals": 2}, "base_url": "http:\/\/allergenics.edyta.me\/wp-content\/plugins\/gravityforms", "number_formats": [], "spinnerUrl": "http:\/\/allergenics.edyta.me\/wp-content\/plugins\/gravityforms\/images\/spinner.gif"};
+                type='text/javascript'> if (typeof gf_global == 'undefined') var gf_global = {"gf_currency_config": {"name": "U.S. Dollar", "symbol_left": "$", "symbol_right": "", "symbol_padding": "", "thousand_separator": ",", "decimal_separator": ".", "decimals": 2}, "base_url": "https:\/\/allergenics.edyta.me\/wp-content\/plugins\/gravityforms", "number_formats": [], "spinnerUrl": "https:\/\/allergenics.edyta.me\/wp-content\/plugins\/gravityforms\/images\/spinner.gif"};
                 jQuery(document).bind('gform_post_render', function (event, formId, currentPage) {
                     if (formId == 2) {
                         if (window['jQuery']) {
@@ -272,8 +272,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
                       
                       <h3>100% Secure Payments</h3>
-                      <img src="http://allergenicstesting.com/wp-content/themes/allergenics/images/pe.png" alt="Payment Processor" width="155" height="54" />
-                      <img src="http://allergenicstesting.com/wp-content/themes/allergenics/images/comodo.png" alt="comodo">
+                      <img src="https://allergenicstesting.com/wp-content/themes/allergenics/images/pe.png" alt="Payment Processor" width="155" height="54" />
+                      <img src="https://allergenicstesting.com/wp-content/themes/allergenics/images/comodo.png" alt="comodo">
 
                       
 </div>                    </div>
