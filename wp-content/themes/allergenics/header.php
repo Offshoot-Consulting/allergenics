@@ -91,27 +91,6 @@ jQuery(document).ready(function(){
 
 </script>
 
-
-<script>
-
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-
-
-  ga('create', 'UA-64114162-1', 'auto');
-
-  ga('send', 'pageview');
-
-
-
-</script>
-
 <meta name="google-site-verification" content="yHdrzlaJQLoxIT5lW9FOjVKZdBUb6nPA6U-SNs0bkXM" />
 
 <meta name="msvalidate.01" content="73B3E1A7212985B5308196BFD5121639" />
@@ -123,43 +102,20 @@ jQuery(document).ready(function(){
 <meta name="geo.position" content="-36.938182;174.654076" />
 
 <meta name="ICBM" content="-36.938182, 174.654076" />
-
-
-
-<!-- Begin Inspectlet Embed Code -->
-
-<script type="text/javascript" id="inspectletjs">
-
-window.__insp = window.__insp || [];
-
-__insp.push(['wid', 1091053351]);
-
-(function() {
-
-function __ldinsp(){var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); };
-
-document.readyState != "complete" ? (window.attachEvent ? window.attachEvent('onload', __ldinsp) : window.addEventListener('load', __ldinsp, false)) : __ldinsp();
-
-
-
-})();
-
-</script>
-
-<!-- End Inspectlet Embed Code -->
-
    
 
 	</head>
 
-	<body <?php body_class(); ?>><!-- Google Tag Manager -->
-<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KDLF7T"
+	<body <?php body_class(); ?>>
+	
+	<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NL5FL6"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KDLF7T');</script>
+})(window,document,'script','dataLayer','GTM-NL5FL6');</script>
 <!-- End Google Tag Manager -->
 	
 
