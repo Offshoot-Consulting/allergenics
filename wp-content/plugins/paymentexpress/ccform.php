@@ -218,6 +218,17 @@ session_start();
 	
 	</head>
 	<body class="page page-id-103 page-template page-template-pages page-template-template-order page-template-pagestemplate-order-php no-customize-support">
+	
+		<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NL5FL6"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NL5FL6');</script>
+<!-- End Google Tag Manager -->
+	
         <div id="wrapper" class="full-width">
             <header id="header">
                 <div class="holder">
@@ -280,6 +291,7 @@ session_start();
             <li class="gfield gfield_contains_required field_sublabel_below field_description_below" id="field_1_11">
             <h3>How would you like to pay?<span class="gfield_required">*</span></h3>
             
+            
             <div class="ginput_container">
               <ul id="input_1_11" class="gfield_radio">
               
@@ -310,29 +322,29 @@ session_start();
             <li class="gfield field">
             <label class="gfield_label">Card Number</label>
             <div class="ginput_container">
-            <input type="text" name="CardNumber" value="" maxlength="16" />
+            <input class="inspectletIgnore" type="text" name="CardNumber" value="" maxlength="16" />
             </div>
             </li>
             
             <li class="gfield field">
             <label class="gfield_label">Expiry (mm/yy)</label>
             <div class="ginput_container">
-            <input type="text" name="ExpiryMonth" value="" maxlength="2" size="2" /> /
-				    <input type="text" name="ExpiryYear" value="" maxlength="2" size="2" />
+            <input class="inspectletIgnore"  type="text" name="ExpiryMonth" value="" maxlength="2" size="2" /> /
+				    <input class="inspectletIgnore"  type="text" name="ExpiryYear" value="" maxlength="2" size="2" />
             </div>
             </li>
             
             <li class="gfield field">
             <label class="gfield_label">Card Security Code</label>
             <div class="ginput_container">
-            <input type="text" name="Cvc2" value="" maxlength="3" size="4" />
+            <input class="inspectletIgnore" type="text" name="Cvc2" value="" maxlength="3" size="4" />
             </div>
             </li>
             
             <li class="gfield field">
             <label class="gfield_label">Card Holder Name</label>
             <div class="ginput_container">
-            <input type="text" name="CardHolderName" value="" />
+            <input  class="inspectletIgnore"  type="text" name="CardHolderName" value="" />
             </div>
             </li>
             </div>
