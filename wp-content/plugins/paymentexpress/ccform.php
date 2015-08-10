@@ -389,9 +389,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     <div class="cont-right">
                       <div class="widget widget_text" id="text-2">
                       
-                      <div class="widget widget_text" id="text-2"><h3>Help</h3><p>In order to give you the best possible results, we ask you to complete the test order form found on this page.</p>
-<p>The form contains a number of questions regarding any symptoms you may be experiencing, and about any medicines or supplements you may be taking.</p>
-<p>If you need any help to complete your test order form, please email us at <a href="mailto:info@allergenics.co.nz">info@allergenics.co.nz</a>  or phone us on 0800 004 898.</p>
+                      <div class="widget widget_text" id="text-2"><h3>Help</h3><p>We require a minimum of 1/2 teaspoon of hair, cut as close to the scalp as possible. The closer to the scalp the more accurate the results will be. Hair samples should not be older than 4 weeks old.</p>
+<p>Please refer to our FAQ's for more information about taking hair samples.</p>
+<p>If you need any help, please email us at <a href="mailto:info@allergenics.co.nz">info@allergenics.co.nz</a>  or phone us on 0800 004 898.</p>
 </div>
                       
                       <h3>100% Secure Payments</h3>
