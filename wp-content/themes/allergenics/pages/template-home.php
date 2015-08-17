@@ -42,7 +42,7 @@ get_header(); ?>
         <?php $services_heading = get_field( 'services_heading' ); ?>
         <?php $learn_more_link = get_field( 'learn_more_link' ); ?>
         <?php if ( $services_heading || have_rows( 'services' ) || $services_heading ) : ?>
-            <section class="services-block">
+            <section class="services-block desktopview">
                 <div class="container">
                     <?php if ( $services_heading ) echo '<h2>'. $services_heading .'</h2>'; ?>
                     <?php if ( have_rows( 'services' )) : ?>
@@ -88,12 +88,62 @@ get_header(); ?>
                         <a href="<?php echo esc_url( $learn_more_link ); ?>" class="more"><?php _e( 'Learn More', 'allergenics' ); ?></a>
                     <?php endif; ?>
                 </div>
+            </section>  
+            <section class="services-block mobileview">
+                <div class="container">
+                    <?php if ( $services_heading ) echo '<h2>'. $services_heading .'</h2>'; ?>
+                    <?php if ( have_rows( 'services' )) : ?>
+                        <ul class="services-list2">
+                            <?php while ( have_rows( 'services' )) : the_row(); ?>
+                                <?php $bg_image = get_sub_field( 'bg_image' );  ?>
+                                <?php $icon = get_sub_field( 'icon' );  ?>
+                                <?php $title = get_sub_field( 'title' );  ?>
+                                <?php $content = get_sub_field( 'content' );  ?>
+                                <?php $url = get_sub_field( 'url' );  ?>
+                                <?php if ( $bg_image || $icon || $title || $content ) : ?>
+                                    <li>
+                                      <div class="holder">
+                                       <div class="front">
+                                                <?php if ( $bg_image ) : ?>
+                                                   
+                                                    <div class="bg-stretch">
+                                                    <a href="<?php echo $url; ?>"> 
+                                                    <?php echo preg_replace('#(width|height)=\"\d*\"\s#', "", wp_get_attachment_image( $bg_image,'thumbnail_246x246') ); ?>
+                                                    </a>
+                                                    </div>
+                                                <?php endif; ?>
+                                                <?php if ( $title || $icon ) : ?>
+                                                    <div class="text-area">
+                                                        <?php if ( $icon ) : ?>
+                                                            <div class="ico">
+                                                            <a href="<?php echo $url; ?>"> 
+                                                            <?php echo preg_replace('#(width|height)=\"\d*\"\s#', "", wp_get_attachment_image( $icon,'thumbnail_97x75') ); ?>
+                                                            </a>
+                                                            </div>
+                                                        <?php endif; ?>
+                                                        <?php if ( $title ) echo '<strong class="title">'. '<a href="' . $url . '">' . $title .'</a></strong>'; ?>
+                                                    </div>
+                                                <?php endif; ?>
+                                            </div>
+                                          </div>
+                                    </li>
+                                <?php endif; ?>
+                            <?php endwhile; ?>
+                        </ul>
+                    <?php endif; ?>
+                    <?php if ( $order_test_link = get_field( 'order_test_link','option' )): ?>
+                        <a href="<?php echo esc_url( $order_test_link ); ?>" class="btn"><?php _e( 'ORDER YOUR TEST NOW', 'allergenics' ); ?></a>
+                    <?php endif; ?>
+                    <?php if ( $learn_more_link = get_field( 'learn_more_link' )): ?>
+                        <a href="<?php echo esc_url( $learn_more_link ); ?>" class="more"><?php _e( 'Learn More', 'allergenics' ); ?></a>
+                    <?php endif; ?>
+                </div>
             </section>
         <?php endif; ?>   
         
         <?php ///////// About Section /////////// ?>
         <?php if ( $about_page = get_field( 'about_page' )) : ?>
-            <section class="services-block text-info-block">
+            <section class="services-block text-info-block desktopview">
               <div class="about-home">  
                 <?php $about = new WP_Query( array( 'page_id' => $about_page->ID ) ); ?>
                     <?php while ( $about->have_posts()) : $about->the_post(); ?>
@@ -160,6 +210,61 @@ get_header(); ?>
                                                         Stephanie is a qualified Naturopath and and has a degree in Health Science from Charles Stuart University (N.S.W. Australia).
                                                     </div>
                                                 </div>
+                                        </div>
+                                    </li>
+            </ul>
+            </section>
+            
+            <section class="services-block text-info-block mobileview">
+              <div class="about-home">  
+                <?php $about = new WP_Query( array( 'page_id' => $about_page->ID ) ); ?>
+                    <?php while ( $about->have_posts()) : $about->the_post(); ?>
+                        <?php the_title( '<h2>','</h2>' ); ?>
+               <?php echo apply_filters('the_excerpt',get_the_excerpt())?>
+                        <p><a href="<?php echo get_permalink(); ?>"><?php echo __( 'Read More', 'allergenics' ) ?></a></p>
+                    <?php endwhile; ?>
+                <?php wp_reset_postdata(); ?>
+              </div>
+              
+              <ul class="services-list2">
+                                    <li>
+                                        <div class="holder">
+                                            <div class="front">
+                                                    <div class="bg-stretch">
+                                                      <img src="<?php bloginfo('template_url');?>/images/team1.jpg" alt="Natasha Berman" />
+                                                    </div>
+                                                    <div class="text-area">
+                                                       <h3>Natasha Berman</h3>
+                                                       <p>Managing Director/Naturopath/Medical Herbalist</p>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    <li>
+                                        <div class="holder">
+                                            <div class="front">
+                                                    <div class="bg-stretch">
+                                                      <img src="<?php bloginfo('template_url');?>/images/team2.jpg" alt="Brett Friedman" />
+                                                    </div>
+                                                    <div class="text-area">
+                                                       <h3>Brett Friedman</h3>
+                                                       <p>Allergenics Chief Health Officer/Nutritional Medicine Practitioner</p>
+                                                    </div>
+                                    </li>
+                                    
+                                    
+                                    <li>
+                                        <div class="holder">
+                                            <div class="front">
+                                                    <div class="bg-stretch">
+                                                      <img src="<?php bloginfo('template_url');?>/images/team3.jpg" alt="Stephanie Kercher" />
+                                                    </div>
+                                                    <div class="text-area">
+                                                       <h3>Stephanie Kercher</h3>
+                                                       <p>Practitioner Support Representative/Naturopath</p>
+                                                    </div>
+                                            </div>
                                         </div>
                                     </li>
             </ul>

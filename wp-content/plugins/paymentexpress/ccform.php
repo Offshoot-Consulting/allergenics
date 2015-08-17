@@ -4,29 +4,80 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en-AU">
-	<head>
+
+<link rel='stylesheet' id='font-awesome-css'  href='//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='base-style-css'  href='/wp-content/themes/allergenics/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='font-open-sans-css'  href='//fonts.googleapis.com/css?family=Open+Sans%3A400%2C300%2C600%2C700&#038;ver=4.2.3' type='text/css' media='all' />
+<link rel='stylesheet' id='base-theme-css'  href='/wp-content/themes/allergenics/theme.css' type='text/css' media='all' />
+<!--[if IE 9]>
+<link rel='stylesheet' id='base-ie-css'  href='/wp-content/themes/allergenics/css/ie.css' type='text/css' media='all' />
+<![endif]-->
+<link rel='stylesheet' id='gforms_reset_css-css'  href='/wp-content/plugins/gravityforms/css/formreset.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='gforms_formsmain_css-css'  href='/wp-content/plugins/gravityforms/css/formsmain.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='gforms_ready_class_css-css'  href='/wp-content/plugins/gravityforms/css/readyclass.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='gforms_browsers_css-css'  href='/wp-content/plugins/gravityforms/css/browsers.min.css' type='text/css' media='all' />
+<script type='text/javascript' src='/wp-includes/js/jquery/jquery.js'></script>
+<script type='text/javascript' src='/wp-includes/js/jquery/jquery-migrate.min.js'></script>
+<script type='text/javascript' src='/wp-content/themes/allergenics/js/jquery.main.js'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml" /> 
+<link rel='shortlink' href='/?p=160' />
+
+
+<script type="text/javascript">
+
+// search when hit enter
+
+  jQuery( document ).ready(function() {
+        jQuery("form").bind("keypress", function (e) {
+      if (e.keyCode == 13) {
+          return false;
+      }
+    });
+  });
+</script>
+    
+    
+<script type="text/javascript">
+
+// show/hide search box
+
+jQuery(document).ready(function(){
+    jQuery("li#menu-item-474 a").click(function(event){
+        event.preventDefault();
+        jQuery("#hidden-search").toggle();
+        jQuery("#hidden-search input[type=search]").focus();
+    });
+    jQuery(".searcher").click(function(event){
+        event.preventDefault();
+        jQuery("#hidden-search").toggle();
+        jQuery("#hidden-search input[type=search]").focus();
+    });
+    jQuery("li#menu-item-470 a").click(function(event){
+        event.preventDefault();
+        jQuery("#hidden-search").toggle();
+        jQuery("#hidden-search input[type=search]").focus();
+    });
+    
+    // SUBMIT FORM ON ENTER
+
+    jQuery("#hidden-search input[type=search]").keypress(function(event) {
+        if (event.which == 13) {
+            event.preventDefault();
+            jQuery(".search-form").submit();
+        }
+    });
+   
+});
+
+</script>
+
 		<meta charset="UTF-8">	
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">	
-		<script type="text/javascript">
-			var pathInfo = {
-				base: '/wp-content/themes/allergenics/',
-				css: 'css/',
-				js: 'js/',
-				swf: 'swf/',
-			}
-		</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">	
+
 		<script language="javascript">
 		function validateform()
 		{
-			//alert ("intotest");
-			
-			if(document.frm1.input_111.value=='' )
-			{
-				alert("Please select a payment option");
-				return false;
-			}
-			if(document.frm1.input_111.value=='choice02' )
-			{
 				if (document.frm1.CardNumber.value=='') {
 					alert("Please enter Card Number ");
 					return false;
@@ -67,243 +118,84 @@ session_start();
 					alert("Card Number should be 16 digits");
 					return false;
 				}
-
-
-			}
-			
-			
 			return true;
-			
-			
-			
-			//document.forms['frm1'].submit();
-			
-			
 		}
 </script>
 
-<style type="text/css">
-		
-		@font-face {
-    font-family: "Open Sans";
-    src: url(Open_Sans/OpenSans-Bold.ttf);
-    font-weight: 200;
-    font-style:normal
-    } 
-    
-    @font-face {
-    font-family: "Open Sans";
-    src: url(Open_Sans/OpenSans-BoldItalic.ttf);
-    font-weight: 200;
-    font-style:italic
-    } 
-    
-    @font-face {
-    font-family: "Open Sans";
-    src: url(Open_Sans/OpenSans-ExtraBold.ttf);
-    font-weight: 200;
-    font-style:normal
-    } 
-    
-    @font-face {
-    font-family: "Open Sans";
-    src: url(Open_Sans/OpenSans-ExtraBoldItalic.ttf);
-    font-weight: 200;
-    font-style:italic
-    } 
-    
-    @font-face {
-    font-family: "Open Sans";
-    src: url(Open_Sans/OpenSans-Italic.ttf);
-    font-weight: 200;
-    font-style:italic
-    } 
-    
-    
-    
-    @font-face {
-    font-family: "Open Sans";
-    src: url(Open_Sans/OpenSans-LightItalic.ttf);
-    font-weight: 200;
-    font-style:italic
-    } 
-    
-    @font-face {
-    font-family: "Open Sans";
-    src: url(Open_Sans/OpenSans-Regular.ttf);
-    font-weight: 200;
-    font-style:normal
-    } 
-    
-    @font-face {
-    font-family: "Open Sans";
-    src: url(Open_Sans/OpenSans-Semibold.ttf);
-    font-weight: 200;
-    font-style:normal
-    } 
-    
-    @font-face {
-    font-family: "Open Sans";
-    src: url(Open_Sans/OpenSans-SemiboldItalic.ttf);
-    font-weight: 200;
-    font-style:italic
-    } 
-    
-    @font-face {
-    font-family: "Open Sans";
-    src: url(Open_Sans/OpenSans-Light.ttf);
-    font-weight: 200;
-    font-style:normal
-    } 
-
-		
-		</style>
-
-
-		<title>Order your test now | Allergenics</title>
-<link rel="alternate" type="application/rss+xml" title="Allergenics &raquo; Feed" href="/feed/" />
-<link rel="alternate" type="application/rss+xml" title="Allergenics &raquo; Comments Feed" href="/comments/feed/" />
-<link rel="alternate" type="application/rss+xml" title="Allergenics &raquo; Order your test now Comments Feed" href="/order-your-test-now/feed/" />
-<!--<link rel='stylesheet' id='open-sans-css'  href='//fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&#038;ver=4.1.4' type='text/css' media='all' />-->
-<link rel='stylesheet' id='dashicons-css'  href='/wp-includes/css/dashicons.min.css?ver=4.1.4' type='text/css' media='all' />
-<link rel='stylesheet' id='admin-bar-css'  href='/wp-includes/css/admin-bar.min.css?ver=4.1.4' type='text/css' media='all' />
-<link rel='stylesheet' id='base-style-css'  href='/wp-content/themes/allergenics/style.css?ver=4.1.4' type='text/css' media='all' />
-<link rel='stylesheet' id='font-open-sans-css'  href='//fonts.googleapis.com/css?family=Open+Sans%3A400%2C300%2C600%2C700&#038;ver=4.1.4' type='text/css' media='all' />
-<link rel='stylesheet' id='base-theme-css'  href='/wp-content/themes/allergenics/theme.css?ver=4.1.4' type='text/css' media='all' />
-<!--[if IE 9]>
-<link rel='stylesheet' id='base-ie-css'  href='/wp-content/themes/allergenics/css/ie.css?ver=4.1.4' type='text/css' media='all' />
-<![endif]-->
-<link rel='stylesheet' id='gforms_reset_css-css'  href='/wp-content/plugins/gravityforms/css/formreset.min.css?ver=1.9.6.2' type='text/css' media='all' />
-<link rel='stylesheet' id='gforms_formsmain_css-css'  href='/wp-content/plugins/gravityforms/css/formsmain.min.css?ver=1.9.6.2' type='text/css' media='all' />
-<link rel='stylesheet' id='gforms_ready_class_css-css'  href='/wp-content/plugins/gravityforms/css/readyclass.min.css?ver=1.9.6.2' type='text/css' media='all' />
-<link rel='stylesheet' id='gforms_browsers_css-css'  href='/wp-content/plugins/gravityforms/css/browsers.min.css?ver=1.9.6.2' type='text/css' media='all' />
-<script type='text/javascript' src='/wp-includes/js/jquery/jquery.js?ver=1.11.1'></script>
-<script type='text/javascript' src='/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
-<script type='text/javascript' src='/wp-content/themes/allergenics/js/jquery.main.js?ver=4.1.4'></script>
-<script type='text/javascript' src='/wp-content/plugins/gravityforms/js/conditional_logic.min.js?ver=1.9.6.2'></script>
-<script type='text/javascript' src='/wp-content/plugins/gravityforms/js/jquery.json-1.3.js?ver=1.9.6.2'></script>
-<script type='text/javascript' src='/wp-content/plugins/gravityforms/js/gravityforms.min.js?ver=1.9.6.2'></script>
-<script type='text/javascript' src='/wp-content/plugins/gravityforms/js/placeholders.jquery.min.js?ver=1.9.6.2'></script>
-<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd" />
-<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml" /> 
-<link rel='canonical' href='/order-your-test-now/' />
-<link rel='shortlink' href='/?p=103' />
-	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
-<style type="text/css" media="print">#wpadminbar { display:none; }</style>
-
-		<script type="text/javascript">
-		  
-		jQuery(document).ready(function() {
-    
-    jQuery("input[name$='input_111']").click(function() {
-        var test = jQuery(this).val();
-        //alert(test);
-        
-        if(test=='choice02') {
-          jQuery('#ccform').show();
-        }
-        
-        if(test=='choice01') {
-          jQuery('#ccform').hide();
-        }
-        
-    });
-    
-    });
-		</script>
-		
-		
-<!-- Google Code for food Conversion Page -->
-<script type="text/javascript">
-/* <![CDATA[ */
-var google_conversion_id = 948192091;
-var google_conversion_language = "en";
-var google_conversion_format = "3";
-var google_conversion_color = "ffffff";
-var google_conversion_label = "D9KZCLnDgF8Q24aRxAM";
-var google_remarketing_only = false;
-/* ]]> */
-</script>
-<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
-</script>
-<noscript>
-<div style="display:inline;">
-<img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/948192091/?label=D9KZCLnDgF8Q24aRxAM&amp;guid=ON&amp;script=0"/>
-</div>
-</noscript>
-<!-- Google Code para etiquetas de remarketing -->
-<!--------------------------------------------------
-Es posible que las etiquetas de remarketing todavía no estén asociadas a la información de identificación personal o que estén en páginas relacionadas con las categorías delicadas. Para obtener más información e instrucciones sobre cómo configurar la etiqueta, consulte http://google.com/ads/remarketingsetup.
---------------------------------------------------->
-<script type="text/javascript">
-/* <![CDATA[ */
-var google_conversion_id = 948192091;
-var google_custom_params = window.google_tag_params;
-var google_remarketing_only = true;
-/* ]]> */
-</script>
-<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
-</script>
-<noscript>
-<div style="display:inline;">
-<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/948192091/?value=0&amp;guid=ON&amp;script=0"/>
-</div>
-</noscript>
-<!-- Begin Inspectlet Embed Code -->
-
-<script type="text/javascript" id="inspectletjs">
-
-window.__insp = window.__insp || [];
-
-__insp.push(['wid', 1091053351]);
-
-(function() {
-
-function __ldinsp(){var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); };
-
-document.readyState != "complete" ? (window.attachEvent ? window.attachEvent('onload', ldinsp) : window.addEventListener('load', ldinsp, false)) : __ldinsp();
-
-
-
-})();
-
-</script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-64114162-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-
+<title>Order your test now | Allergenics</title>
 	
-	</head>
-	<body class="page page-id-103 page-template page-template-pages page-template-template-order page-template-pagestemplate-order-php no-customize-support">
-
+</head>
+	
+  <body class="page page-id-103 page-template page-template-pages page-template-template-order page-template-pagestemplate-order-php no-customize-support">
 	
         <div id="wrapper" class="full-width">
-            <header id="header">
+             
+        <header id="header">
                 <div class="holder">
-                    <div class="logo"><a href="https://allergenicstesting.com"><img src="/wp-content/themes/allergenics/images/logo.png" alt="Allergenics"></a></div>
-                                            <strong class="slogan">Health Assessment Services</strong>
-                                                                <nav id="main-nav">
-                            <a href="#" class="opener"><span>Menu</span></a>
-                            <div class="drop"><ul><li id="menu-item-82" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-82"><a href="/testing-services/">Testing services</a></li>
-<li id="menu-item-83" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-83"><a href="/about-us/">About us</a></li>
-<li id="menu-item-84" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-84"><a href="/faq/">FAQ</a></li>
-<li id="menu-item-85" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-85"><a href="/practitioners-area/">Practitioners Area</a></li>
-</ul></div>                        </nav>
-                                    </div>
-            </header>                        <section class="form-section">
+                    <div class="logo"><a href="/"><img alt="Allergenics" src="/wp-content/themes/allergenics/images/logo.png"></a></div>
+                    <strong class="slogan">Health Assessment Services</strong>
+                    
+                        <nav id="main-nav">
+
+                            <a class="opener" href="#"><span>Menu</span></a>                             
+                            <a class="searcher" href="#"><span>Search</span></a>
+                            
+                            <div class="drop">
+                            
+                            <ul>
+                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-8" id="menu-item-8">
+                            <a href="/hair-testing-services/">Hair Testing Services</a>
+                            <ul class="sub-menu">
+                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-202" id="menu-item-202">
+                            <a href="/hair-testing-services/food-and-environmental-sensitivity-assessment-hair-test/">Food and Environmental Sensitivity Assessment</a></li>
+	                          <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-201" id="menu-item-201"><a href="/hair-testing-services/individual-organ-stress-assessment-hair-test/">Organ Stress Assessment</a></li>
+                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-200" id="menu-item-200"><a href="/hair-testing-services/vitamin-and-mineral-assessment-human-hair-test/">Vitamin and Mineral Assessment</a></li>
+                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-199" id="menu-item-199"><a href="/hair-testing-services/heavy-metal-and-toxic-element-assessment-human-hair-test/">Heavy Metal and Toxic Element Assessment</a></li>
+                            </ul>
+                            </li>
+                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10" id="menu-item-10"><a href="/about-us/">About us</a></li>
+                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-157" id="menu-item-157"><a href="/faq/">FAQ</a></li>
+                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14" id="menu-item-14"><a href="/practitioners/">Practitioners</a></li>
+                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-470" id="menu-item-470"><a href="#">Search</a></li></ul></div>                                    
+                            <div style="display:none" id="hidden-search" class="hidden-search">
+                               <form action="/" class="search-form" method="get">
+                              	<input type="search" value="" placeholder="Enter search terms..." name="s">
+                              	<input type="submit" value="Search">
+                              </form>
+                            </div>
+                        </nav>
+                </div>
+           </header>     
+             
+             <section class="form-section">
                   <div class="container clearfix">
                     <div class="cont-left">
                     <h1>Order your test now</h1>
+                    
+                    <div class="progress">
+                      <div class="circle done">
+                        <span class="label ">&#10003;</span>
+                        <span class="title">Contact details</span>
+                      </div>
+                      <span class="bar"></span>
+                      <div class="circle done">
+                        <span class="label done">&#10003;</span>
+                        <span class="title">Symptoms</span>
+                      </div>
+                      <span class="bar"></span>
+                      <div class="circle done">
+                        <span class="label done">&#10003;</span>
+                        <span class="title">Choose Test</span>
+                      </div>
+                      <span class="bar"></span>
+                      <div class="circle active">
+                        <span class="label active">4</span>
+                        <span class="title">Payment</span>
+                      </div>
+                    </div>
 
 
-                <div class='gf_browser_gecko gform_wrapper' id='gform_wrapper_2' style='display:none'><a id='gf_2' name='gf_2' class='gform_anchor' ></a>
+                <div class='gf_browser_gecko gform_wrapper' id='gform_wrapper_2'><a id='gf_2' name='gf_2' class='gform_anchor' ></a>
                 
                 <!--<form method='post' enctype='multipart/form-data' target='gform_ajax_frame_2' id='gform_2'  action='/order-your-test-now/#gf_2'>-->
                        
@@ -312,56 +204,19 @@ document.readyState != "complete" ? (window.attachEvent ? window.attachEvent('on
         <div class="gform_page" id="gform_page_2_1">
         <div class="gform_page_fields">
         
-        <form name='frm1' enctype='multipart/form-data' onSubmit='javascript: return validateform();'  action="ccform_redirect.php" method="post">
+        <form name='frm1' enctype='multipart/form-data' onSubmit='javascript: return validateform();'  action="https://sec.paymentexpress.com/pxmi3/pxfusionauth" method="post">
 				<input type="hidden" name="SessionId" value="<?php echo $_SESSION['sessid']; ?>" />
 				<input type="hidden" name="Action" value="Add" />
 				<input type="hidden" name="Object" value="DpsPxPay" />
         
         <ul class="gform_fields top_label form_sublabel_below description_below" id="gform_fields_2">
-        
-        <li class="gfield gfield_html gfield_html_formatted gfield_no_follows_desc field_sublabel_below field_description_below" id="field_1_77"><div class="progress">
-          <div class="circle done">
-            <span class="label ">&#10003;</span>
-            <span class="title">Contact details</span>
-          </div>
-          <span class="bar"></span>
-          <div class="circle done">
-            <span class="label done">&#10003;</span>
-            <span class="title">Symptoms</span>
-          </div>
-          <span class="bar"></span>
-          <div class="circle done">
-            <span class="label done">&#10003;</span>
-            <span class="title">Choose Test</span>
-          </div>
-          <span class="bar"></span>
-          <div class="circle active">
-            <span class="label active">4</span>
-            <span class="title">Payment</span>
-          </div>
-        </div></li>
+
         
 
             
-            <li class="gfield gfield_contains_required field_sublabel_below field_description_below" id="field_1_11">
-            <h3>How would you like to pay?<span class="gfield_required">*</span></h3>
-            
-            
-            <div class="ginput_container">
-              <ul id="input_1_11" class="gfield_radio">
-              
-              <li class="gchoice_1_11_0 myhoice_1_11_0">
-                <input type="radio" tabindex="15" id="choice01" value="choice01" name="input_111">
-                <label id="label_1_11_0" for="choice01">Pay by Internet Banking </label>
-              </li>
-              
-              <li class="gchoice_1_11_1 myhoice_1_11_1">
-                <input type="radio" tabindex="16" id="choice02" value="choice02" name="input_111">
-                <label id="label_1_11_1" for="choice02">Pay by Credit Card</label>
-              </li>
-              
-            </ul>
-            </div>
+            <li class="gfield gfield_contains_required field_sublabel_below field_description_below" id="field_1_11" style="width:100%">
+            <h3>Please enter your credit card details:</h3>
+
             </li>
             
             <li class="gfield field">
@@ -373,41 +228,39 @@ document.readyState != "complete" ? (window.attachEvent ? window.attachEvent('on
             </li>
             
             
-            <div id="ccform" style="display:none">
+            <div id="ccform">
             <li class="gfield field">
             <label class="gfield_label">Card Number</label>
             <div class="ginput_container">
-            <input class="inspectletIgnore" type="text" name="CardNumber" value="" maxlength="16" />
+            <input autocomplete="off" class="inspectletIgnore" type="text" name="CardNumber" value="" maxlength="16" />
             </div>
             </li>
             
             <li class="gfield field">
             <label class="gfield_label">Expiry (mm/yy)</label>
             <div class="ginput_container">
-            <input class="inspectletIgnore"  type="text" name="ExpiryMonth" value="" maxlength="2" size="2" /> /
-				    <input class="inspectletIgnore"  type="text" name="ExpiryYear" value="" maxlength="2" size="2" />
+            <input autocomplete="off" class="inspectletIgnore"  type="text" name="ExpiryMonth" value="" maxlength="2" size="2" /> /
+				    <input autocomplete="off" class="inspectletIgnore"  type="text" name="ExpiryYear" value="" maxlength="2" size="2" />
             </div>
             </li>
             
             <li class="gfield field">
             <label class="gfield_label">Card Security Code</label>
             <div class="ginput_container">
-            <input class="inspectletIgnore" type="text" name="Cvc2" value="" maxlength="3" size="4" />
+            <input autocomplete="off" class="inspectletIgnore" type="text" name="Cvc2" value="" maxlength="3" size="4" />
             </div>
             </li>
             
             <li class="gfield field">
             <label class="gfield_label">Card Holder Name</label>
             <div class="ginput_container">
-            <input  class="inspectletIgnore"  type="text" name="CardHolderName" value="" />
+            <input autocomplete="off"  class="inspectletIgnore"  type="text" name="CardHolderName" value="" />
             </div>
             </li>
             </div>
 
 				  </ul>
-				  
-				  <script type="text/javascript">
-				  </script>
+
 
 				</div>
 				</div>
@@ -427,62 +280,54 @@ document.readyState != "complete" ? (window.attachEvent ? window.attachEvent('on
             <input type='hidden' name='gform_field_values' value='' />
             
         </div>
-        
-        
-                      
-                        </form>
-                        </div>
-                        
-               
-                <script type='text/javascript'>jQuery(document).ready(function($){gformInitSpinner( 2, '/wp-content/plugins/gravityforms/images/spinner.gif' );jQuery('#gform_ajax_frame_2').load( function(){var contents = jQuery(this).contents().find('*').html();var is_postback = contents.indexOf('GF_AJAX_POSTBACK') >= 0;if(!is_postback){return;}var form_content = jQuery(this).contents().find('#gform_wrapper_2');var is_confirmation = jQuery(this).contents().find('#gform_confirmation_wrapper_2').length > 0;var is_redirect = contents.indexOf('gformRedirect(){') >= 0;var is_form = form_content.length > 0 && ! is_redirect && ! is_confirmation;if(is_form){jQuery('#gform_wrapper_2').html(form_content.html());setTimeout( function() { /* delay the scroll by 50 milliseconds to fix a bug in chrome */ jQuery(document).scrollTop(jQuery('#gform_wrapper_2').offset().top); }, 50 );if(window['gformInitDatepicker']) {gformInitDatepicker();}if(window['gformInitPriceFields']) {gformInitPriceFields();}var current_page = jQuery('#gform_source_page_number_2').val();gformInitSpinner( 2, '/wp-content/plugins/gravityforms/images/spinner.gif' );jQuery(document).trigger('gform_page_loaded', [2, current_page]);window['gf_submitting_2'] = false;}else if(!is_redirect){var confirmation_content = jQuery(this).contents().find('#gforms_confirmation_message_2').html();if(!confirmation_content){confirmation_content = contents;}setTimeout(function(){jQuery('#gform_wrapper_2').replaceWith('<' + 'div id=\'gforms_confirmation_message_2\' class=\'gform_confirmation_message_2 gforms_confirmation_message\'' + '>' + confirmation_content + '<' + '/div' + '>');jQuery(document).scrollTop(jQuery('#gforms_confirmation_message_2').offset().top);jQuery(document).trigger('gform_confirmation_loaded', [2]);window['gf_submitting_2'] = false;}, 50);}else{jQuery('#gform_2').append(contents);if(window['gformRedirect']) {gformRedirect();}}jQuery(document).trigger('gform_post_render', [2, current_page]);} );} );</script><script type='text/javascript'> if(typeof gf_global == 'undefined') var gf_global = {"gf_currency_config":{"name":"U.S. Dollar","symbol_left":"$","symbol_right":"","symbol_padding":"","thousand_separator":",","decimal_separator":".","decimals":2},"base_url":"https:\/\/allergenics.edyta.me\/wp-content\/plugins\/gravityforms","number_formats":[],"spinnerUrl":"https:\/\/allergenics.edyta.me\/wp-content\/plugins\/gravityforms\/images\/spinner.gif"};jQuery(document).bind('gform_post_render', function(event, formId, currentPage){if(formId == 2) {if(window['jQuery']){if(!window['gf_form_conditional_logic'])window['gf_form_conditional_logic'] = new Array();window['gf_form_conditional_logic'][2] = {'logic' : {26: {"field":{"actionType":"show","logicType":"all","rules":[{"fieldId":"11","operator":"is","value":"Male"}]},"nextButton":null,"section":null},27: {"field":{"actionType":"show","logicType":"all","rules":[{"fieldId":"11","operator":"is","value":"Female"}]},"nextButton":null,"section":null},42: {"field":{"actionType":"show","logicType":"any","rules":[{"fieldId":"43","operator":"is","value":"Yes"}]},"nextButton":null,"section":null},44: {"field":{"actionType":"show","logicType":"any","rules":[{"fieldId":"43","operator":"is","value":"Yes"}]},"nextButton":null,"section":null},51: {"field":{"actionType":"show","logicType":"all","rules":[{"fieldId":"50","operator":"is","value":"Yes"}]},"nextButton":null,"section":null} }, 'dependents' : {26: [26],27: [27],42: [42],44: [44],51: [51] }, 'animation' : 0 , 'defaults' : {"6":{"6.2":"","6.3":"","6.4":"","6.6":"","6.8":""},"7":{"7.1":"","7.2":"","7.3":"","7.4":"","7.5":"","7.6":"New Zealand"},"10":{"d":"","m":"","y":""},"12":{"d":"","m":"","y":""},"60":{"60.1":"","60.2":"","60.3":""},"57":{"57.1":"","57.2":"","57.3":""},"62":{"62.1":"","62.2":"","62.3":""}} }; if(!window['gf_number_format'])window['gf_number_format'] = 'decimal_dot';jQuery(document).ready(function(){gf_apply_rules(2, [26,27,42,44,51], true);jQuery('#gform_wrapper_2').show();jQuery(document).trigger('gform_post_conditional_logic', [2, null, true]);} );} if(window["gformInitPriceFields"]) jQuery(document).ready(function(){gformInitPriceFields();} );if(typeof Placeholders != 'undefined'){
-                        Placeholders.enable();
-                    }} } );jQuery(document).bind('gform_post_conditional_logic', function(event, formId, fields, isInit){} );</script><script type='text/javascript'> jQuery(document).ready(function(){jQuery(document).trigger('gform_post_render', [2, 1]) } ); </script>
- 
-                    </div>
-                    
-                    
-                    <div class="cont-right">
-                      <div class="widget widget_text" id="text-2">
-                      
-                      <div class="widget widget_text" id="text-2"><h3>Help</h3><p>We require a minimum of 1/2 teaspoon of hair, cut as close to the scalp as possible. The closer to the scalp the more accurate the results will be. Hair samples should not be older than 4 weeks old.</p>
-<p>Please refer to our FAQ's for more information about taking hair samples.</p>
-<p>If you need any help, please email us at <a href="mailto:info@allergenics.co.nz">info@allergenics.co.nz</a>  or phone us on 0800 004 898.</p>
+      </form>
+    </div>
 </div>
-                      
-                      <h3>100% Secure Payments</h3>
-                      <img src="/wp-content/themes/allergenics/images/pe.png" alt="Payment Processor" width="155" height="54" />
-                      <img src="/wp-content/themes/allergenics/images/comodo.png" alt="comodo">
+                    
+<div class="cont-right">
+  <div id="text-2" class="widget widget_text">
+    <div id="text-2" class="widget widget_text"><h3>Help</h3><p>We require a minimum of 1/2 teaspoon of hair, cut as close to the scalp as possible. The closer to the scalp the more accurate the results will be. Hair samples should not be older than 4 weeks old.</p>
+    <p>Please refer to our FAQ's for more information about taking hair samples.</p>
+    <p>If you need any help, please email us at <a href="mailto:info@allergenics.co.nz">info@allergenics.co.nz</a>  or phone us on 0800 004 898.</p>
+  </div>
+  <h3>100% Secure Payments</h3>
+  <img width="155" height="54" alt="Payment Processor" src="/wp-content/themes/allergenics/images/pe.png">
+  <img alt="comodo" src="/wp-content/themes/allergenics/images/comodo.png">
+  </div>
+</div>
+</div>
+</section>
 
-                      
-</div>                    </div>
-                  </div>
-                </section>
-        			                                                                <footer id="footer">
-                    <div class="container">
-                                                                            <div class="contact">
-                                <address>
-                                    <strong class="title">Natural Health Consultants Ltd</strong>                                                                            <dl>
-                                                                                            <dt>Phone:</dt>
-                                                <dd><a href="tel:0800004898">0800 004 898</a></dd>
-                                                                                                                                                                                        <dt>Email:</dt>
-                                                <dd><a href="mailto:&#105;nfo&#64;al&#108;&#101;rge&#110;&#105;cs.co&#46;nz">&#105;nfo&#64;al&#108;&#101;rge&#110;&#105;cs.co&#46;nz</a></dd>
-                                                                                    </dl>
-                                                                        <span>PO BOX 60 156, 408 Titirangi Rd, Titirangi, Auckland</span>                                </address>
-                            </div>
-                                                                        <nav class="add-nav"><ul><li id="menu-item-86" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-86"><a href="/partners/">Partners<span class="icon-btn-right"></a></li>
-<li id="menu-item-87" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-87"><a href="/terms-and-conditions/">Terms and conditions<span class="icon-btn-right"></a></li>
-<li id="menu-item-88" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-88"><a href="/privacy/">Privacy<span class="icon-btn-right"></a></li>
-<li id="menu-item-89" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-89"><a href="/faq-2/">FAQ<span class="icon-btn-right"></a></li>
-</ul></nav>                                                                            <div class="connect">
-                                <h3>CONNECT</h3>
-                                <ul class="social-network">
-                                                                            <li><a href=""><span class="icon-facebook"></span></a></li>
-                                                                            <li><a href=""><span class="icon-twitter"></span></a></li>
-                                                                    </ul>
-                            </div>
-                                            </div>
-                </footer>
-            		</main>
-	</div>
-		</body>
+
+<footer id="footer">
+  <div class="container">
+    <div class="contact">
+      <address>
+      <strong class="title">Natural Health Consultants Ltd</strong>
+      <dl><dt>Phone:</dt><dd><a href="tel:0800004898">0800 004 898</a></dd>
+      <dt>Email:</dt><dd><a href="mailto:info@allergenics.co.nz">info@allergenics.co.nz</a></dd></dl>
+      <span>PO BOX 60 156, 408 Titirangi Rd, Titirangi, Auckland</span>
+      </address>
+      </div>
+      
+      <nav class="add-nav">
+        <ul>
+          <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-86" id="menu-item-86"><a href="/partners/">Partners<span class="icon-btn-right"></span></a></li>
+          <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-87" id="menu-item-87"><a href="/terms-and-conditions/">Terms and conditions<span class="icon-btn-right"></span></a></li>
+          <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-88" id="menu-item-88"><a href="/privacy/">Privacy<span class="icon-btn-right"></span></a></li>
+          <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-89" id="menu-item-89"><a href="/faq-2/">FAQ<span class="icon-btn-right"></span></a></li>
+        </ul>
+      </nav>
+      <div class="connect">
+        <h3>CONNECT</h3>
+          <ul class="social-network">
+            <li><a href=""><span class="icon-facebook"></span></a></li>
+            <li><a href=""><span class="icon-twitter"></span></a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    </main>
+	 </div>
+  </body>
 </html>

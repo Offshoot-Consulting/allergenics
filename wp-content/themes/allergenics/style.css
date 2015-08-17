@@ -54,6 +54,8 @@ Theme URI:
 
 .services-block .services-list,
 
+.services-block .services-list2,
+
 #footer .add-nav ul,
 
 .social-network {
@@ -2256,7 +2258,8 @@ background: #f1632a none repeat scroll 0 0;
 
 
 
-.services-block .services-list {
+.services-block .services-list,
+.services-block .services-list2 {
 
 	letter-spacing: -5px;
 
@@ -2266,7 +2269,8 @@ background: #f1632a none repeat scroll 0 0;
 
 
 
-.services-block .services-list li {
+.services-block .services-list li,
+.services-block .services-list2 li {
 
     backface-visibility: hidden;
 
@@ -2320,7 +2324,8 @@ background: #f1632a none repeat scroll 0 0;
 
 
 
-.services-block .services-list li .holder {
+.services-block .services-list li .holder,
+.services-block .services-list2 li .holder {
 
 	position: relative;
 
@@ -2344,7 +2349,10 @@ background: #f1632a none repeat scroll 0 0;
 
 .services-block .services-list li .front,
 
-.services-block .services-list li .back {
+.services-block .services-list li .back,
+.services-block .services-list2 li .front,
+
+.services-block .services-list2 li .back {
 
 	transform-style: preserve-3d;
 
@@ -2374,7 +2382,8 @@ background: #f1632a none repeat scroll 0 0;
 
 
 
-.services-block .services-list li .front {
+.services-block .services-list li .front,
+.services-block .services-list2 li .front {
 
 	transform: rotateY(0deg);
 
@@ -2388,7 +2397,8 @@ background: #f1632a none repeat scroll 0 0;
 
 
 
-.services-block .services-list li .front:after {
+.services-block .services-list li .front:after,
+.services-block .services-list2 li .front:after {
 
 	content: "";
 
@@ -2473,6 +2483,10 @@ background: #f1632a none repeat scroll 0 0;
 
 }
 
+.services-block .services-list2 li .title a {
+ color:white;
+ text-decoration:none}
+
 .text-info-block .services-list li .back .text-box {
     color: #00263c;
     display: inline-block;
@@ -2484,7 +2498,8 @@ background: #f1632a none repeat scroll 0 0;
 
 
 
-.services-block .services-list li .ico {
+.services-block .services-list li .ico,
+.services-block .services-list2 li .ico {
 
 	margin: 0 0 20px;
 
@@ -2492,7 +2507,8 @@ background: #f1632a none repeat scroll 0 0;
 
 
 
-.services-block .services-list li .ico img {
+.services-block .services-list li .ico img,
+.services-block .services-list2 li .ico img {
 
 	vertical-align: top;
 
@@ -2500,7 +2516,8 @@ background: #f1632a none repeat scroll 0 0;
 
 
 
-.services-block .services-list li .bg-stretch {
+.services-block .services-list li .bg-stretch,
+.services-block .services-list2 li .bg-stretch {
 
 	position: absolute;
 
@@ -2520,12 +2537,14 @@ background: #f1632a none repeat scroll 0 0;
 
 
 
-.text-info-block .services-list li .bg-stretch {
+.text-info-block .services-list li .bg-stretch,
+.text-info-block .services-list2 li .bg-stretch {
 background:none}
 
 
 
-.services-block .services-list li .bg-stretch img {
+.services-block .services-list li .bg-stretch img,
+.services-block .services-list2 li .bg-stretch img {
 
 	opacity: .24;
 
@@ -2535,10 +2554,12 @@ background:none}
 
 }
 
-.text-info-block  .services-list li .bg-stretch img {
+.text-info-block  .services-list li .bg-stretch img,
+.text-info-block  .services-list2 li .bg-stretch img {
 opacity:1}
 
-.services-block .services-list li .text-area {
+.services-block .services-list li .text-area,
+.services-block .services-list2 li .text-area {
 
 	position: relative;
 
@@ -2554,7 +2575,8 @@ opacity:1}
 
 }
 
-.text-info-block .services-list li .text-area {
+.text-info-block .services-list li .text-area,
+.text-info-block .services-list2 li .text-area {
     background: rgba(234, 247, 243, 0.9) none repeat scroll 0 0;
     display: inline-block;
     margin-bottom: 24px;
@@ -2565,14 +2587,16 @@ opacity:1}
     width: 100%;
 }
 
-.text-info-block .services-list li .text-area h3 {
+.text-info-block .services-list li .text-area h3,
+.text-info-block .services-list2 li .text-area h3 {
     color: #1e988a;
     font-size: 13px;
     font-weight: normal;
     margin-bottom: 3px;
 }
 
-.text-info-block  .services-list li .text-area p {
+.text-info-block  .services-list li .text-area p,
+.text-info-block  .services-list2 li .text-area p {
 color:#00253d;
 font-size:12px}
 
@@ -2595,10 +2619,12 @@ font-size:12px}
     border-bottom:2px solid #329c87
 }
 
-.text-info-block ul.services-list {
+.text-info-block ul.services-list,
+.text-info-block ul.services-list2 {
  margin-bottom:-10px !important}
 
-.services-block .services-list li .title {
+.services-block .services-list li .title,
+.services-block .services-list2 li .title {
 
 	font-weight: 400;
 
@@ -5078,7 +5104,8 @@ outline: none }
 
 
 
-	.services-block .services-list li .front {
+	.services-block .services-list li .front,
+  .services-block .services-list2 li .front {
 
 		padding: 10px 0;
 
@@ -5109,7 +5136,8 @@ outline: none }
 	}
 	
 	
-	.text-info-block .services-list li .text-area {
+	.text-info-block .services-list li .text-area,
+  .text-info-block .services-list2 li .text-area  {
     background: rgba(234, 247, 243, 0.9) none repeat scroll 0 0;
     display: inline-block;
     margin-bottom: 10px;
@@ -5124,9 +5152,30 @@ outline: none }
 
 }
 
+@media all and (min-width: 768px) {
+
+.mobileview {
+ display:none;
+ visibility:hidden}
+ 
+.desktopview {
+ display:block;
+ visibility:visible}
+
+
+}
+
 
 
 @media all and (max-width: 767px) {
+
+.mobileview {
+ display:block;
+ visibility:visible}
+ 
+.desktopview {
+ display:none;
+ visibility:hidden}
 
 	h1 {
 
@@ -5252,7 +5301,8 @@ outline: none }
 
 
 
-	.services-block .services-list li {
+	.services-block .services-list li,
+  .services-block .services-list2 li {
 
 		width: 50%;
 
@@ -5496,7 +5546,8 @@ outline: none }
 
 @media all and (max-width: 479px) {
 
-	.services-block .services-list li {
+	.services-block .services-list li,
+  .services-block .services-list2 li {
 
 		width: 100%;
 

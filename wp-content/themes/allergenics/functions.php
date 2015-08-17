@@ -432,3 +432,10 @@ add_action( 'gform_after_submission_1', 'store_last_insert_id_gform', 10, 2);
 function store_last_insert_id_gform( $entry, $form ) {
     $_SESSION['allergenics_form_entry'] = $entry;
 }
+
+function _remove_script_version( $src ){
+$parts = explode( '?ver', $src );
+return $parts[0];
+}
+add_filter( 'script_loader_src', '_remove_script_version', 15, 1 );
+add_filter( 'style_loader_src', '_remove_script_version', 15, 1 );
