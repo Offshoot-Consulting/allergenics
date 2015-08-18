@@ -8,6 +8,8 @@ $failursubmitUrl =$server_url."/wp-content/plugins/paymentexpress/start.php";
 <!DOCTYPE html>
 <html lang="en-AU">
 
+<title>Order your test now | Allergenics</title>
+
 <link rel='stylesheet' id='font-awesome-css'  href='//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' type='text/css' media='all' />
 <link rel='stylesheet' id='base-style-css'  href='/wp-content/themes/allergenics/style.css' type='text/css' media='all' />
 <link rel='stylesheet' id='font-open-sans-css'  href='//fonts.googleapis.com/css?family=Open+Sans%3A400%2C300%2C600%2C700&#038;ver=4.2.3' type='text/css' media='all' />
@@ -78,7 +80,53 @@ jQuery(document).ready(function(){
 		<meta charset="UTF-8">	
     <meta name="viewport" content="width=device-width, initial-scale=1.0">	
 
-<title>Order your test now | Allergenics</title>
+<!-- Google Code for food Conversion Page -->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 948192091;
+var google_conversion_language = "en";
+var google_conversion_format = "3";
+var google_conversion_color = "ffffff";
+var google_conversion_label = "D9KZCLnDgF8Q24aRxAM";
+var google_remarketing_only = false;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/948192091/?label=D9KZCLnDgF8Q24aRxAM&amp;guid=ON&amp;script=0"/>
+</div>
+</noscript>
+<!-- Google Code para etiquetas de remarketing -->
+<!--------------------------------------------------
+Es posible que las etiquetas de remarketing todavía no estén asociadas a la información de identificación personal o que estén en páginas relacionadas con las categorías delicadas. Para obtener más información e instrucciones sobre cómo configurar la etiqueta, consulte http://google.com/ads/remarketingsetup.
+--------------------------------------------------->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 948192091;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/948192091/?value=0&amp;guid=ON&amp;script=0"/>
+</div>
+</noscript>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-64114162-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
 	
 </head>
 	
