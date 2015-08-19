@@ -941,7 +941,8 @@ pre {
 
 }
 
-
+.order_now_element {
+ margin-bottom:30px}
 
 .widget {
 
@@ -2731,6 +2732,13 @@ font-size:12px}
 }
 
 
+.cont-left ul li {
+ margin-bottom:5px}
+ 
+.cont-left ul,
+.cont-left ol {
+    padding-left: 30px;
+}
 
 .cont-right {
 
