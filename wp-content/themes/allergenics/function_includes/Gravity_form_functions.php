@@ -95,4 +95,18 @@ $returnUrl =$server_url."/wp-content/plugins/paymentexpress/return.php";
 	// We've got everything we need to generate 
  }
  
+ 
+/* Add additional capabilities to a role or specific users for Gravity Forms */
+
+// get role by name (change 'editor' to a role)
+$role = get_role( 'editor' );
+
+// add core gravity form capabilities
+// adjust as required
+$role->add_cap( 'gravityforms_view_entries' );
+$role->add_cap( 'gravityforms_export_entries' );
+$role->add_cap( 'gravityforms_view_entry_notes' );
+$role->add_cap( 'gravityforms_edit_entry_notes' );
+
+ 
 ?>
