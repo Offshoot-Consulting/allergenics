@@ -207,7 +207,7 @@ get_header(); ?>
                                             </div>
                                                 <div class="back">
                                                     <div class="text-box">
-                                                        Stephanie is a qualified Naturopath and and has a degree in Health Science from Charles Stuart University (N.S.W. Australia).
+                                                        Stephanie is a qualified Naturopath and has a degree in Health Science from Charles Stuart University (N.S.W. Australia).
                                                     </div>
                                                 </div>
                                         </div>
