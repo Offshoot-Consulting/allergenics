@@ -241,5 +241,106 @@ function new_excerpt_more( $more ) {
 }
 add_filter('excerpt_more', 'new_excerpt_more');
 
+/* Change Faq page */
+remove_shortcode( 'colorful_faq' );
+remove_shortcode( 'nested_faq' );
+add_shortcode( 'colorful_faq', 'faq_func_cc' );
+add_shortcode( 'nested_faq', 'faq_func_cc' );
 
-?>
+function faq_func_cc($atts) {
+	
+	$posts_per_page = get_faq_admin_data('posts_per_page', 'colorful_faq_general' );
+	extract( shortcode_atts(
+		array(
+			'items' => $posts_per_page,
+			'cat' => '',
+			'tag' => '',
+			'orderby' => 'menu_order title',
+			'order'   => 'ASC',
+			), $atts )
+	);
+	
+	$args = array();
+	$args['post_type'] = 'faq';
+	$args['posts_per_page'] = $posts_per_page;
+	//$args['order'] = $order;
+	if($cat != '0') {
+	$category = get_term_by('slug', $cat, 'faq_cat');
+	$val = time() . rand();
+	$time = time();	 
+	$args['tax_query'][] = array('taxonomy' => 'faq_cat','field' => 'id' ,'terms' => $category->term_id);
+	}
+	else {
+		$val = time() . rand();
+		$time = time();	
+	}
+		
+	$accordion = 'accordion-' . time() . rand();
+	// The Query
+	$Query = new WP_Query( $args );
+	
+	$cat_div_id = 'nested_accordion'.time().rand()
+	?>
+    
+    <div id="awesome-colorful-faq" style="margin-bottom:20px;">
+		<div class="panel-group" id="<?php echo $cat_div_id; ?>">
+			<div class="panel panel-default">
+
+						<?php if($cat === '0') { ?>
+								<div class="panel-heading" style="background:#e2e2e2;">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" data-parent="#<?php echo $cat_div_id; ?>" href="#<?php echo $cat_div_id; ?>-<?php echo $cat ?>" class="" style="color:#444444;">
+											<span class="pull-right icon"></span>
+											All Posts										</a>
+									</h4>
+								</div>
+                                <?php } else { ?>
+                                <div class="panel-heading" style="background:#e2e2e2;">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" data-parent="#<?php echo $cat_div_id; ?>" href="#<?php echo $cat_div_id; ?>-<?php echo $category->term_id; ?>" class="collapsed" style="color:#444444;">
+											<span class="pull-right icon"></span>
+											<?php echo $category->name; ?>										</a>
+									</h4>
+								</div>
+                                <?php } ?>
+<?php if($cat != 0) { ?>
+								<div id="<?php echo $cat_div_id; ?>-<?php echo $category->term_id; ?>" class="panel-collapse collapse" style="background:#ffffff; color:#444; border-color:;">
+                                <?php } else { ?>
+                                <div id="<?php echo $cat_div_id; ?>-<?php echo $cat; ?>" class="panel-collapse collapse" style="background:#ffffff; color:#444; border-color:;">
+                                <?php } ?>
+									<div class="panel-body">
+											<div id="awesome-colorful-faq">
+                                            <?php $count = 0; $accordion = 'accordion-' . time().rand(); ?>
+		<div class="panel-group" id="<?php echo $accordion.$count; ?>">
+		<?php  while ( $Query->have_posts() ) {
+				$Query->the_post(); ?>
+		
+			<div class="panel panel-default">
+				<div class="panel-heading" style="background:#e2e2e2;">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#<?php echo $accordion.$count; ?>" href="#<?php echo $accordion; ?>-<?php echo get_the_ID(); ?>" style="color:#444444;" class="collapsed">
+							<span class="pull-right icon"></span>
+							<?php the_title();?>						</a>
+					</h4>
+				</div>
+				<div id="<?php echo $accordion; ?>-<?php echo get_the_ID(); ?>" class="panel-collapse collapse" style="background:#ffffff; color:#444; border-color:; height:0px;">
+					<div class="panel-body">					
+						<?php the_content(); ?>
+					</div>
+				</div>
+			</div>
+		
+		<?php $count++; }  ?>
+
+		</div>
+</div><!-- /#awesome-colorful-faq -->
+
+
+									</div>
+								</div>
+
+							
+			</div>
+		</div>
+</div>
+<?php } ?>
