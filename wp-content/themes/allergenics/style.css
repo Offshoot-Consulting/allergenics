@@ -941,8 +941,9 @@ pre {
 
 }
 
-.order_now_element {
- margin-bottom:30px}
+.order_now_element { text-align: center; height: auto; margin: 25px 0px; }
+.order_now_element a { padding: 10px; }
+.what_we_gap { margin-top:15px; }
 
 .widget {
 
