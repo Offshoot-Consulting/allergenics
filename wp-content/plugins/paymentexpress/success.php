@@ -19,6 +19,19 @@ require_once(dirname(__FILE__) . '/soap_submission.php');
 <link rel='stylesheet' id='gforms_formsmain_css-css'  href='/wp-content/plugins/gravityforms/css/formsmain.min.css' type='text/css' media='all' />
 <link rel='stylesheet' id='gforms_ready_class_css-css'  href='/wp-content/plugins/gravityforms/css/readyclass.min.css' type='text/css' media='all' />
 <link rel='stylesheet' id='gforms_browsers_css-css'  href='/wp-content/plugins/gravityforms/css/browsers.min.css' type='text/css' media='all' />
+
+<!-- Google Analytics script. Leave at top of file. Not working at bottom  --> 
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-64114162-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
 <script type='text/javascript' src='/wp-includes/js/jquery/jquery.js'></script>
 <script type='text/javascript' src='/wp-includes/js/jquery/jquery-migrate.min.js'></script>
 <script type='text/javascript' src='/wp-content/themes/allergenics/js/jquery.main.js'></script>
@@ -78,56 +91,12 @@ jQuery(document).ready(function(){
 		<meta charset="UTF-8">	
     <meta name="viewport" content="width=device-width, initial-scale=1.0">	
 
-<!-- Google Code for food Conversion Page -->
-<script type="text/javascript">
-/* <![CDATA[ */
-var google_conversion_id = 948192091;
-var google_conversion_language = "en";
-var google_conversion_format = "3";
-var google_conversion_color = "ffffff";
-var google_conversion_label = "D9KZCLnDgF8Q24aRxAM";
-var google_remarketing_only = false;
-/* ]]> */
-</script>
-<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
-</script>
-<noscript>
-<div style="display:inline;">
-<img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/948192091/?label=D9KZCLnDgF8Q24aRxAM&amp;guid=ON&amp;script=0"/>
-</div>
-</noscript>
-<!-- Google Code para etiquetas de remarketing -->
-<!--------------------------------------------------
-Es posible que las etiquetas de remarketing todavía no estén asociadas a la información de identificación personal o que estén en páginas relacionadas con las categorías delicadas. Para obtener más información e instrucciones sobre cómo configurar la etiqueta, consulte http://google.com/ads/remarketingsetup.
---------------------------------------------------->
-<script type="text/javascript">
-/* <![CDATA[ */
-var google_conversion_id = 948192091;
-var google_custom_params = window.google_tag_params;
-var google_remarketing_only = true;
-/* ]]> */
-</script>
-<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
-</script>
-<noscript>
-<div style="display:inline;">
-<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/948192091/?value=0&amp;guid=ON&amp;script=0"/>
-</div>
-</noscript>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-64114162-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
 	
 </head>
 	
   <body class="page page-id-103 page-template page-template-pages page-template-template-order page-template-pagestemplate-order-php no-customize-support">
+    <?php /* include_once("ga_code.php") */ ?>
 	
         <div id="wrapper" class="full-width">
              

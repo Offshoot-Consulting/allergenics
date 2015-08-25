@@ -343,4 +343,4 @@ function faq_func_cc($atts) {
 			</div>
 		</div>
 </div>
-<?php } ?>
+<?php } ob_start(); ob_flush();?>
