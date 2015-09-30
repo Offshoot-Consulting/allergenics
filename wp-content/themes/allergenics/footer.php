@@ -51,6 +51,51 @@
             <?php endif; ?>
 		</main>
 	</div>
+    
+   <script type="text/javascript">
+
+
+jQuery(document).ready(function() {
+
+  jQuery('#searchsubmit').val('');
+
+   jQuery('#s').hide();
+
+// Search
+
+jQuery('#searchgly').click(function() {   
+
+  
+jQuery('.hit_me').toggleClass( 'inner' );
+    //jQuery('#searchgly').hide('slow');
+
+        jQuery('#s').animate({width: "toggle"},500);
+	jQuery( "#s" ).focus();	
+
+    
+
+});
+
+
+
+   
+
+
+
+});
+
+jQuery(document).ready(function(){
+    jQuery('#s').keypress(function (e) {
+  if (e.which == 13) {
+    jQuery('form#searchform').submit();
+    return false;    //<---- Add this line
+  }
+});
+});
+</script>
+
 	<?php wp_footer(); ?>
+    <script type='text/javascript' src='<?php echo get_bloginfo('template_url'); ?>/woocommerce/assets/js/frontend/jquery.payment.min.js'></script>
+<script type='text/javascript' src='<?php echo get_bloginfo('template_url'); ?>/woocommerce/assets/js/frontend/credit-card-form.min.js'></script>
 </body>
 </html>

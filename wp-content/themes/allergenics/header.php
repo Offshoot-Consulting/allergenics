@@ -120,7 +120,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	
 
         <div id="wrapper" <?php if ( is_page() || !is_active_sidebar( 'default-sidebar' )) echo 'class="full-width"'; ?>>
-
+<div class="top-header">
+	<div class="header-wrapper">
+    	
+        
+        <div class="right-section">
+      	<?php wp_nav_menu( array('menu' => 'top-head-menu', 'menu_class' => 'top-menu-right' )); ?>
+        <div class="product_search"><?php get_product_search_form(); ?></div>
+       
+        </div>
+    </div>
+</div>
             <header id="header">
 
                 <div class="holder">
@@ -143,9 +153,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
                             <?php wp_nav_menu( array(
 
-                                    'container_class' => 'drop',
+                                    'container_class' => 'drop header_menu',
 
                                     'theme_location' => 'primary',
+									'menu_class' => '',
 
                                     'items_wrap'     => '<ul>%3$s</ul>'
 
