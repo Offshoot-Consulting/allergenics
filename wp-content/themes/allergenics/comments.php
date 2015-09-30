@@ -26,7 +26,7 @@ function theme_comment( $comment, $args, $depth ) {
 				
 				<?php
 				comment_reply_link( array_merge( $args, array(
-					'reply_text' => __( 'Reply', 'allergenics' ),
+					'reply_text' => __( '&uarr; Reply', 'allergenics' ),
 					'before'     => '<p>',
 					'after'      => '</p>',
 					'depth'      => $depth,
@@ -59,7 +59,7 @@ function theme_comment( $comment, $args, $depth ) {
 <?php endif; ?>
 
 <?php if ( comments_open() ) : ?>
-	<div class="section respond">
+	<div class="section respond" <?php if( is_user_logged_in() ) { echo 'id="respodloggedin"'; } ?> >
 		<?php comment_form(); ?>
 	</div>
 <?php else : ?>

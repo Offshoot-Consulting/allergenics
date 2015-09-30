@@ -56,6 +56,18 @@ function theme_widget_init2() {
 }
 add_action( 'widgets_init', 'theme_widget_init2' );
 
+function theme_widget_init3() {
+	register_sidebar( array(
+		'id'            => 'blog-sidebar',
+		'name'          => __( 'Blog Sidebar', 'allergenics' ),
+		'before_widget' => '<div class="widget %2$s" id="%1$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3>',
+		'after_title'   => '</h3>'
+	) );
+}
+add_action( 'widgets_init', 'theme_widget_init3' );
+
 add_theme_support( 'post-thumbnails' );
 set_post_thumbnail_size( 50, 50, true ); // Normal post thumbnails
 add_image_size( 'thumbnail_400x9999', 400, 9999, true );
@@ -158,6 +170,11 @@ function theme_the_excerpt() {
 	}
 }
 
+function custom_excerpt_length( $length ) {
+	return 20;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
 //theme password form
 function theme_get_the_password_form() {
 	global $post;
@@ -234,12 +251,16 @@ if( !class_exists( 'acf' ) && !is_admin() ) {
 	function acf_filter_post_id( $post_id ) { return $post_id; }
 }
 
-add_post_type_support( 'page', 'excerpt' );
+// blog related stuff
 
+add_post_type_support( 'page', 'excerpt' );   
 function new_excerpt_more( $more ) {
- return '...';
+ return '&hellip;';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
+
+add_image_size( 'listing-thumb', 480, 320, array( 'center', 'center' ) );
+add_image_size( 'single-thumb', 800, 270, array( 'center', 'center' ) );
 
 /* Change Faq page */
 remove_shortcode( 'colorful_faq' );
@@ -343,4 +364,9 @@ function faq_func_cc($atts) {
 			</div>
 		</div>
 </div>
-<?php } ob_start(); ob_flush();?>
+<?php } ob_start(); ob_flush();
+
+
+
+
+?>

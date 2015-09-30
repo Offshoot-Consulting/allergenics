@@ -1,58 +1,31 @@
 <!DOCTYPE html>
-
 <html <?php language_attributes(); ?>>
-
 	<head>
-
 		<meta charset="<?php bloginfo( 'charset' ); ?>">	
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">	
-
-    
 
     <link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" />
 
-    
-
 		<script type="text/javascript">
-
 			var pathInfo = {
-
 				base: '<?php echo get_template_directory_uri(); ?>/',
-
 				css: 'css/',
-
 				js: 'js/',
-
 				swf: 'swf/',
-
 			}
-
 		</script>
 
 		<?php wp_head(); ?>
 
-
-
     <script type="text/javascript">
 
-    
-
     jQuery( document ).ready(function() {
-
         jQuery("form").bind("keypress", function (e) {
-
-      if (e.keyCode == 13) {
-
-          return false;
-
-      }
-
+          if (e.keyCode == 13) {
+              return false;
+          }
+        });
     });
-
-    });
-
-    
 
     </script>
     
@@ -91,16 +64,35 @@ jQuery(document).ready(function(){
 
 </script>
 
+<!-- SMOOTH SCROLL -->
+
+<script type="text/javascript">
+
+jQuery(document).ready(function(){
+
+  jQuery('a[href*=#]:not([href=#])').click(function() {
+      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
+          || location.hostname == this.hostname) {
+  
+          var target = jQuery(this.hash);
+          target = target.length ? target : jQuery('[name=' + this.hash.slice(1) +']');
+             if (target.length) {
+               jQuery('html,body').animate({
+                   scrollTop: target.offset().top
+              }, 1000);
+              return false;
+          }
+      }
+  });
+
+});
+</script>
+
 <meta name="google-site-verification" content="yHdrzlaJQLoxIT5lW9FOjVKZdBUb6nPA6U-SNs0bkXM" />
-
 <meta name="msvalidate.01" content="73B3E1A7212985B5308196BFD5121639" />
-
 <meta name="geo.region" content="NZ-AUK" />
-
 <meta name="geo.placename" content="Auckland" />
-
 <meta name="geo.position" content="-36.938182;174.654076" />
-
 <meta name="ICBM" content="-36.938182, 174.654076" />
    
 
@@ -132,34 +124,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </div>
 </div>
             <header id="header">
-
                 <div class="holder">
-
                     <div class="logo"><a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="<?php echo bloginfo( 'name' ); ?>"></a></div>
 
                     <?php if ( $site_desc = get_bloginfo( 'description' )) : ?>
-
                         <strong class="slogan"><?php echo $site_desc; ?></strong>
-
                     <?php endif; ?>
 
                     <?php if( has_nav_menu( 'primary' ) ) : ?>
 
                         <nav id="main-nav">
-
                             <a href="#" class="opener"><span><?php _e( 'Menu', 'allergenics' ); ?></span></a>
-                            
                             <a href="#" class="searcher"><span><?php _e( 'Search', 'allergenics' ); ?></span></a>
 
                             <?php wp_nav_menu( array(
-
                                     'container_class' => 'drop header_menu',
-
                                     'theme_location' => 'primary',
-									'menu_class' => '',
-
+									                   'menu_class' => '',
                                     'items_wrap'     => '<ul>%3$s</ul>'
-
                                     )); ?>
                                     
                             <div class="hidden-search" id="hidden-search" style="display:none">
@@ -171,5 +153,4 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     <?php endif; ?>
 
                 </div>
-
             </header>
