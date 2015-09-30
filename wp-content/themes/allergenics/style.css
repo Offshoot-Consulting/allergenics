@@ -1207,9 +1207,9 @@ font-size:12px}
 .services-block + .text-info-block {
 	padding: 49px 15px;
 }
-.carousel-block, 
-.form-section {
-    background: none repeat scroll 0 0 #f7f7f7;
+.carousel-block, .form-section {
+    background: #f7f7f7 none repeat scroll 0 0;
+    border-bottom: 1px solid #e4e4e4;
     border-top: 1px solid #e4e4e4;
     padding: 30px 0 44px;
     text-align: center;
@@ -1994,7 +1994,7 @@ body .form-section .ginput_container img.ui-datepicker-trigger {
     font-size: 20px;
     line-height: 1.33;
     margin: 0;
-    padding: 0 0 0 46px;
+    padding: 0 46px;
 }
 .carousel-block .carousel blockquote q {
 	display: block;
