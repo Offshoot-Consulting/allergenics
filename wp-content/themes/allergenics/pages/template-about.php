@@ -134,8 +134,8 @@ get_header(); ?>
                         </li>
                       </ul>
                       
-                      <a class="btn" href="/order-your-test/">ORDER YOUR TEST NOW</a>
-                      <a class="more" href="/?page_id=7">Learn More</a>
+                      <a class="btn" href="/hair-testing-services/">LEARN MORE</a>
+                      <!--<a class="more" href="/?page_id=7">Learn More</a>-->
                       
                     </div>
             </section>

@@ -13,11 +13,13 @@ get_header(); ?>
                     <div class="wrap">
                         <?php the_title( '<h1>','</h1>' ); ?>
                         <?php if ( $order_test_link = get_field( 'order_test_link','option' )): ?>
-                            <a href="<?php echo esc_url( $order_test_link ); ?>" class="btn"><?php _e( 'ORDER YOUR TEST NOW', 'allergenics' ); ?></a>
+                            <a href="<?php echo esc_url( $order_test_link ); ?>" class="btn"><?php _e( 'LEARN MORE', 'allergenics' ); ?></a>
                         <?php endif; ?>
+                        <!--
                         <?php if ( $read_more_link = get_field( 'read_more_link' )): ?>
                             <a href="<?php echo esc_url( $read_more_link ); ?>" class="more"><?php _e( 'Learn more and see pricing', 'allergenics' ); ?></a>
                         <?php endif; ?>
+                        -->
                     </div>
                 </div>
             </div>
@@ -82,11 +84,13 @@ get_header(); ?>
                         </ul>
                     <?php endif; ?>
                     <?php if ( $order_test_link = get_field( 'order_test_link','option' )): ?>
-                        <a href="<?php echo esc_url( $order_test_link ); ?>" class="btn"><?php _e( 'ORDER YOUR TEST NOW', 'allergenics' ); ?></a>
+                        <a href="<?php echo esc_url( $order_test_link ); ?>" class="btn"><?php _e( 'LEARN MORE', 'allergenics' ); ?></a>
                     <?php endif; ?>
+                    <!--
                     <?php if ( $learn_more_link = get_field( 'learn_more_link' )): ?>
                         <a href="<?php echo esc_url( $learn_more_link ); ?>" class="more"><?php _e( 'Learn more and see pricing', 'allergenics' ); ?></a>
                     <?php endif; ?>
+                    -->
                 </div>
             </section>  
             <section class="services-block mobileview">
