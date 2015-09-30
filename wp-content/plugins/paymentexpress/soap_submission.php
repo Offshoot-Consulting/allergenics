@@ -80,7 +80,7 @@ if (!empty($_SESSION['allergenics_form_entry'])) {
                 'Surname' => empty($entry['6.6']) ? '-' : $entry['6.6']
             )
         );
-		//print_r($params);
+//		print_r($params);
         $objResponse = $objClient->CreateReport($params);
     }
 //    unset($_SESSION['allergenics_form_entry']);

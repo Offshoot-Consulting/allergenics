@@ -1,0 +1,224 @@
+*** Smart Offers Changelog ***
+
+2015.09.18 - version 3.1.5
+ * New: Shortcode [so_price] to strike off original price & show offer price in offer content (for simple products)
+ * Fix: Fatal error on 'get_product_title'
+ * Fix: Remove offered product not removing from cart on removal of parent product
+ * Update: Updated POT file
+ * Update: Updated Shortcode reference on About Smart Offers page
+ * Tweak: CSS tweaks for About Smart Offers page
+ * Tweak: Code modification for checkout & before checkout
+ * Tweak: Notice for After checkout page option on offer edit page
+
+2015.09.06 - version 3.1.4
+ * Update: Minor change in upgrade file
+
+2015.09.01 - version 3.1.3
+ * New: Generate embed code for offer
+ * Update: Improvements in upgrade file
+ * Fix: Removed Warnings
+ 
+2015.08.19 - version 3.1.2
+ * Update: Checkout page is now Before checkout page, as there is no difference
+ * Update: Removed action 'woocommerce_before_checkout_form'
+ * Fix: Pre-defined button styles not visible for sample offers
+
+2015.08.13 - version 3.1.1
+ * Update: Shortcode references on Welcome Page
+ * Update: Updated POT file
+ * Fix: Shortcode to show product's images in offer 'so_product_image' not working
+ * Fix: Accept/Skip & Show Another Offer not working in some cases
+ * Fix: 'Skip & Redirect to URL' not redirecting to external URL
+ * Fix: Sometimes skipping offers goes in redirect-loop in case of Skip & Show Another Offer on order complete page
+ * Tweak: Minor CSS change
+
+2015.07.06 - version 3.1
+ * New: 2 new location to show offer - Before Checkout & After Checkout
+ * Update: In offer content, strike off original price & show offer price (for variable products)
+ * Update: Text Domain & Language loader
+ * Fix: 'Clear cart on Accept' not working when 'When to show this offer?' is not set
+ * Fix: Smart Offers conflicting with original post of the page, where it is shown
+ * Fix: Unable to skip offer on Order Complete Page for guest users
+ * Fix: Sometimes skipping offers goes in redirect-loop
+ * Fix: Set max-width for popup to prevent full-width popup
+ * Fix: Minor fix related to text domain & admin notices
+ * Fix: Removed Warnings
+
+2015.06.08 - version 3.0
+ * New: Rules for product quantity
+ * New: Few sample offers
+ * Fix: Quick stats was resetting on every bulk edit
+ * Fix: Offers not visible on 'Order Complete Page' when rule is 'Cart/Order contains products from category'
+
+2015.06.01 - version 2.9
+ * New: Preview Offer
+ * New: Support to clear cart before adding offered product in cart
+ * Update: Use of Magnific Popup instead of ThickBox to make offers responsive
+ * Fix: Minor fix related to Admin CSS
+
+2015.05.26 - version 2.8
+ * New: Pre-defined styles for Accept links
+
+2015.05.18 - version 2.7
+ * New: Welcome Page on activating Smart Offers
+ * Fix: Smart Offers storewide setting "Pick one Randomnly" not picking up random offers
+ * Fix: Minor fix related to text domain
+
+2015.05.04 - version 2.6
+ * New: Accept & Show Another Offer
+ * Fix: 'Offered Product' field broken when WooCommerce Follow-up Email active
+ * Fix: Saving categories, under offer rules not working
+ * Fix: Always showing product image in offer, even if it is set "not to display"
+ * Tweak: Source code, CSS, unescaped URL
+
+2015.04.21 - version 2.5.2
+ * Fix: Replace invalid character from accept link
+ * Tweak: Load product's image from template
+ * Tweak: Remove warnings from admin panel
+ * Tweak: CSS of help tip
+
+2015.03.05 - version 2.5.1
+* Fix: 'Offered product' field under 'Whats the offer?' broken (WooCommerce 2.2.x)
+* Fix: 'Search product categories' field under 'When to show this offer?' broken (WooCommerce 2.3.x)
+* Fix: Shortcode 'so_product_image' shows main product's image instead of specific variation's image
+* Fix: PHP Fatal error:  Call to a member function get_customer_id() on a non-object (Thanks to Nick Ivanter)
+* Fix: Issue with HTML Entities in product title (Thanks to Nick Ivanter)
+
+2015.02.25 - version 2.5
+* Update: WooCommerce 2.3 ready
+* Update: Moved 'Reset Quick Stats' to WordPress's 'Bulk Edit' & 'Quick Edit'
+* Update: Compatible with PHP version lower than 5.3
+* Update: Always show skip link in offer
+* Update: Option to hold order statuses which is allowed to show offer
+* Update: Removed 'global $woocommerce'
+* New: Shortcode to show product's images in offer
+* New: Now you can choose 'not to add product to cart' after accepting an offer
+* New: Added 'Switch Subscription' action on accept, if offering already purchased subscription
+* Fix: Missing argument for 'woocommerce_calculated_total' filter
+* Fix: Sometimes offers doesn't show up on 'Order Complete' / 'Thank you' page
+* Fix: Sometimes doesn't show offer due to JavaScript error 'jQuery not defined'
+* Tweak: Count of 'Offers Seen' in stats, accepting an offer was also counted as 'Seen'
+
+2014.12.14 - version 2.4.1
+* Fix: Showing all offers by not considering offer rules
+
+2014.12.11 - version 2.4
+* New: WPML ready
+* Fix: 'Reset Smart Offers' showing on pages other than Smart Offers
+* Update: Improvements in offers statistics recording process
+* Update: Minor update in JavaScript code of Smart Offers
+
+2014.09.18 - version 2.3
+* Update: WooCommerce 2.2 compatibility
+
+2014.08.18 - version 2.2
+* New: Rule: Cart / Order -> Does not contains Product from Category -> .....
+* New: Rule: User -> Is not a -> .....
+* Fix: Offered product not removing from cart, when the product, which caused that offer, is removed
+
+2014.07.24 - version 2.1.1
+* Fix: Fatal error for "Store_Apps_Upgrade" class redeclaration
+* Fix: Offer does't display on incompatible themes
+* Fix: Max inline offer set to '1' if it is not define 
+
+2014.07.04 - version 2.1
+* New: Rewrite code and introduce class structure
+
+2014.06.11 - version 2.0.2
+ * Fix: Displaying the offers even if the rules were not following
+
+2014.05.23 - version 2.0.1
+ * Fix: Warning on checkout & order completion page
+
+2014.05.16 - version 2.0
+ * New: Show quantity in offer with use of shortcode [so_quantity]
+ * New: Offer Rule "Cart/Order does not contains products"
+ * New: Two new action after accepting the offer : Redirect to a URL and Apply Coupons
+ * Fix: PHP short tag
+ * Fix: Breaking page if target product field is empty
+
+2014.04.16 - version 1.9.3
+ * Update: Important update related to 'update notification' of the plugin
+
+2014.04.08 - version 1.9.2
+ * New: Show multiple offers on a page
+ * Update: Code optimization
+
+2014.04.04 - version 1.9.1
+ * Fix: Important fix related to plugin updates
+
+2014.03.20 - version 1.9
+ * New: Compatibility with "WooCommerce Buy Now" (http://www.storeapps.org/product/woocommerce-buy-now/) plugin
+ * New: Moved 'Swap' functionality, now located under 'Actions to take when offer is accepted'
+ * Update: Backward Compatibility with WooCommerce 1.6.6
+ * Update: Showing up offer again if the product is removed from cart 
+ * Update: Showing up offer even if product being offered is already in cart
+
+2014.02.14 - version 1.8
+ * Update: WooCommerce 2.1 compatibility
+ * Fix: Pop up not working with Wootique theme
+ * Fix: Showing all variation options in offer
+
+2014.01.29 - version 1.7.1
+ * Fix: Offers in pop-up not working on some pages
+ * Update: Minor update in CSS for License Key row on plugins page
+
+2014.01.17 - version 1.7
+ * New: Show offer shortcode
+ * New: Additional page option : Home, Any other page where shortcode is added
+ * Update: Converted front end javascript to inline javascript using 'add_inline_js' of WC object
+ * Update: Admin referer for searching product & only variations
+ * Fix: Smart Offers not working on Multi site
+ * Fix: Removal of offered product when there is product category based rule
+
+2013.11.12 - version 1.6.1
+ * Fix: Warnings showing in Smart Offers Admin panel
+ * Fix: Smart Offers Statistics update on order cancel, failed or refunded.
+ * Fix: Pop up height set to auto
+ * Update: Upgrade process
+
+2013.09.23 - version 1.6
+ * New: Offer rule based on product category
+ * Fix: Minor fixes related to Smart Offers changelog on plugins page and Support form.
+ * Update: Redirecting to checkout page if offer accepted from page other than cart
+ * Update: Demo link
+
+2013.08.21 - version 1.5
+ * New: New offer rule to show offer between scheduled time
+ * New: Show Offer as a Popup
+ * Update: Changes in sending Support ticket.
+
+2013.08.03 - version 1.4.1
+ * Fix: Minor jQuery issue, 'Add to cart' was visible even if the product is 'Out of Stock'
+
+2013.08.02 - version 1.4
+ * New: Allow customer to choose product variation
+ * Update: Allow dynamic price (Fixed Price, Discount on Price & Percent Discount) for offered products
+
+2013.06.21 - version 1.3.1
+ * Fix: Reset Quick Stats button showing up at all pages.
+ * Update: Use of nonce for accept & skip of offers to increase security
+ * Update: Smart Offers Demo link added
+
+2013.06.06 - version 1.3
+ * New: Resetting Smart Offers Statistics
+ * Fix: Product searching was not happening when WooCommerce is lower than 2.0
+ * Update: Code optimization so that offer can be shown for first customers in Order Complete page.
+
+2013.05.15 - version 1.2
+ * New: New offer rule based on User Roles
+ * New: New offer rule to swap/replace the product in the cart
+ * Fix: Offer's were not showing up if the stock quantity for a variation was null
+ * Update: Removed the filter to show remove link for Offer Products in the Cart
+
+
+2013.03.28 - version 1.1
+ * Fix: Cart updates that invalidate an offer rule, would automatically remove the offered product from the cart
+ * Fix: Updated saving "When to show this offer?" rules
+ * Fix: Support request failing if license key not entered
+ * Update: Showing up only Simple Products & Product Variations in "Offered Product" in "What's the offer?" 
+ * Update: Text changes in rules
+ * Update: Performance optimizations.
+
+2013.03.06 - version 1.0
+ * Initial release 

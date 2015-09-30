@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once(dirname(__FILE__) . '/soap_submission.php');
+//require_once(dirname(__FILE__) . '/soap_submission.php');
 ?>
 
 <!DOCTYPE html>
@@ -21,6 +21,8 @@ require_once(dirname(__FILE__) . '/soap_submission.php');
 <link rel='stylesheet' id='gforms_browsers_css-css'  href='/wp-content/plugins/gravityforms/css/browsers.min.css' type='text/css' media='all' />
 
 <!-- Google Analytics script. Leave at top of file. Not working at bottom  --> 
+<!-- comment out for dev system
+
 <script type="text/javascript">
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -31,6 +33,7 @@ require_once(dirname(__FILE__) . '/soap_submission.php');
   ga('send', 'pageview');
 
 </script>
+-->
 
 <script type='text/javascript' src='/wp-includes/js/jquery/jquery.js'></script>
 <script type='text/javascript' src='/wp-includes/js/jquery/jquery-migrate.min.js'></script>

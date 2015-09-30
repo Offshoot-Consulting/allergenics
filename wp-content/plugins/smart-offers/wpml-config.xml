@@ -1,0 +1,25 @@
+<wpml-config>
+	<custom-types>
+		<custom-type translate="1">smart_offers</custom-type>
+	</custom-types>
+	<custom-fields>
+		<custom-field action="copy">_offer_rules</custom-field>
+		<custom-field action="ignore">offer_title</custom-field>
+		<custom-field action="translate">target_product_ids</custom-field>
+		<custom-field action="copy">offer_price</custom-field>
+		<custom-field action="copy">discount_type</custom-field>
+		<custom-field action="copy">offer_rule_home_page</custom-field>
+		<custom-field action="copy">offer_rule_cart_page</custom-field>
+		<custom-field action="copy">offer_rule_checkout_page</custom-field>
+		<custom-field action="copy">offer_rule_thankyou_page</custom-field>
+		<custom-field action="copy">offer_rule_myaccount_page</custom-field>
+		<custom-field action="copy">offer_rule_any_page</custom-field>
+		<custom-field action="ignore">offer_rule_page_options</custom-field>
+		<custom-field action="copy">so_show_offer_as</custom-field>
+		<custom-field action="ignore">so_actions_on_accept</custom-field>
+		<custom-field action="ignore">sa_smart_offer_if_denied</custom-field>
+		<custom-field action="ignore">offer_rule_cart_contains</custom-field>
+		<custom-field action="ignore">so_conversion_rate</custom-field>
+		<custom-field action="ignore">so_accept_skip_counter</custom-field>
+	</custom-fields>
+</wpml-config>

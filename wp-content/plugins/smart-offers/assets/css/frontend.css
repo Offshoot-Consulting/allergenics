@@ -1,0 +1,76 @@
+div.so_accept {
+    
+}
+
+div.so_skip{
+    
+}    
+  
+div[id^="so-entry-content"] table.variations {
+	margin: 0 20px 20px;
+	width: 0;
+	display: inline-block;
+	vertical-align: top;
+}
+
+div[id^="so-entry-content"] div.so_product_image {
+	display: inline-block;
+	width: 35%;
+	margin-bottom: 30px;
+}
+
+div[id^="so-entry-content"] div.so_product_image div.thumbnails {
+	display: inline-block;
+	width: 102%;
+}
+
+div[id^="so-entry-content"] div.so_product_image div.thumbnails img {
+	padding: 5px 5px 0 0;
+	max-width: 25%;
+}
+
+/* for magnific popup - start*/
+
+div[id^="so-entry-content"] {
+	background: #FFF;
+	padding: 2em 3em;
+}
+
+.so-offer-content.white-popup {
+	display: block !important;
+	position: relative;
+	width: auto;
+	height: auto;
+	margin: 1.250em auto;
+	overflow: hidden;
+}
+
+.mfp-inline-holder .mfp-content {
+	width: auto !important;
+	max-width: 60% !important;
+}
+
+/* for magnific popup - end */
+
+
+/* for Embed offer popup start*/
+
+.embed_offer {
+	width: 55em;
+	height: 30.5em;
+	background-color: white;
+}
+
+.embed_head {
+	margin: 0;
+	padding-top: 5px;
+	padding-left: 5px;
+}
+
+.embed_text {
+	width: 51em;
+	height: 25em;
+	resize: none;
+}
+
+/* for Embed offer popup end*/
