@@ -3035,14 +3035,43 @@ outline: none }
     width: 100%;
 }
 
+.post-left {
+    float: none;
+    width: 100%;
+}
+
+.post-right {
+    float: none;
+    width: 100%;
+}
+
+.relatedposts .relatedthumb {
+    float: none;
+    margin-bottom: 30px;
+    margin-right: 0;
+    width: 100%;
+}
+
+.relatedposts .relatedthumb:last-child {
+ margin-bottom:-30px}
+ 
+.attachment-listing-thumb.wp-post-image {
+    float: left;
+    width: 26%;
+}
+
 }
 
 
 
 /* form medias */
 @media only screen and (max-width: 850px) {
+
 .cont-right {
- display:none}
+ display:block;
+ margin-top:-30px;
+ width:100%}
+ 
 .cont-left {
 width:100%;
 float:none}
