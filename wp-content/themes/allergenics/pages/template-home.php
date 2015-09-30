@@ -307,5 +307,28 @@ get_header(); ?>
                     <?php endif; ?>
                 </div>
             </section>
+            
+            
+          <!-- PRACTICIONERS SECTION -->    
+            
+            <section class="practitioner-home-bottom">
+              <div class="container clearfix">
+                <div class="pract-left">
+                  <h3>Health Practitioners</h3>
+                  <p>How can allergenics hair testing service help you as a practitioner?</p>
+                  <a href="/practitioners/" class="btn practbtn">REGISTER HERE &raquo;</a>
+                </div>
+                <div class="pract-right">
+                  <ul>
+                    <li><img src="<?php bloginfo('template_url');?>/images/picon1.png" /><span>Provides you with additional information on your client's current state of health.</span></li>
+                    <li class="last"><img src="<?php bloginfo('template_url');?>/images/picon2.png" /><span>Assists you in prioritising your client's treatment protocol.</span></li>
+                    <li><img src="<?php bloginfo('template_url');?>/images/picon3.png" /><span>Provides your client with a reference point from which they can monitor their health progress.</span></li>
+                    <li class="last"><img src="<?php bloginfo('template_url');?>/images/picon4.png" /><span>The test is simple and non-invasive, a benefit for both you and your clientele.</span></li>
+                  </ul>
+                </div>                  
+              </div>
+            </section>
+            
+            
         <?php endif; ?>
 <?php get_footer(); ?>
