@@ -263,4 +263,44 @@ function custom_pre_get_posts_query( $q ) {
 	remove_action( 'pre_get_posts', 'custom_pre_get_posts_query' );
 
 }
+
+add_filter( 'woocommerce_checkout_fields' , 'custom_wc_checkout_fields',999 );
+ 
+// Change order comments placeholder and label, and set billing phone number to not required.
+function custom_wc_checkout_fields( $fields ) {
+$fields['billing']['billing_first_name']['placeholder'] = 'First Name *';
+//$fields['billing']['billing_first_name']['label'] = '';
+$fields['billing']['billing_last_name']['placeholder'] = 'Last Name *';
+//$fields['billing']['billing_last_name']['label'] = '';
+$fields['billing']['billing_email']['placeholder'] = 'Email Address *';
+//$fields['billing']['billing_email']['label'] = '';
+$fields['billing']['billing_phone']['placeholder'] = 'Phone *';
+//$fields['billing']['billing_phone']['label'] = '';
+$fields['billing']['billing_country']['placeholder'] = 'Country *';
+$fields['billing']['billing_country']['label'] = '';
+$fields['billing']['billing_address_1']['label'] = '';
+$fields['billing']['billing_state']['label'] = '';
+$fields['billing']['billing_postcode']['label'] = '';
+$fields['billing']['billing_city']['label'] = '';
+//$fields['account']['account_password']['label'] = '';
+return $fields;
+}
+
+add_filter( 'woocommerce_order_button_text', create_function( '', 'return "Make Payment";' ),999 );
+
+
+add_action('woocommerce_payment_complete', 'custom_process_order', 10, 1);
+function custom_process_order($order_id) {
+    $order = new WC_Order( $order_id );
+    $myuser_id = (int)$order->user_id;
+    $user_info = get_userdata($myuser_id);
+    $items = $order->get_items();
+    foreach ($items as $item) {
+        if ($item['product_id']==24) {
+          // Do something clever
+        }
+    }
+    return $order_id;
+
+}
 ?>

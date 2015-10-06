@@ -3508,7 +3508,7 @@ a, a:hover, a:focus, a:active{ outline:none !important;}
 .place-order #place_order { background-color:#f1632a; }
 .woocommerce-info { display:none; }
 .woocommerce-checkout #payment ul.payment_methods li { list-style-type:none; }
-.place_order_right #payment { background:none; border:3px solid #ebe9eb; }
+.woocommerce-checkout #payment { background:none; border:3px solid #ebe9eb; }
 .header_menu ul li:last-child a {
     border: 1px solid #e4e4e4;
 }
@@ -3600,3 +3600,54 @@ ul.products li.product div[itemprop="description"]{  line-height: 125%;}
     position: absolute;
 }
 .woocommerce ul.products li.product, .woocommerce-page ul.products li.product{ position:relative}
+h2.cat_name a {
+    color: #329c87;
+    line-height: 1.2;
+    margin: 0 0 15px;
+    font-weight: 400;
+	font-size: 19px;
+    padding-bottom: 0 !important;
+    text-align: left;
+	text-decoration:none;
+}
+h2.cat_name a:hover { text-decoration:underline; }
+.woocommerce-checkout #payment div.payment_box { background:none; }
+.woocommerce form .form-row input.input-text, .woocommerce form .form-row textarea, .woocommerce form .form-row select { height:40px; }
+.checkout .woocommerce-checkout.woocommerce .woocommerce-error { display:none !important; }
+.select2-choice { height:40px; }
+.woocommerce form .form-row { margin:0 0 20px; }
+.woocommerce #customer_details table.shop_table td.product-name {
+    border-right: none;
+    border-top: none;
+    border-bottom: none;
+    border-left: 1px solid #999;
+}
+.woocommerce #customer_details table.shop_table td.product-total {
+   
+    border-top: none;
+    border-bottom: none;
+}
+.woocommerce #customer_details table.shop_table tr.cart-subtotal th {
+    border-top: none;
+    border-bottom: none;
+    border-right: none;
+}
+.woocommerce #customer_details table.shop_table tr.cart-subtotal td {
+    border-top: none;
+    border-bottom: none;
+   
+}
+.woocommerce-checkout #payment div.payment_box::before {
+    border: 0 none;
+}
+.woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
+    min-height: 220px;
+}
+.form-row.terms{ margin-bottom:0px !important;}
+.woocommerce-checkout #payment div.form-row { padding-top: 0px; padding-bottom: 0px; padding-right: 25px; }
+
+#billing_first_name_field label:first-child { display: none; }
+#billing_last_name_field label:first-child { display: none; }
+#billing_email_field label:first-child { display: none; }
+#billing_phone_field label:first-child { display: none; }
+#account_password_field label:first-child { display: none; }
