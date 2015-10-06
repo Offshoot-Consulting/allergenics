@@ -1,8 +1,8 @@
 <?php
 /*
-Plugin Name: WooCommerce Menu Cart
+Plugin Name: WooCommerce Menu Cart - !!! THIS PLUGIN HAS BEEN MODIFIED !!! 
 Plugin URI: www.wpovernight.com/plugins
-Description: Extension for WooCommerce that places a cart icon with number of items and total cost in the menu bar. Activate the plugin, set your options and you're ready to go! Will automatically conform to your theme styles.
+Description: READ BEFORE UPDATE: on the line 420 change the "shop_page_url" to the "cart_url". Extension for WooCommerce that places a cart icon with number of items and total cost in the menu bar. Activate the plugin, set your options and you're ready to go! Will automatically conform to your theme styles.
 Version: 2.5.7
 Author: Jeremiah Prummer, Ewout Fernhout
 Author URI: www.wpovernight.com/
@@ -417,7 +417,7 @@ class WpMenuCart {
 		$this->menu_items['menu']['cart_contents'] = $cart_contents;
 
 		if ($item_data['cart_contents_count'] == 0) {
-			$menu_item_href = apply_filters ('wpmenucart_emptyurl', $item_data['shop_page_url'] );
+			$menu_item_href = apply_filters ('wpmenucart_emptyurl', $item_data['cart_url'] );  // changed to "cart_url" from "shop_page_url"
 			$menu_item_title = apply_filters ('wpmenucart_emptytitle', $start_shopping );
 			$menu_item_classes = 'wpmenucart-contents empty-wpmenucart-visible';
 		} else {

@@ -1774,6 +1774,83 @@ p.form-submit input#submit:hover {
  background:#00263C}
 
 
+/* blog banner */
+
+#blog_banner {
+    background: #eaf7f3 none repeat scroll 0 0;
+    border: 1px solid #eee;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    padding: 20px;
+    width:100%
+}
+
+#blog_banner h3 {
+    color: #00263c;
+    font-size: 22px;
+    font-weight: normal;
+    line-height: 23px;
+    margin-bottom: 5px;
+    margin-top: 0;
+}
+
+#blog_banner p {
+    font-size: 13px;
+    font-weight: normal;
+    margin-bottom: -2px;
+}
+
+#blog_banner .banner-image {     
+    display: block;
+    float: left;
+    height: 50px;
+    margin-right: 20px;
+    margin-top: -2px;
+    width: 50px;
+}
+
+#blog_banner .banner-left {
+    float: left;
+    margin-right: 20px;
+    width: calc(100% - 226px);
+}
+
+#blog_banner a {
+    background: #f1632a none repeat scroll 0 0;
+    border-radius: 2px;
+    color: #fff;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 0;
+    padding: 4px 20px 6px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background 0.3s ease 0s;
+}
+
+#blog_banner.foodbanner .banner-image {
+  background: #eaf7f3 url("images/ban1.png") no-repeat scroll 0 0;
+}
+
+#blog_banner.organbanner .banner-image {
+  background: #eaf7f3 url("images/ban2.png") no-repeat scroll 0 0;
+}
+
+#blog_banner.vitaminbanner .banner-image {
+  background: #eaf7f3 url("images/ban3.png") no-repeat scroll 0 0;
+}
+
+#blog_banner.toxicbanner .banner-image {
+  background: #eaf7f3 url("images/ban4.png") no-repeat scroll 0 0;
+}
+
+#blog_banner.consulationbanner .banner-image {
+  background: #eaf7f3 url("images/ban5.png") no-repeat scroll 0 0;
+}
+
 /* hidde little labels */
 .name_first label, 
 .name_last label,
@@ -2394,6 +2471,38 @@ body .form-section .ginput_container img.ui-datepicker-trigger {
     color: #1e988a;
     font-weight: 400;
 }
+
+/* search box fix */
+
+.product_search #searchform .hit_me input#s {
+display:none}
+
+.urgent-box {
+    background: #f7f7f7 none repeat scroll 0 0;
+    float: left;
+    margin-bottom: 30px;
+    padding: 30px;
+}
+
+.urgent-box h3 {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+ 
+.urgent-box p {
+    margin-bottom: 10px;
+}
+ 
+.urgent-box a {
+    background: #f1632a none repeat scroll 0 0;
+    border-radius: 3px;
+    color: white;
+    display: inline-block;
+    font-weight: bold;
+    padding: 4px 20px;
+    text-decoration: none;
+}
+
 .carousel-block h2:after {
 	content: "";
 	position: absolute;

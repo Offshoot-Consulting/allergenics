@@ -12,6 +12,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 ?>
+  
+  <?php $items_in_cart = WC()->cart->cart_contents_count; ?>
+  
+  <?php if($items_in_cart>0) { ?>
+    <div class="urgent-box">
+      <h3>Would you like to your test to be urgent???</h3>
+      <p>Some description goes here +20$ </p>
+      <a href="/cart/?add-to-cart=574&quantity=<?php echo $items_in_cart; ?>">Yes! Make my tests urgent</a>
+    </div>
+  <?php } ?>
+
 <div class="cart_totals total_dv <?php if ( WC()->customer->has_calculated_shipping() ) echo 'calculated_shipping'; ?>">
 
 	<?php do_action( 'woocommerce_before_cart_totals' ); ?>

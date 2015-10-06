@@ -64,12 +64,11 @@ jQuery(document).ready(function(){
 
 </script>
 
+
+<?php if(is_singular('post')) { ?>
 <!-- SMOOTH SCROLL -->
-
 <script type="text/javascript">
-
 jQuery(document).ready(function(){
-
   jQuery('a[href*=#]:not([href=#])').click(function() {
       if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
           || location.hostname == this.hostname) {
@@ -84,9 +83,9 @@ jQuery(document).ready(function(){
           }
       }
   });
-
 });
 </script>
+<?php } ?>
 
 <meta name="google-site-verification" content="yHdrzlaJQLoxIT5lW9FOjVKZdBUb6nPA6U-SNs0bkXM" />
 <meta name="msvalidate.01" content="73B3E1A7212985B5308196BFD5121639" />
