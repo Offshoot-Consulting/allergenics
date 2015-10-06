@@ -2471,38 +2471,6 @@ body .form-section .ginput_container img.ui-datepicker-trigger {
     color: #1e988a;
     font-weight: 400;
 }
-
-/* search box fix */
-
-.product_search #searchform .hit_me input#s {
-display:none}
-
-.urgent-box {
-    background: #f7f7f7 none repeat scroll 0 0;
-    float: left;
-    margin-bottom: 30px;
-    padding: 30px;
-}
-
-.urgent-box h3 {
-    font-weight: 600;
-    margin-bottom: 10px;
-}
- 
-.urgent-box p {
-    margin-bottom: 10px;
-}
- 
-.urgent-box a {
-    background: #f1632a none repeat scroll 0 0;
-    border-radius: 3px;
-    color: white;
-    display: inline-block;
-    font-weight: bold;
-    padding: 4px 20px;
-    text-decoration: none;
-}
-
 .carousel-block h2:after {
 	content: "";
 	position: absolute;
@@ -3357,8 +3325,8 @@ display: none;
 #coupon_code {
     width: 46%;
 }
-.woocommerce table.shop_table { border:none !important; }
-.woocommerce-cart table.cart td, .woocommerce-cart table.cart th { border-left:none !important;border-right:none !important;border-top:none !important;  }
+/*.woocommerce table.shop_table { border:none !important; }
+.woocommerce-cart table.cart td, .woocommerce-cart table.cart th { border-left:none !important;border-right:none !important;border-top:none !important;  }*/
 .woocommerce-cart table.cart th:nth-of-type(3) { text-align:left; }
 .woocommerce-cart table.cart th.product-subtotal , .woocommerce-cart table.cart td.product-subtotal { text-align:right; }
 .woocommerce-cart table.cart th { text-transform:uppercase; }
@@ -3508,7 +3476,7 @@ a, a:hover, a:focus, a:active{ outline:none !important;}
 .place-order #place_order { background-color:#f1632a; }
 .woocommerce-info { display:none; }
 .woocommerce-checkout #payment ul.payment_methods li { list-style-type:none; }
-.woocommerce-checkout #payment { background:none; border:3px solid #ebe9eb; }
+.woocommerce-checkout #payment { background:none; border:1px solid #999; border-radius: 0px; }
 .header_menu ul li:last-child a {
     border: 1px solid #e4e4e4;
 }
@@ -3616,7 +3584,7 @@ h2.cat_name a:hover { text-decoration:underline; }
 .checkout .woocommerce-checkout.woocommerce .woocommerce-error { display:none !important; }
 .select2-choice { height:40px; }
 .woocommerce form .form-row { margin:0 0 20px; }
-.woocommerce #customer_details table.shop_table td.product-name {
+/*.woocommerce #customer_details table.shop_table td.product-name {
     border-right: none;
     border-top: none;
     border-bottom: none;
@@ -3636,7 +3604,7 @@ h2.cat_name a:hover { text-decoration:underline; }
     border-top: none;
     border-bottom: none;
    
-}
+}*/
 .woocommerce-checkout #payment div.payment_box::before {
     border: 0 none;
 }
@@ -3651,3 +3619,15 @@ h2.cat_name a:hover { text-decoration:underline; }
 #billing_email_field label:first-child { display: none; }
 #billing_phone_field label:first-child { display: none; }
 #account_password_field label:first-child { display: none; }
+
+/* checkout product table */
+.woocommerce #customer_details table.shop_table th { border: 0px; border-bottom: 1px solid #999 !important; }
+.woocommerce #customer_details table.shop_table td { border: 0px; }
+.woocommerce #customer_details table.shop_table { border: 1px solid #999;  border-radius: 0px;}
+.woocommerce table.shop_table tr th:nth-of-type(1) { border-right: 1px solid #999 !important; border-bottom: 1px solid #999 !important; }
+
+.woocommerce #customer_details table.shop_table tr.order-total th { border-top: 1px solid #ccc !important; border-bottom: 0px !important; border-right: 1px solid #ccc !important;}
+.woocommerce #customer_details table.shop_table tr.order-total td { border-top: 1px solid #ccc !important;}
+.woocommerce #customer_details table.shop_table tr.cart-subtotal td { border-top: 1px solid #ccc !important;}
+.woocommerce #customer_details table.shop_table tr.cart-subtotal th { border-top: 1px solid #ccc !important; border-bottom: 0px !important; border-right: 1px solid #ccc !important;}
+.woocommerce #customer_details table.shop_table tr.cart_item td:first-child { border-right: 1px solid #ccc !important; }

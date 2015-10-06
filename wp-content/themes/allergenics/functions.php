@@ -289,18 +289,63 @@ return $fields;
 add_filter( 'woocommerce_order_button_text', create_function( '', 'return "Make Payment";' ),999 );
 
 
-add_action('woocommerce_payment_complete', 'custom_process_order', 10, 1);
-function custom_process_order($order_id) {
+//add_action('init', 'custom_process_order', 10);
+function custom_process_order() {
+	$order_id = 717;
+	$IsUrgent = 'No';
     $order = new WC_Order( $order_id );
+    echo '<pre>'; print_r($order->billing_first_name);
     $myuser_id = (int)$order->user_id;
     $user_info = get_userdata($myuser_id);
+    echo '<pre>'; print_r($user_info);
     $items = $order->get_items();
     foreach ($items as $item) {
-        if ($item['product_id']==24) {
-          // Do something clever
-        }
+        
+    	echo $item['product_id'];
+    	echo '<br>';
+    	if($item['product_id'] == '574') {
+
+    		$IsUrgent = 'Yes';
+    	}
     }
-    return $order_id;
+
+
+	//get all the variables that are the same for every test in the order
+	 $IsUrgent = $IsUrgent;
+	 $first_name = $order->billing_first_name;
+	 $last_name = $order->billing_last_name;
+	 $address_line = $order->billing_address_1 . ', ' . $order->billing_address_2;
+	 $suburb = $order->billing_city;
+	 $city = $order->billing_city;
+	 $postcode = $order->billing_postcode;
+	 $phone = $order->billing_phone;
+	 $email = $order->billing_email;
+	 $dateofhairsample = date('Y-m-d h:i:s',time()); //[current timestamp (should be this format '2015-04-05' . 'T00:00:00')]
+	 $dateofbirth  = date('Y-m-d h:i:s',time()); //[get from custom order field (should be this format '2015-04-05' . 'T00:00:00')]
+
+	 $params = array(
+		'username' => $user_info->user_login,
+		'password' => $user_info->user_pass,
+		'report' => array(
+		'Category' => $category,
+		'City' => $city,
+		'DateOfBirth' => date('Y-m-d h:i:s',time()),
+		'DateOfHairSample' => date('Y-m-d h:i:s',time()),
+		'Email' => $order->billing_email,
+		'FirstName' => $order->billing_first_name,
+		'IsPaid' => true,
+		'IsUrgent' => $IsUrgent,
+		'PaymentType' => 'credit_card',
+		'Phone' => $order->billing_postcode,
+		'Postcode' => $postcode,
+		'StreetNameAndNo' => $order->billing_address_1,
+		'Suburb' => $order->billing_city,
+		'Surname' => $order->billing_last_name
+		)
+	);			
+	print_r($params);
+
+  die;
 
 }
 ?>
