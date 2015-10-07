@@ -348,4 +348,27 @@ function custom_process_order() {
   die;
 
 }
+
+
+function mp_remove_product_from_cart() {
+    
+		$WC = WC();
+        // Set the product ID to remove
+        $prod_to_remove = intval($_GET['574']);
+ 
+        // Cycle through each product in the cart
+        foreach ( $WC->cart->get_cart() as $cart_item_key => $cart_item ) {
+            // Get the Variation or Product ID
+            $prod_id = $cart_item['product_id'];
+ 
+            // Check to see if IDs match
+            if( $prod_to_remove == $prod_id ) {
+				$WC->cart->set_quantity( $cart_item_key, $cart_item['quantity'] - 1, true  );
+				break;
+            }
+        }
+		
+		//die(); // if ajax call
+}
+
 ?>

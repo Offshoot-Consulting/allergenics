@@ -2683,6 +2683,51 @@ body .form-section .ginput_container img.ui-datepicker-trigger {
 	float: right;
 	width: 35%;
 }
+
+/* urgent box */
+
+.urgent-box {
+    background: #eaf7f3 none repeat scroll 0 0;
+    border: 1px solid #e4e4e4;
+    border-radius: 3px;
+    float: left;
+    padding: 25px;
+}
+
+.urgent-box h3 {
+    color: #00253d;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 25px;
+    margin-bottom: 10px;
+}
+
+.urgent-box p {
+margin-bottom: 10px;
+}
+
+.urgent-box a {
+    background: #329c87 none repeat scroll 0 0;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 3px 20px 4px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background 0.3s ease 0s;
+}
+
+.urgent-box a:hover {
+background:#00263C
+}
+
+td.product-name dl.variation {
+ display:none;
+ visibility:hidden}
+
 /* team style */
 .team {}
 .team ul {
