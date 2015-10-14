@@ -56,7 +56,7 @@ else if(isset($_GET['removed_item']) && $_GET['removed_item'] == '1') {
     } 
   
   $how_many_tests_in_cart = $test01 + $test02 + $test03 + $test04;
-  echo 'there is ' . $how_many_tests_in_cart . ' tests in the cart !<br /><br />';
+  //echo 'there is ' . $how_many_tests_in_cart . ' tests in the cart !<br /><br />';
   ?>
 	
   <!-- if there is no urgent process in the cart -->		
@@ -65,26 +65,41 @@ else if(isset($_GET['removed_item']) && $_GET['removed_item'] == '1') {
   <?php if($how_many_tests_in_cart > 0) { ?>
     <div class="urgent-box">
       <?php if($how_many_tests_in_cart == 1) { ?>
-        <h3>Would you like to your test to be urgent???</h3>
-        <p>Get your hair test processed urgently for only $20!</p>
-        <a href="/cart/?add-to-cart=574&variation_id=719&attribute_amount=1">Yes! Make my test urgent</a>
+        <h3>Need quicker results?</h3>
+        <p>For just $20 per test you can have your tests processed urgently. <a class="tell-me-more" href="#modal-one">Tell me more</a></p>
+        <a href="/cart/?add-to-cart=574&variation_id=719&attribute_amount=1">Yes, process my test urgently</a>
       <?php } ?>
       
       <?php if($how_many_tests_in_cart > 1) { ?>
-        <h3>Would you like to your tests to be urgent???</h3>
-        <p>Get your hair tests processed urgently for only $20 per test!</p>
+        <h3>Need quicker results?</h3>
+        <p>For just $20 per test you can have your tests processed urgently. <a class="tell-me-more" href="#modal-one">Tell me more</a></p>
       <?php } ?>
       
+      <div class="modal" id="modal-one" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-header">
+            <h2>Need quicker results?</h2>
+            <a href="#close" class="btn-close" aria-hidden="true">&#10006;</a> <!--CHANGED TO "#close"-->
+          </div>
+          <div class="modal-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          <div class="modal-footer">
+            <a href="#close" class="btn">OK!</a>  <!--CHANGED TO "#close"-->
+          </div>
+          </div>
+        </div>
+      
       <?php if($how_many_tests_in_cart == 2) { ?>
-        <a href="/cart/?add-to-cart=574&variation_id=720&attribute_amount=2">Yes! Make my tests urgent</a>
+        <a href="/cart/?add-to-cart=574&variation_id=720&attribute_amount=2">Yes, process my test urgently</a>
       <?php } ?>
       
       <?php if($how_many_tests_in_cart == 3) { ?>
-        <a href="/cart/?add-to-cart=574&variation_id=721&attribute_amount=3">Yes! Make my tests urgent</a>
+        <a href="/cart/?add-to-cart=574&variation_id=721&attribute_amount=3">Yes, process my test urgently</a>
       <?php } ?>
       
       <?php if($how_many_tests_in_cart == 4) { ?>
-        <a href="/cart/?add-to-cart=574&variation_id=722&attribute_amount=4">Yes! Make my tests urgent</a>
+        <a href="/cart/?add-to-cart=574&variation_id=722&attribute_amount=4">Yes, process my test urgently</a>
       <?php } ?> 
     </div>
     <?php } // end if($items_in_cart > 0) ?>

@@ -2696,15 +2696,33 @@ body .form-section .ginput_container img.ui-datepicker-trigger {
 
 .urgent-box h3 {
     color: #00253d;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
-    line-height: 25px;
-    margin-bottom: 10px;
+    line-height: 21px;
+    margin-bottom: 6px;
 }
 
 .urgent-box p {
-margin-bottom: 10px;
+    font-size: 14px;
+    margin-bottom: 10px;
 }
+
+.urgent-box a.tell-me-more {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    color: #329c87;
+    display: flex;
+    font-size: 14px;
+    font-weight: normal;
+    padding: 0;
+    text-align: left;
+    text-decoration: underline;
+    text-transform: none;
+    transition: background 0.3s ease 0s;
+}
+
+.urgent-box a.tell-me-more:hover {
+ color: #00253d;
+ background:none}
 
 .urgent-box a {
     background: #329c87 none repeat scroll 0 0;
@@ -2722,6 +2740,83 @@ margin-bottom: 10px;
 
 .urgent-box a:hover {
 background:#00263C
+}
+
+.urgent-box a.btn-close {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0 !important;
+    color: #aaaaaa !important;
+    font-size: 14px !important;
+    position: absolute !important;
+    right: 5px;
+    text-decoration: none;
+    top: 8px;
+}
+
+.urgent-box a.btn-close:hover {
+  color: #919191;
+}
+.modal:before {
+  content: "";
+  display: none;
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+}
+.modal:target:before {
+  display: block;
+}
+.modal:target .modal-dialog {
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+  top: 20%;
+}
+.modal-dialog {
+  background: #fefefe;
+  border: #333333 solid 1px;
+  border-radius: 5px;
+  margin-left: -200px;
+  position: fixed;
+  left: 50%;
+  top: -100%;
+  z-index: 11;
+  width: 360px;
+  -webkit-transform: translate(0, -500%);
+  -ms-transform: translate(0, -500%);
+  transform: translate(0, -500%);
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  -moz-transition: -moz-transform 0.3s ease-out;
+  -o-transition: -o-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+}
+.modal-body {
+  padding: 20px;
+}
+.modal-body p:last-child {
+ margin-bottom:0}
+ 
+.modal-header,
+.modal-footer {
+  padding: 10px 20px;
+}
+.modal-header {
+  border-bottom: #eeeeee solid 1px;
+}
+.modal-header h2 {
+    font-size: 20px;
+    margin-bottom: 0;
+}
+.modal-footer {
+  border-top: #eeeeee solid 1px;
+  text-align: right;
+}
+/*ADDED TO STOP SCROLLING TO TOP*/
+#close {
+  display: none;
 }
 
 td.product-name dl.variation {
