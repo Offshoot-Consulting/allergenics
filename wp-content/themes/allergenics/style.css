@@ -3344,8 +3344,8 @@ a.button.add_to_cart_button.product_type_simple { background-color:#f1632a !impo
  .woocommerce table.cart td:nth-of-type(4), .woocommerce table.cart th:nth-of-type(4) {
 display: none;
 }
- .woocommerce table.cart td:nth-of-type(5), .woocommerce table.cart th:nth-of-type(5) {
-display: none;
+.woocommerce table.cart td:nth-of-type(5), .woocommerce table.cart th:nth-of-type(5) {
+    display: none;
 }
 #content input.button[value="Update Cart"] {display:none !important}
 .cart_totals td{ text-align:right; }
@@ -3522,9 +3522,7 @@ a, a:hover, a:focus, a:active{ outline:none !important;}
 .woocommerce-info { display:none; }
 .woocommerce-checkout #payment ul.payment_methods li { list-style-type:none; }
 .woocommerce-checkout #payment { background:none; border:1px solid #999; border-radius: 0px; }
-.header_menu ul li:last-child a {
-    border: 1px solid #e4e4e4;
-}
+
 /*ul.products.list li.product {
     float: left !important;
     text-align: left !important;
@@ -3666,13 +3664,29 @@ h2.cat_name a:hover { text-decoration:underline; }
 #account_password_field label:first-child { display: none; }
 
 /* checkout product table */
-.woocommerce #customer_details table.shop_table th { border: 0px; border-bottom: 1px solid #999 !important; }
-.woocommerce #customer_details table.shop_table td { border: 0px; }
-.woocommerce #customer_details table.shop_table { border: 1px solid #999;  border-radius: 0px;}
-.woocommerce table.shop_table tr th:nth-of-type(1) { border-right: 1px solid #999 !important; border-bottom: 1px solid #999 !important; }
+.woocommerce #customer_details table.shop_table.woocommerce-checkout-review-order-table th { border: 0px; border-bottom: 1px solid #999 !important; }
+.woocommerce #customer_details table.shop_table.woocommerce-checkout-review-order-table td { border: 0px; }
+.woocommerce #customer_details table.shop_table.woocommerce-checkout-review-order-table { border: 1px solid #999;  border-radius: 0px;}
+.woocommerce table.shop_table.woocommerce-checkout-review-order-table tr th:nth-of-type(1) { border-right: 1px solid #999 !important; border-bottom: 1px solid #999 !important; }
 
-.woocommerce #customer_details table.shop_table tr.order-total th { border-top: 1px solid #ccc !important; border-bottom: 0px !important; border-right: 1px solid #ccc !important;}
-.woocommerce #customer_details table.shop_table tr.order-total td { border-top: 1px solid #ccc !important;}
-.woocommerce #customer_details table.shop_table tr.cart-subtotal td { border-top: 1px solid #ccc !important;}
-.woocommerce #customer_details table.shop_table tr.cart-subtotal th { border-top: 1px solid #ccc !important; border-bottom: 0px !important; border-right: 1px solid #ccc !important;}
-.woocommerce #customer_details table.shop_table tr.cart_item td:first-child { border-right: 1px solid #ccc !important; }
+.woocommerce #customer_details table.shop_table.woocommerce-checkout-review-order-table tr.order-total th { border-top: 1px solid #ccc !important; border-bottom: 0px !important; border-right: 1px solid #ccc !important;}
+.woocommerce #customer_details table.shop_table.woocommerce-checkout-review-order-table tr.order-total td { border-top: 1px solid #ccc !important;}
+.woocommerce #customer_details table.shop_table.woocommerce-checkout-review-order-table tr.cart-subtotal td { border-top: 1px solid #ccc !important;}
+.woocommerce #customer_details table.shop_table.woocommerce-checkout-review-order-table tr.cart-subtotal th { border-top: 1px solid #ccc !important; border-bottom: 0px !important; border-right: 1px solid #ccc !important;}
+.woocommerce #customer_details table.shop_table.woocommerce-checkout-review-order-table tr.cart_item td:first-child { border-right: 1px solid #ccc !important; }
+.woocommerce #customer_details table.shop_table.woocommerce-checkout-review-order-table tr.cart_item td.product-name .product-quantity { display: none; }
+
+.header_menu ul.parent_menu li:last-child:hover { background: none !important;}
+    /*.header_menu ul li:last-child a {
+    border: 1px solid #e4e4e4;
+}*/
+a.wpmenucart-contents {
+    border: 1px solid #ccc;
+    margin: 23px 0;
+    padding: 15px !important;
+}
+a.wpmenucart-contents:hover { background: none !important; }
+.woocommerce table.shop_table.cart, .woocommerce table.shop_table.cart th { border: none !important;}
+.shop_table.cart td {
+    border: medium none;
+}

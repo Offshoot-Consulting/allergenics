@@ -11,12 +11,24 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+global $woocommerce;
+if(isset($_GET['add-to-cart']) && $_GET['add-to-cart'] != '') {
+ $cart_url = $woocommerce->cart->get_cart_url();
+wp_redirect($cart_url );
+exit;
+}
+else if(isset($_GET['removed_item']) && $_GET['removed_item'] == '1') {
+	 
+	 refresh_cart_content();
+
+}
 ?>
   
   <?php $items_in_cart = WC()->cart->cart_contents_count; ?>
   <?php $prod_ids_in_cart = array(); ?>
   
   <?php
+ 
 		foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
 			$product_id   = apply_filters( 'woocommerce_cart_item_product_id', $cart_item['product_id'], $cart_item, $cart_item_key );
 			array_push($prod_ids_in_cart, $product_id );
@@ -29,7 +41,7 @@ if ( ! defined( 'ABSPATH' ) ) {
   $test02 = 0;
   $test03 = 0;
   $test04 = 0;
-  
+ 
     if(in_array("566", $prod_ids_in_cart)) {
       $test01 = 1;
     }
@@ -44,7 +56,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     } 
   
   $how_many_tests_in_cart = $test01 + $test02 + $test03 + $test04;
-  echo 'there is ' . $how_many_tests_in_cart . ' tests in the cart';
+  echo 'there is ' . $how_many_tests_in_cart . ' tests in the cart !<br /><br />';
   ?>
 	
   <!-- if there is no urgent process in the cart -->		
@@ -78,30 +90,40 @@ if ( ! defined( 'ABSPATH' ) ) {
     <?php } // end if($items_in_cart > 0) ?>
     
   <?php } // if (!in_array("574", $prod_ids_in_cart)) ?>
+  
+  <?php // get cart item id for product to remove
+  
+  ?>
 
   <!-- if there is urgent process in the cart -->		
 	<?php if (in_array("574", $prod_ids_in_cart)) { 
+	
+	// get $cart_item_key from cart
+	foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) { 
+     if($cart_item['product_id'] == 574 ){
+        WC()->cart->set_quantity( $cart_item_key, 0);
+     }
+    } 
+	
     	 
        if($how_many_tests_in_cart == 0) {
-      	   mp_remove_product_from_cart();  
        }
        if($how_many_tests_in_cart == 1) {
-           mp_remove_product_from_cart();
            WC()->cart->add_to_cart( '574' , '1' , '719' , '1' );
        }
        if($how_many_tests_in_cart == 2) {
-           mp_remove_product_from_cart();
            WC()->cart->add_to_cart( '574' , '1' , '720' , '2' );
        }
        if($how_many_tests_in_cart == 3) {
-           mp_remove_product_from_cart();
            WC()->cart->add_to_cart( '574' , '1' , '721' , '3' );
        }
        if($how_many_tests_in_cart == 4) {
-           mp_remove_product_from_cart();
            WC()->cart->add_to_cart( '574' , '1' , '722' , '4' );
-       }
-   } ?>
+       } 
+       
+
+   }
+?>
 
 <div class="cart_totals total_dv <?php if ( WC()->customer->has_calculated_shipping() ) echo 'calculated_shipping'; ?>">
 

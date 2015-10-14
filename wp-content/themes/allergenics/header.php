@@ -69,6 +69,7 @@ jQuery(document).ready(function(){
 <!-- SMOOTH SCROLL -->
 <script type="text/javascript">
 jQuery(document).ready(function(){
+  alert('single blog page');
   jQuery('a[href*=#]:not([href=#])').click(function() {
       if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
           || location.hostname == this.hostname) {
@@ -140,7 +141,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                     'container_class' => 'drop header_menu',
                                     'theme_location' => 'primary',
 									                   'menu_class' => '',
-                                    'items_wrap'     => '<ul>%3$s</ul>'
+                                    'items_wrap'     => '<ul class="parent_menu">%3$s</ul>'
                                     )); ?>
                                     
                             <div class="hidden-search" id="hidden-search" style="display:none">

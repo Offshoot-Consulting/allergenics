@@ -48,7 +48,8 @@ $product_categories = get_terms( 'product_cat', array('hide_empty' => 0, 'orderb
 $count = count($product_categories);
 if ( $count > 0 ){
     foreach ( $product_categories as $product_category ) {
-        echo '<h1 class="cat_name"><a href="' . get_term_link( $product_category ) . '">' . $product_category->name . '</a></h1>';
+		
+        echo '<h2 class="cat_name"><a href="' . get_term_link( $product_category ) . '">' . $product_category->name . '</a></h2>';
         $args = array(
             'posts_per_page' => -1,
             'tax_query' => array(
@@ -61,7 +62,7 @@ if ( $count > 0 ){
                 )
             ),
             'post_type' => 'product',
-            'orderby' => 'title,'
+            'orderby' => 'title'
         );
     query_posts($args);
    
