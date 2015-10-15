@@ -3785,3 +3785,6 @@ a.wpmenucart-contents:hover { background: none !important; }
 .shop_table.cart td {
     border: medium none;
 }
+/* testimonail css */
+.single_prd_testimonial {  clear:both; border-top:1px solid #ccc; }
+.what_customer { margin-top:40px; }

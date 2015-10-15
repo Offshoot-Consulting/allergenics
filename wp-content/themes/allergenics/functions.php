@@ -507,6 +507,8 @@ $IsUrgent = false;
   }
   $products = array_values($products);
   $prd_array = array('566' => 1,'570' => 2,'568' => 3,'572' => 4);
+  $Countries = new  WC_Countries( $order->billing_country );
+    $state = $Countries->states[$order->billing_country][$order->billing_state];
   foreach($products as $product) {
     $product_id =  $prd_array[$product];
     $first_name = $order->billing_first_name;
@@ -515,7 +517,7 @@ $IsUrgent = false;
     $email = $order->billing_email;
     $postcode = $order->billing_postcode;
     $suburb = $order->billing_city;
-    $city = $order->billing_state;
+    $city = $state;
     $address_line = $order->billing_address_1 . ', ' . $order->billing_address_2;
     $dateofhairsample = date('Y-m-d'); //[current timestamp (should be this format '2015-04-05' . 'T00:00:00')]
     $dateofbirth  = date('Y-m-d h:i:s',time()); //[get from custom order field (should be this format '2015-04-05' . 'T00:00:00')]

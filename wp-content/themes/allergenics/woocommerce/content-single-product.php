@@ -89,18 +89,28 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	</div><!-- .summary -->
     <?php if($post->ID != '576') { ?>
-    <div class="single_prd_testimonial" style=" clear:both; border-top:1px solid #ccc;">
-    <h2 style="margin-top:40px;">What our customers are saying</h2>
+    <div class="single_prd_testimonial">
+    <h2 class="what_customer">What our customers are saying</h2>
     </div>
+    <?php $args = array(
+	'posts_per_page'   => 5,
+	'offset'           => 0,
+	'orderby'          => 'ID',
+	'order'            => 'DESC',
+	'post_type'        => 'testimonial',
+	'post_status'      => 'publish',
+	
+);
+$testimonials = get_posts( $args ); ?>
     <section id="features" class="blue">
 <div class="testmonial-block">
 <div class="slider multiple-items">
-					<div class="slideme"><center>I wanted to sa about yourI wanted to sa about yourI wanted to sa about your 1.<p>John</p></center></div>
-                    <div class="slideme"><center>I wanted to sa about yourI wanted to sa about yourI wanted to sa about your 2.<p>John</p></center></div>
-                    <div class="slideme"><center>I wanted to sa about yourI wanted to sa about yourI wanted to sa about your 3.<p>John</p></center></div>
-                    <div class="slideme"><center>I wanted to sa about yourI wanted to sa about yourI wanted to sa about your 4.<p>John</p></center></div>
-                    <div class="slideme"><center>I wanted to sa about yourI wanted to sa about yourI wanted to sa about your 5.<p>John</p></center></div>
-                    <div class="slideme"><center>I wanted to sa about yourI wanted to sa about yourI wanted to sa about your 6.<p>John</p></center></div>
+					<?php foreach ( $testimonials as $testimonial ) { ?>
+						
+						<div class="slideme"><center><?php echo $testimonial->post_content; ?><p><?php echo get_post_meta($testimonial->ID,'_ikcf_client',true); ?></p></center></div>
+						
+					<?php }
+wp_reset_postdata();?>
                    
 				</div>
 </div>
