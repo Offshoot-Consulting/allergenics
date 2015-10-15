@@ -21,7 +21,7 @@ echo "Took $time seconds\n";
 
  */
 
- /*this is how you make a change*/
+ /*this is how you make a change again change*/
  
 /** Put required files below */
 require 'function_includes/check_if_this_is _staging_site.php';
