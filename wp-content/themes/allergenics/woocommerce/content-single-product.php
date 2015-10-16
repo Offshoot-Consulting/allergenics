@@ -92,7 +92,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     <div class="single_prd_testimonial">
     <h2 class="what_customer">What our customers are saying</h2>
     </div>
-    <?php $args = array(
+    	<?php $args = array(
 	'posts_per_page'   => 5,
 	'offset'           => 0,
 	'orderby'          => 'ID',
@@ -111,6 +111,7 @@ $testimonials = get_posts( $args ); ?>
 						
 					<?php }
 wp_reset_postdata();?>
+					
                    
 				</div>
 </div>

@@ -41,6 +41,7 @@ $params = array(
                 'Surname' => $last_name
             )
 		);
+//echo '<pre>'; print_r($params);
 /*$params = array(
             'username' => 'reportcr34tor',
             'password' => 'lv^nzvtA4',
@@ -61,9 +62,11 @@ $params = array(
                 'Surname' => 'for woo'
             )
         );*/
+//echo '<pre>'; print_r($params);
 
         //echo '<pre>'; print_r($params1);print_r($params);
 	$objResponse = $objClient->CreateReport($params);
+
 //end loop
 
 //echo "End";  

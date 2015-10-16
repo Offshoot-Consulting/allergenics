@@ -12,8 +12,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 global $woocommerce;
-if(isset($_GET['add-to-cart']) && $_GET['add-to-cart'] != '') {
  $cart_url = $woocommerce->cart->get_cart_url();
+if(isset($_GET['add-to-cart']) && $_GET['add-to-cart'] != '') {
+
 wp_redirect($cart_url );
 exit;
 }
@@ -67,7 +68,7 @@ else if(isset($_GET['removed_item']) && $_GET['removed_item'] == '1') {
       <?php if($how_many_tests_in_cart == 1) { ?>
         <h3>Need quicker results?</h3>
         <p>For just $20 per test you can have your tests processed urgently. <a class="tell-me-more" href="#modal-one">Tell me more</a></p>
-        <a href="/cart/?add-to-cart=574&variation_id=719&attribute_amount=1">Yes, process my test urgently</a>
+        <a href="<?php echo  $cart_url; ?>?add-to-cart=574&variation_id=719&attribute_amount=1">Yes, process my test urgently</a>
       <?php } ?>
       
       <?php if($how_many_tests_in_cart > 1) { ?>
@@ -91,15 +92,15 @@ else if(isset($_GET['removed_item']) && $_GET['removed_item'] == '1') {
         </div>
       
       <?php if($how_many_tests_in_cart == 2) { ?>
-        <a href="/cart/?add-to-cart=574&variation_id=720&attribute_amount=2">Yes, process my test urgently</a>
+        <a href="<?php echo  $cart_url; ?>?add-to-cart=574&variation_id=720&attribute_amount=2">Yes, process my test urgently</a>
       <?php } ?>
       
       <?php if($how_many_tests_in_cart == 3) { ?>
-        <a href="/cart/?add-to-cart=574&variation_id=721&attribute_amount=3">Yes, process my test urgently</a>
+        <a href="<?php echo  $cart_url; ?>?add-to-cart=574&variation_id=721&attribute_amount=3">Yes, process my test urgently</a>
       <?php } ?>
       
       <?php if($how_many_tests_in_cart == 4) { ?>
-        <a href="/cart/?add-to-cart=574&variation_id=722&attribute_amount=4">Yes, process my test urgently</a>
+        <a href="<?php echo  $cart_url; ?>?add-to-cart=574&variation_id=722&attribute_amount=4">Yes, process my test urgently</a>
       <?php } ?> 
     </div>
     <?php } // end if($items_in_cart > 0) ?>
