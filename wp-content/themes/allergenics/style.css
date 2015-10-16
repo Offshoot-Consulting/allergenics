@@ -2691,10 +2691,7 @@ body .form-section .ginput_container img.ui-datepicker-trigger {
     border: 1px solid #e4e4e4;
     border-radius: 3px;
     float: left;
-    margin-left: 118px;
-    max-width: 460px;
     padding: 25px;
-    width: 100%;
 }
 
 .urgent-box h3 {
@@ -2713,7 +2710,7 @@ body .form-section .ginput_container img.ui-datepicker-trigger {
 .urgent-box a.tell-me-more {
     background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
     color: #329c87;
-    display: inline;
+    display: flex;
     font-size: 14px;
     font-weight: normal;
     padding: 0;
@@ -2924,20 +2921,10 @@ outline: none }
 	}
 	.carousel-block .carousel .btn-next {
 		right: 5px;
-	}	
+	}
 }
-
-
-@media all and (max-width: 1025px) {
-
-.urgent-box {
- margin-left:0}
-
-}
-
 @media all and (max-width: 991px) {
-	
-  #header .holder {
+	#header .holder {
 		padding: 25px 15px 15px;
 		min-height: 1px;
 	}
@@ -3218,12 +3205,6 @@ outline: none }
     text-align: left;
     width: 100%;
 }
-
-.urgent-box {
- width:100%;
- max-width:100%;
- margin-bottom:20px}
-
 }
 
 
@@ -3803,9 +3784,6 @@ a.wpmenucart-contents:hover { background: none !important; }
 .woocommerce table.shop_table.cart, .woocommerce table.shop_table.cart th { border: none !important;}
 .shop_table.cart td {
     border: medium none;
-}
-.product-remove {
-    width: 80px !important;
 }
 /* testimonail css */
 .single_prd_testimonial {  clear:both; border-top:1px solid #ccc; }
