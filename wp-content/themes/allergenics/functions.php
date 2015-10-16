@@ -334,7 +334,8 @@ wp_mail( $to, $subject, $message, $headers );
 
 }
 
-
+/*Something below is breaking the  fly to cart plugin*/
+/*
 function remove_loop_button(){
 remove_all_actions('wp_ajax_nopriv_orak_add_to_cart');
     remove_all_actions('wp_ajax_orak_add_to_cart');
@@ -344,7 +345,7 @@ add_action('init','remove_loop_button');
 add_action('wp_ajax_orak_add_to_cart_fly',  'addToCartFly',10 );
 		add_action('wp_ajax_nopriv_orak_add_to_cart_fly', 'addToCartFly',10 );
     
-	
+*/	
 
 		
 function addToCartFly() {
