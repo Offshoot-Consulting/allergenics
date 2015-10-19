@@ -3148,11 +3148,11 @@ padding:0}
 	h1 {
 		font-size: 26px;
 	}
-	#header .logo {
-		width: 248px;
-		margin: 0 auto 10px;
-		float: none;
-	}
+#header .logo {
+    float: none;
+    margin: 0;
+    width: 248px;
+}
 	#header .slogan {
 		padding: 8px 0;
 	}
