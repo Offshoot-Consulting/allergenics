@@ -1812,7 +1812,7 @@ p.form-submit input#submit:hover {
 #blog_banner .banner-left {
     float: left;
     margin-right: 20px;
-    width: calc(100% - 226px);
+    width: calc(100% - 263px);
 }
 
 #blog_banner a {
@@ -3233,6 +3233,20 @@ outline: none }
  width:100%;
  max-width:100%;
  margin-bottom:20px}
+ 
+#blog_banner .banner-left {
+    float: none;
+    margin-right: 0;
+    width: 100%;
+}
+
+#blog_banner p {
+    margin-bottom: 10px;
+    padding-left: 70px;
+}
+
+#blog_banner a {
+ margin-left:70px}
 
 }
 
@@ -3291,6 +3305,19 @@ outline: none }
     float: left;
     width: 26%;
 }
+
+}
+
+
+@media all and (max-width:380px) {
+
+#blog_banner { text-align:center }
+
+#blog_banner .banner-image { display:none }
+
+#blog_banner a { margin-left:0 }
+
+#blog_banner p { padding-left:0}
 
 }
 

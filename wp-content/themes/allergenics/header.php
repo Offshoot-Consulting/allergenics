@@ -69,7 +69,7 @@ jQuery(document).ready(function(){
 <!-- SMOOTH SCROLL -->
 <script type="text/javascript">
 jQuery(document).ready(function(){
-  alert('single blog page');
+  //alert('single blog page');
   jQuery('a[href*=#]:not([href=#])').click(function() {
       if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
           || location.hostname == this.hostname) {
