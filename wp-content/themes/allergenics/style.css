@@ -3971,4 +3971,6 @@ a.wpmenucart-contents:hover { background: none !important; }
   .related.products ul.products li.product .button {
     margin-bottom: 18px;
 }
-.slick-initialized .slick-slide { outline: 0px !important;}
+.related.products span.amount {
+    font-size: 10px;
+}
