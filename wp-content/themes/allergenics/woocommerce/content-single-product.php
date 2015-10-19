@@ -157,10 +157,19 @@ wp_reset_postdata();?>
 
 		<script type="text/javascript">
 		jQuery('.multiple-items').slick({
-  infinite: true,
-  slidesToShow: 2,
-  slidesToScroll: 2,
-  autoplay: true,
-  autoplaySpeed: 2000
-});
-</script>
+      infinite: true,
+      slidesToShow: 2,
+      slidesToScroll: 2,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      responsive: [ 
+            {
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+              }
+            }
+          ]
+    });
+    </script>

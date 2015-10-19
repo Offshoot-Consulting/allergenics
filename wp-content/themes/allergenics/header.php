@@ -40,15 +40,9 @@ jQuery(document).ready(function(){
         jQuery("#hidden-search").toggle();
         jQuery("#hidden-search input[type=search]").focus();
     });
-    jQuery(".searcher").click(function(event){
+    jQuery(".carter").click(function(event){
         event.preventDefault();
         jQuery("#hidden-search").toggle();
-        jQuery("#hidden-search input[type=search]").focus();
-    });
-    jQuery("li#menu-item-470 a").click(function(event){
-        event.preventDefault();
-        jQuery("#hidden-search").toggle();
-        jQuery("#hidden-search input[type=search]").focus();
     });
     
     // SUBMIT FORM ON ENTER
@@ -111,18 +105,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 	
 
-        <div id="wrapper" <?php if ( is_page() || !is_active_sidebar( 'default-sidebar' )) echo 'class="full-width"'; ?>>
-<div class="top-header">
-	<div class="header-wrapper">
-    	
-        
-        <div class="right-section">
-      	<?php wp_nav_menu( array('menu' => 'top-head-menu', 'menu_class' => 'top-menu-right' )); ?>
-        <div class="product_search"><?php get_product_search_form(); ?></div>
-       
-        </div>
+<div id="wrapper" <?php if ( is_page() || !is_active_sidebar( 'default-sidebar' )) echo 'class="full-width"'; ?>>
+    
+    <div class="top-header">
+    	<div class="header-wrapper">
+         <div class="right-section">
+          	<?php wp_nav_menu( array('menu' => 'top-head-menu', 'menu_class' => 'top-menu-right' )); ?>
+            <div class="product_search"><?php get_product_search_form(); ?></div>
+          </div>
+       </div>
     </div>
-</div>
+    
             <header id="header">
                 <div class="holder">
                     <div class="logo"><a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="<?php echo bloginfo( 'name' ); ?>"></a></div>
@@ -135,7 +128,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
                         <nav id="main-nav">
                             <a href="#" class="opener"><span><?php _e( 'Menu', 'allergenics' ); ?></span></a>
-                            <a href="#" class="searcher"><span><?php _e( 'Search', 'allergenics' ); ?></span></a>
+                            <a href="#" class="carter"><span><?php _e( 'Cart', 'allergenics' ); ?></span></a>
 
                             <?php wp_nav_menu( array(
                                     'container_class' => 'drop header_menu',
@@ -145,7 +138,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                     )); ?>
                                     
                             <div class="hidden-search" id="hidden-search" style="display:none">
-                               <?php get_search_form(); ?>
+                               <?php woocommerce_mini_cart(); ?>
                             </div>
 
                         </nav>
