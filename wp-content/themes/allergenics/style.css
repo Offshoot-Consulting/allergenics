@@ -2734,11 +2734,12 @@ body .form-section .ginput_container img.ui-datepicker-trigger {
     color: #fff;
     font-size: 15px;
     font-weight: 600;
-    padding: 3px 20px 4px;
+    letter-spacing: 0;
+    padding: 3px 10px 4px;
     position: relative;
     text-align: center;
     text-decoration: none;
-    text-transform: uppercase;
+    text-transform: none;
     transition: background 0.3s ease 0s;
 }
 
