@@ -3983,3 +3983,8 @@ a.wpmenucart-contents:hover { background: none !important; }
 #main-nav ul a.wpmenucart-contents:hover {
     border: 1px solid #00263c;
 }
+
+/* border bottom */
+.cart_item:last-child td {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
