@@ -38,6 +38,9 @@ if ( $order ) : ?>
 	<?php else : ?>
 
 		<p class="order-main-text"><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', __( 'Thank you. Your order has been received.', 'woocommerce' ), $order ); ?></p>
+		
+		<p class="important-info"><b>PLEASE NOTE: </b>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et. 
+    <a href="https://allergenics.typeform.com/to/AMcjtq?wcuserid=<?php echo $order->billing_email; ?>&orderid=<?php echo $order->get_order_number(); ?>"> Click here to fill the test </a></p>
 
 		<ul class="order_details">
 			<li class="order">
@@ -84,12 +87,12 @@ if ( $order ) : ?>
 <div class="order-right">
 
   <div class="whats-next">
-    <h3>Whats next?</h3>
+    <h3>Important Notice!</h3>
     <div class="whats-next-step step01">
-      <p>You need to fill in our customer information form</p>
-      <a href="">Click here</a>
+      <p>You need to fill in our customer information form</p>
+      <a href="https://allergenics.typeform.com/to/AMcjtq?wcuserid=<?php echo $order->billing_email; ?>&orderid=<?php echo $order->get_order_number(); ?>">Click here</a>
     </div>   
-    <div class="whats-next-step step01">
+    <div class="whats-next-step step02">
       <p>Send us your hair sample</p>
       <a href="">More info</a>
     </div>

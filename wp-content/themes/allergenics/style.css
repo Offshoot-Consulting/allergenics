@@ -323,10 +323,14 @@ i,
 cite,
 em,
 var,
-dfn,
-address {
+dfn {
 	font-style: italic;
+} 
+
+.edytas-tables > address {
+    font-style: normal;
 }
+
 u,
 ins {
 	text-decoration: underline;
@@ -2886,12 +2890,17 @@ ul.order_details li {
     -moz-border-left-colors: none;
     -moz-border-right-colors: none;
     -moz-border-top-colors: none;
-    background: #f1f2f2 none repeat scroll 0 0;
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
     border-bottom: 1px dashed #d3ced2;
     border-image: none;
     border-left: medium none;
     border-right: 1px dashed #d3ced2;
     border-top: medium none !important;
+    width: 155px;
+}
+
+.edytas-tables .order_details tr:nth-of-type(2) {
+display:none
 }
 
 .order-left {
@@ -2902,6 +2911,92 @@ ul.order_details li {
  width:32%;
  float:right;
  margin-left:3%}
+ 
+.whats-next {
+    background: #eaf7f3 none repeat scroll 0 0;
+    border: 1px solid #e4e4e4;
+    border-radius: 3px;
+    margin-top: 41px;
+    padding: 15px 20px 20px;
+}
+
+.whats-next h3 {
+    background: rgba(0, 0, 0, 0) url("images/picon8.png") no-repeat scroll 10px 0;
+    border-bottom: 1px dashed;
+    display: block;
+    font-size: 22px;
+    height: 47px;
+    padding-bottom: 47px;
+    padding-left: 60px;
+}
+
+.whats-next .whats-next-step {}
+
+.whats-next .whats-next-step p {
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding-left: 60px;
+}
+
+.whats-next .step01 a {
+    background: #f1632a none repeat scroll 0 0;
+    border-radius: 3px;
+    color: white;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 500;
+    margin-left: 60px;
+    padding: 6px 30px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.3s ease
+}
+
+.whats-next .step01 a:hover {
+ background: #DA490E}
+
+.whats-next .step02 a {
+    display: block;
+    margin-left: 60px;
+    margin-top: -10px;
+    padding-bottom: 10px;
+}
+
+.whats-next .step01 {
+    background: rgba(0, 0, 0, 0) url("images/picon5.png") no-repeat scroll 10px 0;
+    margin-bottom: 22px;
+}
+
+.whats-next .step02 {
+    background: rgba(0, 0, 0, 0) url("images/picon6.png") no-repeat scroll 10px 0;
+}
+
+.what-to-expect {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: 1px dashed #d3ced2;
+    margin-top: 30px;
+    padding: 20px 20px 0;
+}
+
+.what-to-expect h3 {
+    color: #00263c;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.what-to-expect p {}
+
+.important-info {
+    background: #eaf7f3 url("images/picon8.png") no-repeat scroll 13px 13px;
+    border: 1px solid #e4e4e4;
+    border-radius: 3px;
+    padding: 12px 13px 13px 61px;
+}
+
+.important-info a {
+    color: #f1632a;
+    font-weight: bold;
+}
 
 
 /*ADDED TO STOP SCROLLING TO TOP*/
@@ -3220,7 +3315,7 @@ padding:0}
  visibility:hidden}
 .desktopview {
  display:block;
- visibility:visible}
+ visibility:visible}   
 }
 
 
@@ -3345,6 +3440,21 @@ padding:0}
     margin: 0 0 10px;
     padding: 0 0 10px;
 }
+
+.edytas-tables .customer_details tr th {
+ display:table-cell !important}
+ 
+.order-left {
+    float: none;
+    width: 100%;
+} 
+
+.order-right {
+    float: none;
+    margin-left: 0;
+    width: 100%;
+}
+
 }
 @media only screen and (max-width: 767px) {
 	.commentlist-item .commentlist-item {
