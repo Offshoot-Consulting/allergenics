@@ -13,6 +13,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( $order ) : ?>
 
+<div class="clearfix">
+
+<div class="order-left">
+
 	<?php if ( $order->has_status( 'failed' ) ) : ?>
 
 		<p><?php _e( 'Unfortunately your order cannot be processed as the originating bank/merchant has declined your transaction.', 'woocommerce' ); ?></p>
@@ -33,24 +37,28 @@ if ( $order ) : ?>
 
 	<?php else : ?>
 
-		<p><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', __( 'Thank you. Your order has been received.', 'woocommerce' ), $order ); ?></p>
+		<p class="order-main-text"><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', __( 'Thank you. Your order has been received.', 'woocommerce' ), $order ); ?></p>
 
 		<ul class="order_details">
 			<li class="order">
-				<?php _e( 'Order Number:', 'woocommerce' ); ?>
+				<img src="<?php bloginfo('template_url'); ?>/images/icon1.png" /><br />
+        <?php _e( 'Order Number:', 'woocommerce' ); ?>
 				<strong><?php echo $order->get_order_number(); ?></strong>
 			</li>
 			<li class="date">
-				<?php _e( 'Date:', 'woocommerce' ); ?>
+				<img src="<?php bloginfo('template_url'); ?>/images/icon2.png" /><br />
+        <?php _e( 'Date:', 'woocommerce' ); ?>
 				<strong><?php echo date_i18n( get_option( 'date_format' ), strtotime( $order->order_date ) ); ?></strong>
 			</li>
 			<li class="total">
-				<?php _e( 'Total:', 'woocommerce' ); ?>
+				<img src="<?php bloginfo('template_url'); ?>/images/icon3.png" /><br />
+        <?php _e( 'Total:', 'woocommerce' ); ?>
 				<strong><?php echo $order->get_formatted_order_total(); ?></strong>
 			</li>
 			<?php if ( $order->payment_method_title ) : ?>
 			<li class="method">
-				<?php _e( 'Payment Method:', 'woocommerce' ); ?>
+				<img src="<?php bloginfo('template_url'); ?>/images/icon4.png" /><br />
+        <?php _e( 'Payment Method:', 'woocommerce' ); ?>
 				<strong><?php echo $order->payment_method_title; ?></strong>
 			</li>
 			<?php endif; ?>
@@ -59,11 +67,40 @@ if ( $order ) : ?>
 
 	<?php endif; ?>
 
-	<?php do_action( 'woocommerce_thankyou_' . $order->payment_method, $order->id ); ?>
-	<?php do_action( 'woocommerce_thankyou', $order->id ); ?>
+	<?php //do_action( 'woocommerce_thankyou_' . $order->payment_method, $order->id ); ?>
+	
+  <div class="edytas-tables">
+  <?php do_action( 'woocommerce_thankyou', $order->id ); ?>
+  </div>
 
 <?php else : ?>
 
 	<p><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', __( 'Thank you. Your order has been received.', 'woocommerce' ), null ); ?></p>
 
 <?php endif; ?>
+
+</div>
+
+<div class="order-right">
+
+  <div class="whats-next">
+    <h3>Whats next?</h3>
+    <div class="whats-next-step step01">
+      <p>You need to fill in our customer information form</p>
+      <a href="">Click here</a>
+    </div>   
+    <div class="whats-next-step step01">
+      <p>Send us your hair sample</p>
+      <a href="">More info</a>
+    </div>
+  </div>
+  
+  <div class="what-to-expect">
+    <h3>What to expect...</h3>
+    <p>Lorem ipsum dolor sit amet, eleifend nunc at at facilisi dui, adipiscing vestibulum eget porttitor elit id vel, justo odio eros at ante id interdum, dignissim sed dolor eu... </p>
+    <p>You'll receive an email with report, it may contain a prescription etc...</p>
+  </div>
+
+</div>
+
+</div>

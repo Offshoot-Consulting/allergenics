@@ -2818,6 +2818,91 @@ background:#00263C
   border-top: #eeeeee solid 1px;
   text-align: right;
 }
+
+/*  thank you page style */
+
+p.order-main-text {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: -10px;
+}
+
+ul.order_details {
+padding-left:0}
+
+ul.order_details li {
+    background: #f1f2f2 none repeat scroll 0 0;
+    list-style-type: none;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-bottom: 20px;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-top: 20px;
+    text-align: center;
+    width: 25%;
+}
+
+.edytas-tables {}
+
+.edytas-tables .shop_table { border:none !important }
+
+.edytas-tables .shop_table thead tr th {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: #f1f2f2 none repeat scroll 0 0;
+    border-color: -moz-use-text-color -moz-use-text-color #d3ced2;
+    border-image: none;
+    border-style: none none dashed;
+    border-width: medium medium 1px;
+}
+
+
+.edytas-tables .shop_table tbody tr td,
+.edytas-tables .shop_table tfoot tr td,
+.edytas-tables .shop_table tfoot tr th {
+ border:none;
+ border-bottom:1px dashed #d3ced2}
+ 
+.edytas-tables .shop_table thead tr th:first-child,
+.edytas-tables .shop_table tbody tr td:first-child,
+.edytas-tables .shop_table tfoot tr td:first-child,
+.edytas-tables .shop_table tfoot tr th {
+ border-right:1px dashed #d3ced2 }
+ 
+.edytas-tables .shop_table tfoot tr th {
+    text-align: right !important;
+}
+
+.edytas-tables .customer_details {
+    border-top: 1px dashed #d3ced2 !important;
+}
+
+.edytas-tables .customer_details tr th {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: #f1f2f2 none repeat scroll 0 0;
+    border-bottom: 1px dashed #d3ced2;
+    border-image: none;
+    border-left: medium none;
+    border-right: 1px dashed #d3ced2;
+    border-top: medium none !important;
+}
+
+.order-left {
+ width:65%;
+ float:left}
+ 
+.order-right {
+ width:32%;
+ float:right;
+ margin-left:3%}
+
+
 /*ADDED TO STOP SCROLLING TO TOP*/
 #close {
   display: none;
