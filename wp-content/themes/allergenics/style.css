@@ -3974,3 +3974,8 @@ a.wpmenucart-contents:hover { background: none !important; }
 .related.products span.amount {
     font-size: 10px;
 }
+
+/* mini cart hover styleing */
+#main-nav ul a.wpmenucart-contents:hover {
+    border: 1px solid #00263c;
+}
