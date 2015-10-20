@@ -3695,6 +3695,10 @@ small.includes_tax { display:none; }
 .hit_me {
     position: relative;
 }
+
+.hit_me input#s {
+ display:none}
+
 #searchgly {
     background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
     border: 0 none;
