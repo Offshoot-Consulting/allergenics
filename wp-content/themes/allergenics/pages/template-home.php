@@ -284,29 +284,38 @@ get_header(); ?>
             <section class="carousel-block">
                 <div class="container">
                     <?php if ( $faqs_heading ) echo '<h2>'. $faqs_heading .'</h2>'; ?>
-                    <?php if ( have_rows( 'faqs' )) : ?>
+                    <?php //if ( have_rows( 'faqs' )) : ?>
+					<?php $args = array(
+	'posts_per_page'   => 5,
+	'offset'           => 0,
+	'orderby'          => 'ID',
+	'order'            => 'DESC',
+	'post_type'        => 'testimonial',
+	'post_status'      => 'publish',
+	
+);
+$testimonials = get_posts( $args ); ?>
+
                         <div class="carousel">
                             <div class="mask">
                                 <div class="slideset">
-                                    <?php while ( have_rows( 'faqs' )) : the_row(); ?>
-                                        <?php $quotes = get_sub_field( 'quotes' ); ?>
-                                        <?php $author = get_sub_field( 'author' ); ?>
-                                        <?php if ( $quotes || $author ) : ?>
+                                   					<?php foreach ( $testimonials as $testimonial ) { ?>
                                             <div class="slide">
                                                 <blockquote>
-                                                    <?php if ( $quotes ) echo '<q>'. $quotes .'</q>'; ?>
-                                                    <?php if ( $author ) echo '<cite>– '. $author .'</cite>'; ?>
+                                                    <?php  echo '<q>'. $testimonial->post_content .'</q>'; ?>
+                                                    <?php  echo '<cite>– '. get_post_meta($testimonial->ID,'_ikcf_client',true) .'</cite>'; ?>
                                                 </blockquote>
                                             </div>
-                                        <?php endif; ?>
-                                    <?php endwhile; ?>
+											
+                                      <?php } wp_reset_postdata();?>
                                 </div>
                             </div>
                             <a class="btn-prev" href="#"><span class="icon-btn-left"></span></a>
                             <a class="btn-next" href="#"><span class="icon-btn-right"></span></a>
                         </div>
+						
                         <p><a href="/testimonials/"><?php echo __( 'Read More', 'allergenics' ) ?></a></p>
-                    <?php endif; ?>
+                    <?php //endif; ?>
                 </div>
             </section>
             
