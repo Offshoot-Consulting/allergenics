@@ -3840,7 +3840,7 @@ display: none;
     border: 1px solid #ddd;
     font-size: 14px;
     padding: 4px 10px;
-    width: calc(100% - 143px);
+    /*width: calc(100% - 143px);*/
 }
 /*.woocommerce table.shop_table { border:none !important; }
 .woocommerce-cart table.cart td, .woocommerce-cart table.cart th { border-left:none !important;border-right:none !important;border-top:none !important;  }*/
