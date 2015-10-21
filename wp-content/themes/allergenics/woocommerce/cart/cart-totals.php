@@ -67,13 +67,13 @@ else if(isset($_GET['removed_item']) && $_GET['removed_item'] == '1') {
     <div class="urgent-box">
       <?php if($how_many_tests_in_cart == 1) { ?>
         <h3>Need your results faster? </h3>
-        <p>Add urgent processing to your order for just $20 per test, and get your results in just 3-5 working days. <a class="tell-me-more" href="#modal-one">Tell me more</a></p>
+        <p>Add urgent processing to your order for just $20 per test, and get your results in just 5-7 working days. <a class="tell-me-more" href="#modal-one">Tell me more</a></p>
         <a href="<?php echo  $cart_url; ?>?add-to-cart=574&variation_id=719&attribute_amount=1">Yes process my tests urgently</a>
       <?php } ?>
       
       <?php if($how_many_tests_in_cart > 1) { ?>
         <h3>Need quicker results?</h3>
-        <p>Add urgent processing to your order for just $20 per test, and get your results in just 3-5 working days. <a class="tell-me-more" href="#modal-one">Tell me more</a></p>
+        <p>Add urgent processing to your order for just $20 per test, and get your results in just 5-7 working days. <a class="tell-me-more" href="#modal-one">Tell me more</a></p>
       <?php } ?>
       
       <div class="modal" id="modal-one" aria-hidden="true">
@@ -83,7 +83,8 @@ else if(isset($_GET['removed_item']) && $_GET['removed_item'] == '1') {
             <a href="#close" class="btn-close" aria-hidden="true">&#10006;</a> <!--CHANGED TO "#close"-->
           </div>
           <div class="modal-body">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Our standard processing time is 14 days. You can select to have your order processed within 7 days by selecting the Urgent processing option.</p>
+<p>Please note the processing time starts from the date we receive your hair sample, and not the date you place the order online. We will send you an email to let you know when we have received your sample.</p>
           </div>
           <div class="modal-footer">
             <a href="#close" class="btn">OK!</a>  <!--CHANGED TO "#close"-->

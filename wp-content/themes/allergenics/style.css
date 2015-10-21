@@ -3155,13 +3155,16 @@ padding:0}
     background: #329c87 none repeat scroll 0 0;
     border-radius: 3px;
     color: white;
-    padding: 10px 14px;
+    float: right;
+    margin-bottom: 22px;
+    padding: 5px 14px;
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
     transition: all 0.3s ease 0s;
-    width: 100%;
+    width: 150px;
 }
+
 #hidden-search p.buttons a:hover {
  background:#00263C}
 
