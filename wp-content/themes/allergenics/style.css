@@ -3842,6 +3842,29 @@ display: none;
     padding: 4px 10px;
     width: calc(100% - 145px);
 }
+
+#payment p.terms {
+    padding: 20px !important;
+}
+
+#payment p.terms label {
+    padding-right: 10px;
+}
+
+#payment p.terms input {
+    margin-top: 0;
+}
+
+label[for="ali_payfusion-card-saved"] {
+    display: inline-block !important;
+    margin-top: -13px !important;
+}
+
+input#ali_payfusion-card-saved {
+    float: left;
+    margin-right: 11px !important;
+}
+
 /*.woocommerce table.shop_table { border:none !important; }
 .woocommerce-cart table.cart td, .woocommerce-cart table.cart th { border-left:none !important;border-right:none !important;border-top:none !important;  }*/
 .woocommerce-cart table.cart th:nth-of-type(3) { text-align:left; }
