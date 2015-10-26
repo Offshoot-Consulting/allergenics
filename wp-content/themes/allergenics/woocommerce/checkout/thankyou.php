@@ -41,7 +41,8 @@ if ( $order ) : ?>
 	 <div class="order-header">
 	   <p class="order-main-text"><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', __( 'Thank you. Your order has been received.', 'woocommerce' ), $order ); ?></p>
 	 </div>
-   <div class="order-left">    
+   <div class="order-left"> 
+     <h3>What's next?</h3>   
 	   <div class="whats-next">
         <div class="whats-next-step step01">
           <p>You need to fill in our customer information form</p>
@@ -56,7 +57,7 @@ if ( $order ) : ?>
 	 <div class="order-right">
 	   <h3>What to expect...</h3>
         <p>Lorem ipsum dolor sit amet, eleifend nunc at at facilisi dui, adipiscing vestibulum eget porttitor elit id vel, justo odio eros at ante id interdum, dignissim sed dolor eu... </p>
-        <p>You'll receive an email with report, it may contain a prescription etc...</p>
+        <p style="margin-bottom:0">You'll receive an email with report, it may contain a prescription etc...</p>
 	 </div>
 	</section>
 	
@@ -102,7 +103,7 @@ if ( $order ) : ?>
 
 	<div class="clear"></div>	
 	
-	<section class="order-two clearfix">
+	<section class="order-three clearfix">
 	 <div class="order-header">
 	   <h3>Customer Details</h3>
 	   <div class="order-left"> 

@@ -43,7 +43,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <?php endif; ?> 
 
 <tr>
-	<th><?php _e( 'Billing Address', 'woocommerce' ); ?></th>
+	<th><?php _e( 'Billing Address:', 'woocommerce' ); ?></th>
 	<td><?php echo ( $address = $order->get_billing_address() ) ? $address : __( 'N/A', 'woocommerce' ); ?></td>
 </tr>
 
@@ -51,7 +51,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <?php if ( ! wc_ship_to_billing_address_only() && $order->needs_shipping_address() ) : ?>
 
 <tr>
-		<th><?php _e( 'Shipping Address', 'woocommerce' ); ?></th>
+		<th><?php _e( 'Shipping Address:', 'woocommerce' ); ?></th>
 		<td><?php echo ( $address = $order->get_shipping_address() ) ? $address : __( 'N/A', 'woocommerce' ); ?></td>
 </tr>
 
