@@ -39,25 +39,25 @@ if ( $order ) : ?>
 	
 	<section class="order-one clearfix">
 	 <div class="order-header">
-	   <p class="order-main-text"><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', __( 'Thank you. Your order has been received.', 'woocommerce' ), $order ); ?></p>
+	   <p class="order-main-text">Thank you for ordering with Allergenics.</p>
 	 </div>
    <div class="order-left"> 
      <h3>What's next?</h3>   
 	   <div class="whats-next">
         <div class="whats-next-step step01">
           <p>You need to fill in our customer information form</p>
-          <a href="https://allergenics.typeform.com/to/AMcjtq?wcuserid=<?php echo $order->billing_email; ?>&orderid=<?php echo $order->get_order_number(); ?>">Click here</a>
+          <a target="_blank" href="https://allergenics.typeform.com/to/AMcjtq?wcuserid=<?php echo $order->billing_email; ?>&orderid=<?php echo $order->get_order_number(); ?>">Click here</a>
         </div>   
         <div class="whats-next-step step02">
           <p>Send us your hair sample</p>
-          <a href="">More info</a>
+          <a target="_blank" href="">More info</a>
         </div>
       </div>
 	 </div>
 	 <div class="order-right">
-	   <h3>What to expect...</h3>
+	   <!--<h3>What to expect...</h3>-->
         <p>Lorem ipsum dolor sit amet, eleifend nunc at at facilisi dui, adipiscing vestibulum eget porttitor elit id vel, justo odio eros at ante id interdum, dignissim sed dolor eu... </p>
-        <p style="margin-bottom:0">You'll receive an email with report, it may contain a prescription etc...</p>
+        <p style="margin-bottom:0">Lorem ipsum dolor sit amet, eleifend nunc at at facilisi dui, adipiscing vestibulum eget porttitor elit id vel, justo odio eros at ante id interdum, dignissim sed dolor eu... </p>
 	 </div>
 	</section>
 	
