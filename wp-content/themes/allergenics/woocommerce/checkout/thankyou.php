@@ -58,7 +58,7 @@ if ( $order ) : ?>
 	   <!--<h3>What to expect...</h3>-->
         <p>Please ensure you complete our customer information form which will give us a better picture of your state of health.</p>
         <p>We can not process your test until the form and hair sample have been received so please complete these steps as soon as you can. We will email you when your hair sample has been received and when your test results are ready.</p>
-		<p style="margin-bottom:0">Please dont hesitate to contact us if you have any questions.</p>
+		<p style="margin-bottom:0">Please don't hesitate to contact us if you have any questions.</p>
 	 </div>
 	</section>
 	
