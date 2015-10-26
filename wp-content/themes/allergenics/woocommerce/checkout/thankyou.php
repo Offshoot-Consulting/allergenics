@@ -13,9 +13,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( $order ) : ?>
 
-<div class="clearfix">
-
-<div class="order-left">
+<section class="order-top">
+  <img src="<?php bloginfo('template_url');?>/images/success-top.jpg" alt="order successful" />
+</section>
 
 	<?php if ( $order->has_status( 'failed' ) ) : ?>
 
@@ -36,13 +36,38 @@ if ( $order ) : ?>
 		</p>
 
 	<?php else : ?>
-
-		<p class="order-main-text"><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', __( 'Thank you. Your order has been received.', 'woocommerce' ), $order ); ?></p>
-		
-		<p class="important-info"><b>PLEASE NOTE: </b>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et. 
-    <a href="https://allergenics.typeform.com/to/AMcjtq?wcuserid=<?php echo $order->billing_email; ?>&orderid=<?php echo $order->get_order_number(); ?>"> Click here to fill the test </a></p>
-
-		<ul class="order_details">
+	
+	<section class="order-one clearfix">
+	 <div class="order-header">
+	   <p class="order-main-text"><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', __( 'Thank you. Your order has been received.', 'woocommerce' ), $order ); ?></p>
+	 </div>
+   <div class="order-left">    
+	   <div class="whats-next">
+        <div class="whats-next-step step01">
+          <p>You need to fill in our customer information form</p>
+          <a href="https://allergenics.typeform.com/to/AMcjtq?wcuserid=<?php echo $order->billing_email; ?>&orderid=<?php echo $order->get_order_number(); ?>">Click here</a>
+        </div>   
+        <div class="whats-next-step step02">
+          <p>Send us your hair sample</p>
+          <a href="">More info</a>
+        </div>
+      </div>
+	 </div>
+	 <div class="order-right">
+	   <h3>What to expect...</h3>
+        <p>Lorem ipsum dolor sit amet, eleifend nunc at at facilisi dui, adipiscing vestibulum eget porttitor elit id vel, justo odio eros at ante id interdum, dignissim sed dolor eu... </p>
+        <p>You'll receive an email with report, it may contain a prescription etc...</p>
+	 </div>
+	</section>
+	
+	<div class="clear"></div>
+	
+	<section class="order-two clearfix">
+	 <div class="order-header">
+	   <h3>Order Details</h3>
+	 </div>
+	 <div class="order-left"> 
+	   <ul class="order_details">
 			<li class="order">
 				<img src="<?php bloginfo('template_url'); ?>/images/icon1.png" /><br />
         <?php _e( 'Order Number:', 'woocommerce' ); ?>
@@ -66,44 +91,34 @@ if ( $order ) : ?>
 			</li>
 			<?php endif; ?>
 		</ul>
-		<div class="clear"></div>
+	 </div>
+	 <div class="order-right"> 
+  	 <div class="edytas-tables"> 
+      <?php //do_action( 'woocommerce_order_details_table',  ); ?>
+      <?php woocommerce_order_details_table($order->id); ?>
+    </div>
+	 </div>
+	</section>
+
+	<div class="clear"></div>	
+	
+	<section class="order-two clearfix">
+	 <div class="order-header">
+	   <h3>Customer Details</h3>
+	   <div class="order-left"> 
+       <div class="edytas-tables"> 
+        <?php //do_action( 'woocommerce_order_details_table',  ); ?>
+        <?php woocommerce_order_details_table($order->id); ?>
+      </div>
+    </div>
+	 </div>
+	</section>
 
 	<?php endif; ?>
-
 	<?php //do_action( 'woocommerce_thankyou_' . $order->payment_method, $order->id ); ?>
-	
-  <div class="edytas-tables">
-  <?php do_action( 'woocommerce_thankyou', $order->id ); ?>
-  </div>
-
-<?php else : ?>
-
-	<p><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', __( 'Thank you. Your order has been received.', 'woocommerce' ), null ); ?></p>
-
-<?php endif; ?>
-
-</div>
-
-<div class="order-right">
-
-  <div class="whats-next">
-    <h3>Important Notice!</h3>
-    <div class="whats-next-step step01">
-      <p>You need to fill in our customer information form</p>
-      <a href="https://allergenics.typeform.com/to/AMcjtq?wcuserid=<?php echo $order->billing_email; ?>&orderid=<?php echo $order->get_order_number(); ?>">Click here</a>
-    </div>   
-    <div class="whats-next-step step02">
-      <p>Send us your hair sample</p>
-      <a href="">More info</a>
-    </div>
-  </div>
   
-  <div class="what-to-expect">
-    <h3>What to expect...</h3>
-    <p>Lorem ipsum dolor sit amet, eleifend nunc at at facilisi dui, adipiscing vestibulum eget porttitor elit id vel, justo odio eros at ante id interdum, dignissim sed dolor eu... </p>
-    <p>You'll receive an email with report, it may contain a prescription etc...</p>
-  </div>
-
-</div>
+<?php else : ?>
+	<p><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', __( 'Thank you. Your order has been received.', 'woocommerce' ), null ); ?></p>
+<?php endif; ?>
 
 </div>

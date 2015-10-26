@@ -2826,6 +2826,31 @@ background:#00263C
 
 /*  thank you page style */
 
+.woocommerce-order-received div.title {
+ display:none}
+ 
+.woocommerce-order-received  #content {
+  padding-top:0}
+
+.order-top, 
+.order-one,
+.order-two {
+ margin-bottom:30px;
+ clear:both}
+ 
+.order-two {
+    background: #f1f2f2 none repeat scroll 0 0;
+    padding: 30px;
+}
+
+.order-two .customer_details {
+ display:none}
+ 
+.order-two .order-right h2,
+.order-two .order-right h3 {
+ display:none}
+
+
 p.order-main-text {
     font-size: 20px;
     font-weight: 600;
@@ -2899,26 +2924,25 @@ ul.order_details li {
     width: 155px;
 }
 
-.edytas-tables .order_details tr:nth-of-type(2) {
+.edytas-tables .order_details tr:nth-of-type(3) {
 display:none
-}
+} 
 
 .order-left {
- width:65%;
- float:left}
+ width:49%;
+ float:left;
+ margin-right:1%}
  
 .order-right {
- width:32%;
+ width:49%;
  float:right;
- margin-left:3%}
+ margin-left:1%}
  
-.whats-next {
-    background: #eaf7f3 none repeat scroll 0 0;
-    border: 1px solid #e4e4e4;
-    border-radius: 3px;
-    margin-top: 41px;
-    padding: 15px 20px 20px;
-}
+.order-one .order-left,
+.order-one order-left  {}
+
+.order-two .order-left,
+.order-two order-left  {}
 
 .whats-next h3 {
     background: rgba(0, 0, 0, 0) url("images/picon8.png") no-repeat scroll 10px 0;
