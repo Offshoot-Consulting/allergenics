@@ -45,19 +45,20 @@ if ( $order ) : ?>
      <h3>What's next?</h3>   
 	   <div class="whats-next">
         <div class="whats-next-step step01">
-          <p>You need to fill in our customer information form</p>
+          <p>We need you to fill in our customer information form.</p>
           <a target="_blank" href="https://allergenics.typeform.com/to/AMcjtq?wcuserid=<?php echo $order->billing_email; ?>&orderid=<?php echo $order->get_order_number(); ?>">Click here</a>
         </div>   
         <div class="whats-next-step step02">
           <p>Send us your hair sample</p>
-          <a target="_blank" href="">More info</a>
+          <a target="_blank" href="/faqs">more info</a>
         </div>
       </div>
 	 </div>
 	 <div class="order-right">
 	   <!--<h3>What to expect...</h3>-->
-        <p>Lorem ipsum dolor sit amet, eleifend nunc at at facilisi dui, adipiscing vestibulum eget porttitor elit id vel, justo odio eros at ante id interdum, dignissim sed dolor eu... </p>
-        <p style="margin-bottom:0">Lorem ipsum dolor sit amet, eleifend nunc at at facilisi dui, adipiscing vestibulum eget porttitor elit id vel, justo odio eros at ante id interdum, dignissim sed dolor eu... </p>
+        <p>Please ensure you complete our customer information form which will give us a better picture of your state of health.</p>
+        <p>We can not process your test until the form and hair sample have been received so please complete these steps as soon as you can. We will email you when your hair sample has been received and when your test results are ready.</p>
+		<p style="margin-bottom:0">Please dont hesitate to contact us if you have any questions.</p>
 	 </div>
 	</section>
 	
