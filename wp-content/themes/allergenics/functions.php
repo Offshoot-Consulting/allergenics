@@ -521,9 +521,8 @@ $IsUrgent = false;
     $address_line = $order->billing_address_1 . ', ' . $order->billing_address_2;
     $dateofhairsample = date('Y-m-d'); //[current timestamp (should be this format '2015-04-05' . 'T00:00:00')]
     $dateofbirth  = date('Y-m-d h:i:s',time()); //[get from custom order field (should be this format '2015-04-05' . 'T00:00:00')]
-    echo "before";
+    
     include('api/new_soap_submission.php');
-	echo "after";
    
   }
   update_post_meta($order_id,'data_submit','Y');
