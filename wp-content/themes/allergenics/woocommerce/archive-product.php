@@ -44,7 +44,7 @@ get_header('shop'); ?>
                     
         <?php
   if(is_shop()) {
-$product_categories = get_terms( 'product_cat', array('hide_empty' => 0, 'orderby' => 'ASC',  'parent' =>0) );
+$product_categories = get_terms( 'product_cat', array('hide_empty' => 0, 'orderby' => 'ASC',  'parent' =>0, 'exclude' => array(31)) );
 $count = count($product_categories);
 if ( $count > 0 ){
     foreach ( $product_categories as $product_category ) {

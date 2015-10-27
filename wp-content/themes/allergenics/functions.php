@@ -479,7 +479,7 @@ function add_test_into_backend( $order_id ) {
 $IsUrgent = false;
     $order = new WC_Order( $order_id );
     $data_submit = get_post_meta($order_id,'data_submit',true);
-    $data_submit = '';
+    //$data_submit = '';
     if($data_submit != 'Y') {
     $myuser_id = (int)$order->user_id;
     $user_info = get_userdata($myuser_id);
@@ -522,7 +522,7 @@ $IsUrgent = false;
     $dateofhairsample = date('Y-m-d'); //[current timestamp (should be this format '2015-04-05' . 'T00:00:00')]
     $dateofbirth  = date('Y-m-d h:i:s',time()); //[get from custom order field (should be this format '2015-04-05' . 'T00:00:00')]
     
-    include('api/new_soap_submission.php');
+    include('function_includes/api/new_soap_submission.php');
    
   }
   update_post_meta($order_id,'data_submit','Y');
