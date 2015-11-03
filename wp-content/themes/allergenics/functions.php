@@ -425,110 +425,6 @@ function addToCartFly() {
 }
 
 
-function mysite_woocommerce_order_status_completed( $order_id ) {
-$IsUrgent = 'false';
-    $order = new WC_Order( $order_id );
-    
-    $myuser_id = (int)$order->user_id;
-    $user_info = get_userdata($myuser_id);
-    
-    $items = $order->get_items();
-	$products = array();
-    foreach ($items as $item) {
-        
-    	$products[] = $item['product_id'];
-    	
-    }
-	$products = array_unique($products);
-	$del_val = 576;
-	if(($key = array_search($del_val, $products)) !== false) {
-    unset($products[$key]);
-	}
-	$products = array_values($products);
-	$urjent_prd = 574;
-	if(in_array($urjent_prd,$products)) {
-		
-		$IsUrgent = 'true';
-	}
-	if(($key = array_search($urjent_prd, $products)) !== false) {
-    unset($products[$key]);
-	}
-	$products = array_values($products);
-	$prd_array = array('566' => 1,'570' => 2,'568' => 3,'572' => 4);
-	foreach($products as $product) {
-		$product_id =  $prd_array[$product];
-		$first_name = $order->billing_first_name;
-		$last_name = $order->billing_last_name;
-		$phone = $order->billing_phone;
-		$email = $order->billing_email;
-		$postcode = $order->billing_postcode;
-		$suburb = $order->billing_city;
-		$city = $order->billing_state;
-		$address_line = $order->billing_address_1 . ', ' . $order->billing_address_2;
-		$dateofhairsample = date('Y-m-d'); //[current timestamp (should be this format '2015-04-05' . 'T00:00:00')]
-		$dateofbirth  = date('Y-m-d h:i:s',time()); //[get from custom order field (should be this format '2015-04-05' . 'T00:00:00')]
-		
-		include('api/new_soap_submission.php');
-  //  die('here');	
-	}
-}
-//add_action( 'woocommerce_order_status_processing','mysite_woocommerce_order_status_completed' );
-
-
-function add_test_into_backend( $order_id ) {
-$IsUrgent = false;
-    $order = new WC_Order( $order_id );
-    $data_submit = get_post_meta($order_id,'data_submit',true);
-    //$data_submit = '';
-    if($data_submit != 'Y') {
-    $myuser_id = (int)$order->user_id;
-    $user_info = get_userdata($myuser_id);
-    
-    $items = $order->get_items();
-  $products = array();
-    foreach ($items as $item) {
-        
-      $products[] = $item['product_id'];
-      
-    }
-  $products = array_unique($products);
-  $del_val = 576;
-  if(($key = array_search($del_val, $products)) !== false) {
-    unset($products[$key]);
-  }
-  $products = array_values($products);
-  $urjent_prd = 574;
-  if(in_array($urjent_prd,$products)) {
-    
-    $IsUrgent = true;
-  }
-  if(($key = array_search($urjent_prd, $products)) !== false) {
-    unset($products[$key]);
-  }
-  $products = array_values($products);
-  $prd_array = array('566' => 1,'570' => 2,'568' => 3,'572' => 4);
-  $Countries = new  WC_Countries( $order->billing_country );
-    $state = $Countries->states[$order->billing_country][$order->billing_state];
-  foreach($products as $product) {
-    $product_id =  $prd_array[$product];
-    $first_name = $order->billing_first_name;
-    $last_name = $order->billing_last_name;
-    $phone = $order->billing_phone;
-    $email = $order->billing_email;
-    $postcode = $order->billing_postcode;
-    $suburb = $order->billing_city;
-    $city = $state;
-    $address_line = $order->billing_address_1 . ', ' . $order->billing_address_2;
-    $dateofhairsample = date('Y-m-d'); //[current timestamp (should be this format '2015-04-05' . 'T00:00:00')]
-    $dateofbirth  = date('Y-m-d h:i:s',time()); //[get from custom order field (should be this format '2015-04-05' . 'T00:00:00')]
-    
-    include('function_includes/api/new_soap_submission.php');
-   
-  }
-  update_post_meta($order_id,'data_submit','Y');
-}
-}
-
 
 add_action( 'woocommerce_cart_item_removed', 'action_woocommerce_cart_item_removed', 10, 1 );
 
@@ -596,6 +492,120 @@ function refresh_cart_content() {
 
     header("Refresh:0; url=".$cart_url);
     exit;
+
+}
+
+
+
+add_filter('deprecated_constructor_trigger_error', '__return_false');
+
+
+add_action( 'widgets_init', 'theme_slug_widgets_init' );
+function theme_slug_widgets_init() {
+    register_sidebar( array(
+        'name' => __( 'Mini Cart', 'theme-slug' ),
+        'id' => 'mini-cart',
+        'description' => __( 'Widgets in this area will be shown on all posts and pages.', 'theme-slug' ),
+        'before_widget' => '<li id="%1$s" class="widget %2$s">',
+  'after_widget'  => '</li>',
+  'before_title'  => '<h2 class="widgettitle">',
+  'after_title'   => '</h2>',
+    ) );
+}
+
+
+
+add_action('init','remove_cart_ajax');
+
+
+    add_action('wp_ajax_woocommerce_remove_from_cart','removeCartToFly',99999);
+    add_action('wp_ajax_nopriv_woocommerce_remove_from_cart', 'removeCartToFly',99999);
+
+    function removeCartToFly() {
+      global $woocommerce;
+
+    $woocommerce->cart->set_quantity( $_POST['remove_item'], 0 );
+    if( $woocommerce->cart ) {
+    
+    $items_in_cart = $woocommerce->cart->cart_contents_count;
+    $prod_ids_in_cart = array();
+    
+    foreach ( $woocommerce->cart->get_cart() as $cart_item_key => $cart_item ) {
+          $product_id   = apply_filters( 'woocommerce_cart_item_product_id', $cart_item['product_id'], $cart_item, $cart_item_key );
+          array_push($prod_ids_in_cart, $product_id );
+      }
+      
+    $test01 = 0;
+    $test02 = 0;
+    $test03 = 0;
+    $test04 = 0;
+      
+      if(in_array("566", $prod_ids_in_cart)) {
+          $test01 = 1;
+      }
+      if(in_array("568", $prod_ids_in_cart)) {
+          $test02 = 1;
+      }
+      if(in_array("570", $prod_ids_in_cart)) {
+          $test03 = 1;
+      }
+      if(in_array("572", $prod_ids_in_cart)) {
+          $test04 = 1;
+      }
+      
+    $how_many_tests_in_cart = $test01 + $test02 + $test03 + $test04;
+    
+    if (in_array("574", $prod_ids_in_cart)) { 
+    
+    foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) { 
+     if($cart_item['product_id'] == 574 ){
+        $woocommerce->cart->set_quantity( $cart_item_key, 0);
+     }
+    }
+    
+        if($how_many_tests_in_cart == 0) {
+        }
+        if($how_many_tests_in_cart == 1) {
+            $woocommerce->cart->add_to_cart( '574' , '1' , '719' , '1' );
+        }
+        if($how_many_tests_in_cart == 2) {
+            $woocommerce->cart->add_to_cart( '574' , '1' , '720' , '2' );
+        }
+        if($how_many_tests_in_cart == 3) {
+            $woocommerce->cart->add_to_cart( '574' , '1' , '721' , '3' );
+        }
+        if($how_many_tests_in_cart == 4) {
+            $woocommerce->cart->add_to_cart( '574' , '1' , '722' , '4' );
+        }
+    } // end if there is processing in cart
+    
+    
+    
+    } // edn of if woocommerce cart
+
+    $ver = explode(".", WC_VERSION);
+
+    if($ver[0] >= 2 && $ver[1] >= 0 && $ver[2] >= 0) :
+      $wc_ajax = new WC_AJAX();
+      $wc_ajax->get_refreshed_fragments();
+    else :
+      woocommerce_get_refreshed_fragments();
+    endif;
+
+    die();
+    }
+
+
+add_action( 'wp_enqueue_scripts', 'remove_default_stylesheet', 99 );
+
+function remove_default_stylesheet() {
+    
+   
+    wp_deregister_style( 'nw-styles' );
+    wp_dequeue_style( 'nw-styles' );
+
+    wp_register_style( 'new-style', get_stylesheet_directory_uri() . '/css/drop-down-cart.css', false, '1.0.0' ); 
+    wp_enqueue_style( 'new-style' );
 
 }
 
