@@ -17,10 +17,14 @@
                         <?php endif; ?>
                       </div>
                       <div class="footer-column footer-column-02">
-                        <?php dynamic_sidebar( 'footer2-sidebar' ); ?>
+                        <nav class="add-nav">
+                          <?php dynamic_sidebar( 'footer2-sidebar' ); ?>
+                        </nav>
                       </div>
                       <div class="footer-column footer-column-03">
-                        <?php dynamic_sidebar( 'footer3-sidebar' ); ?>
+                        <nav class="add-nav">
+                          <?php dynamic_sidebar( 'footer3-sidebar' ); ?>
+                        </nav>
                       </div>
                     </div>
                 </footer>
