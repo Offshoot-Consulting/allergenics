@@ -68,6 +68,34 @@ function theme_widget_init3() {
 }
 add_action( 'widgets_init', 'theme_widget_init3' );
 
+function theme_widget_init4() {
+	register_sidebar( array(
+		'id'            => 'footer1-sidebar',
+		'name'          => __( 'Footer Column 1', 'allergenics' ),
+		'before_widget' => '<div class="widget %2$s" id="%1$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3>',
+		'after_title'   => '</h3>'
+	) );
+	register_sidebar( array(
+		'id'            => 'footer2-sidebar',
+		'name'          => __( 'Footer Column 2', 'allergenics' ),
+		'before_widget' => '<div class="widget %2$s" id="%1$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3>',
+		'after_title'   => '</h3>'
+	) );
+	register_sidebar( array(
+		'id'            => 'footer3-sidebar',
+		'name'          => __( 'Footer Column 3', 'allergenics' ),
+		'before_widget' => '<div class="widget %2$s" id="%1$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3>',
+		'after_title'   => '</h3>'
+	) );
+}
+add_action( 'widgets_init', 'theme_widget_init4' );
+
 add_theme_support( 'post-thumbnails' );
 set_post_thumbnail_size( 50, 50, true ); // Normal post thumbnails
 add_image_size( 'thumbnail_400x9999', 400, 9999, true );
