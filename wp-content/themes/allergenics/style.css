@@ -2580,11 +2580,18 @@ body .form-section .ginput_container img.ui-datepicker-trigger {
 	margin: 0 0 26px;
 	font-size: 12px;
 }
+
 #footer .contact {
 	float: left;
-	width: 39.3%;
-	padding: 0 15px 0 0;
+	width: 33.3333%;
+	padding:0 3.5% 0 0
 }
+
+#footer .about-us-footer {
+ float:left;
+ width:33.3333%;
+ padding:0 3.5% 0 0}
+
 #footer .contact .title {
 	display: block;
 	font-weight: 400;
@@ -2620,9 +2627,9 @@ body .form-section .ginput_container img.ui-datepicker-trigger {
 }
 #footer .add-nav {
     float: left;
-    margin-right: 3%;
-    padding: 0 6.2% 0 0;
-    width: 31.4%;
+    margin-right: 0;
+    padding: 0;
+    width: 100%;
 }
 #footer .add-nav ul li {
 	list-style: none;
@@ -2653,7 +2660,7 @@ body .form-section .ginput_container img.ui-datepicker-trigger {
 #footer .connect {
     float: left;
     padding: 0;
-    width: 26%;
+    width: 33.3333%;
 }
 #footer .connect h3 {
 	margin: 0 0 13px;
@@ -3513,10 +3520,7 @@ li#wpmenucartli {
 		width: 50%;
 		padding: 0 15px 25px 0;
 	}
-	#footer .add-nav {
-		width: 50%;
-		padding: 0 15px 25px 0;
-	}
+
 	#footer .connect {
 		width: 100%;
 		padding: 0 0 25px;

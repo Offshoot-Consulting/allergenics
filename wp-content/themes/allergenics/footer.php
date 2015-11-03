@@ -8,6 +8,7 @@
                         <?php ///////// Contact Section /////////// ?>
                         <?php if ( $title || $phone || $email || $address )  : ?>
                             <div class="contact">
+                            <h3><?php _e( 'CONTACT', 'allergenics' ); ?></h3>
                                 <address>
                                     <?php if ( $title ) echo '<strong class="title">'. $title .'</strong>'; ?>
                                     <?php if ( $phone || $email )  : ?>
@@ -28,6 +29,8 @@
                             </div>
                         <?php endif; ?>
                         <?php ///////// Menu Section /////////// ?>
+                        <div class="about-us-footer contact">
+                        <h3><?php _e( 'ABOUT US', 'allergenics' ); ?></h3>
                         <?php if( has_nav_menu( 'footer_nav' ) )
                             wp_nav_menu( array(
                                 'container' => 'nav','container_class' => 'add-nav',
@@ -35,6 +38,7 @@
                                 'link_after'      => '<span class="icon-btn-right"></span>',
                                 'items_wrap'     => '<ul>%3$s</ul>'
                                 )); ?>
+                        </div>
                         <?php ///////// Social Links Section /////////// ?>
                         <?php if ( have_rows( 'social_links','option' )) : ?>
                             <div class="connect">
