@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Home Template
+Template Name: Home Template Var A
 */
 get_header(); ?>
 	<section class="visual">
@@ -9,11 +9,19 @@ get_header(); ?>
                 <div class="bg-stretch"><?php echo preg_replace('#(width|height)=\"\d*\"\s#', "", wp_get_attachment_image( get_post_thumbnail_id(),'thumbnail_1600x583') ); ?></div>
             <?php endif; ?>
             <div class="container">
-                <div class="holder-box">
+                <div class="holder-box variation-a">
                     <div class="wrap">
-                        <?php the_title( '<h1>','</h1>' ); ?>
+                        <h1>Intolerance testing for food and environmental elements</h1>
+                        <h2>Allergenics offers accurate and effective hair testing services direct to the public, and to health professionals.</h2>
+                        <h3>Allergenics hair tests are:</h3>
+                        <ul>
+                          <li>non-invasive</li>
+                          <li>simple, reliable & affordable</li>
+                          <li>effective for a wide range of foods, additives and environmental compounds</li>
+                        </ul>
+                        
                         <?php if ( $order_test_link = get_field( 'order_test_link','option' )): ?>
-                            <a href="<?php echo esc_url( $order_test_link ); ?>" class="btn"><?php _e( 'LEARN MORE', 'allergenics' ); ?></a>
+                            <a href="<?php echo esc_url( $order_test_link ); ?>" class="btn">LEARN MORE ABOUT HAIR TESTS</a>
                         <?php endif; ?>
                         <!--
                         <?php if ( $read_more_link = get_field( 'read_more_link' )): ?>

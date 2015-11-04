@@ -1858,6 +1858,61 @@ p.form-submit input#submit:hover {
   background: #eaf7f3 url("images/ban5.png") no-repeat scroll 0 0;
 }
 
+
+/* variations */
+
+.variation-a .wrap {
+    background: rgba(255, 255, 255, 0.45) none repeat scroll 0 0;
+    max-width: 100%;
+    padding: 30px;
+    text-align: left;
+}
+
+.variation-a .wrap .btn {
+    left: 0;
+    margin-bottom: 0 !important;
+    margin-left: 0 !important;
+    position: relative;
+    width: 300px;
+}
+
+.variation-a .wrap h1 {
+    font-size: 28px;
+    font-weight: 500;
+    margin: -10px -9px 13px 0;
+}
+
+.variation-a .wrap h2 {
+    color: #00263c;
+    font-size: 18px;
+    font-weight: 100;
+    line-height: 25px;
+    margin-bottom: 15px;
+}
+
+.variation-a .wrap h3 {
+    color: #00263c;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.variation-a .wrap ul {
+    margin-bottom: 19px;
+    padding-left: 15px;
+}
+
+.variation-a .wrap ul li {
+    font-size: 14px;
+    font-weight: 100;
+}
+
+.holder-box.variation-a {
+    padding: 10px 0;
+    width: 39%;
+}
+
+
 /* hidde little labels */
 .name_first label, 
 .name_last label,
@@ -3205,6 +3260,7 @@ li#menu-item-470 a:hover {
     position: absolute;
     right: 0;
     top: 75px;
+    display:none
 }
 
 
@@ -3431,6 +3487,23 @@ padding:0}
 
 li#wpmenucartli {
  display:none}
+ 
+.variation-a .wrap h1 {
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.variation-a .wrap h2 {
+ font-size:18px}
+ 
+.variation-a .wrap h3,
+.variation-a .wrap ul {
+ display:none}
+ 
+.variation-a .wrap .btn {
+    font-size: 13px;
+    width: auto;
+}
 
 }
 
@@ -3603,6 +3676,13 @@ li#wpmenucartli {
 #footer .add-nav ul li {
 width:100%}
 
+.variation-a .wrap {
+    text-align: center;
+}
+
+.variation-a .wrap h2 {
+ }
+ 
 }
 @media only screen and (max-width: 767px) {
 	.commentlist-item .commentlist-item {
@@ -3656,6 +3736,17 @@ width:100%}
 .subtotal_div .cart_totals {
     float: right;
     width: 50% !important;
+}
+
+.variation-a .wrap .btn {
+    left: auto;
+    margin-left: auto !important;
+    width:300px;
+    font-size:16px
+}
+
+.variation-a .wrap h2 {
+    display: none;
 }
 
 }
