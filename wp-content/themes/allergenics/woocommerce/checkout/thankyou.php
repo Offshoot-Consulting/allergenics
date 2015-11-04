@@ -46,7 +46,7 @@ if ( $order ) : ?>
 	   <div class="whats-next">
         <div class="whats-next-step step01">
           <p>We need you to fill in our customer information form.</p>
-          <a target="_blank" href="https://allergenics.typeform.com/to/AMcjtq?wcuserid=<?php echo $order->billing_email; ?>&orderid=<?php echo $order->get_order_number(); ?>">Click here</a>
+          <a target="_blank" href="https://allergenics.typeform.com/to/AMcjtq?wcuserid=<?php echo get_current_user_id(); ?>&orderid=<?php echo $order->get_order_number(); ?>">Click here</a>
         </div>   
         <div class="whats-next-step step02">
           <p>Send us your hair sample</p>
