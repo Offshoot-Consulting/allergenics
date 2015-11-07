@@ -20,12 +20,12 @@ get_header(); ?>
                           <li>effective for a wide range of foods, additives and environmental compounds</li>
                         </ul>
                         
-                        <?php if ( $order_test_link = get_field( 'order_test_link','option' )): ?>
-                            <a href="<?php echo esc_url( $order_test_link ); ?>" class="btn">LEARN MORE ABOUT HAIR TESTS</a>
+                        <?php if ( $read_more_link = get_field( 'read_more_link' )): ?>
+                            <a href="<?php echo esc_url( $read_more_link ); ?>" class="btn">LEARN MORE ABOUT HAIR TESTS</a>
                         <?php endif; ?>
                         <!--
-                        <?php if ( $read_more_link = get_field( 'read_more_link' )): ?>
-                            <a href="<?php echo esc_url( $read_more_link ); ?>" class="more"><?php _e( 'Learn more and see pricing', 'allergenics' ); ?></a>
+                        <?php if ( $order_test_link = get_field( 'order_test_link' )): ?>
+                            <a href="<?php echo esc_url( $order_test_link ); ?>" class="more"><?php _e( 'Learn more and see pricing', 'allergenics' ); ?></a>
                         <?php endif; ?>
                         -->
                     </div>
@@ -92,13 +92,11 @@ get_header(); ?>
                         </ul>
                     <?php endif; ?>
                     <?php if ( $order_test_link = get_field( 'order_test_link','option' )): ?>
-                        <a href="<?php echo esc_url( $order_test_link ); ?>" class="btn"><?php _e( 'LEARN MORE', 'allergenics' ); ?></a>
+                        <a href="<?php echo esc_url( $order_test_link ); ?>" class="btn"><?php _e( 'CHOOSE YOUR TEST', 'allergenics' ); ?></a>
                     <?php endif; ?>
-                    <!--
-                    <?php if ( $learn_more_link = get_field( 'learn_more_link' )): ?>
-                        <a href="<?php echo esc_url( $learn_more_link ); ?>" class="more"><?php _e( 'Learn more and see pricing', 'allergenics' ); ?></a>
+                    <?php if ( $read_more_link = get_field( 'read_more_link' )): ?>
+                        <a href="<?php echo esc_url( $read_more_link ); ?>" class="more"><?php _e( 'Learn more &raquo;', 'allergenics' ); ?></a>
                     <?php endif; ?>
-                    -->
                 </div>
             </section>  
             <section class="services-block mobileview">
@@ -144,13 +142,11 @@ get_header(); ?>
                         </ul>
                     <?php endif; ?>
                     <?php if ( $order_test_link = get_field( 'order_test_link','option' )): ?>
-                        <a href="<?php echo esc_url( $learn_more_link ); ?>" class="btn"><?php _e( 'LEARN MORE', 'allergenics' ); ?></a>
+                        <a href="<?php echo esc_url( $order_test_link ); ?>" class="btn"><?php _e( 'CHOOSE YOUR TEST', 'allergenics' ); ?></a>
                     <?php endif; ?>
-                    <!--
-                    <?php if ( $learn_more_link = get_field( 'learn_more_link' )): ?>
-                        <a href="<?php echo esc_url( $learn_more_link ); ?>" class="more"><?php _e( 'Learn more and see pricing', 'allergenics' ); ?></a>
+                    <?php if ( $read_more_link = get_field( 'read_more_link' )): ?>
+                        <a href="<?php echo esc_url( $read_more_link ); ?>" class="more"><?php _e( 'Learn more &raquo;', 'allergenics' ); ?></a>
                     <?php endif; ?>
-                    -->
                 </div>
             </section>
         <?php endif; ?>   
@@ -235,7 +231,7 @@ get_header(); ?>
                     <?php while ( $about->have_posts()) : $about->the_post(); ?>
                         <?php the_title( '<h2>','</h2>' ); ?>
                <?php echo apply_filters('the_excerpt',get_the_excerpt())?>
-                        <p><a href="<?php echo get_permalink(); ?>"><?php echo __( 'Read More', 'allergenics' ) ?></a></p>
+                        <p><a href="<?php echo get_permalink(); ?>"><?php echo __( 'Read More &raquo;', 'allergenics' ) ?></a></p>
                     <?php endwhile; ?>
                 <?php wp_reset_postdata(); ?>
               </div>
@@ -294,15 +290,15 @@ get_header(); ?>
                     <?php if ( $faqs_heading ) echo '<h2>'. $faqs_heading .'</h2>'; ?>
                     <?php //if ( have_rows( 'faqs' )) : ?>
 					<?php $args = array(
-	'posts_per_page'   => 5,
-	'offset'           => 0,
-	'orderby'          => 'ID',
-	'order'            => 'DESC',
-	'post_type'        => 'testimonial',
-	'post_status'      => 'publish',
-	
-);
-$testimonials = get_posts( $args ); ?>
+          	'posts_per_page'   => 5,
+          	'offset'           => 0,
+          	'orderby'          => 'ID',
+          	'order'            => 'DESC',
+          	'post_type'        => 'testimonial',
+          	'post_status'      => 'publish',
+          	
+          );
+          $testimonials = get_posts( $args ); ?>
 
                         <div class="carousel">
                             <div class="mask">

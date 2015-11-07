@@ -93,6 +93,14 @@ function theme_widget_init4() {
 		'before_title'  => '<h3>',
 		'after_title'   => '</h3>'
 	) );
+	register_sidebar( array(
+		'id'            => 'learn-more-sidebar',
+		'name'          => __( 'Learn More Sidebar', 'allergenics' ),
+		'before_widget' => '<div class="widget %2$s" id="%1$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3>',
+		'after_title'   => '</h3>'
+	) );
 }
 add_action( 'widgets_init', 'theme_widget_init4' );
 

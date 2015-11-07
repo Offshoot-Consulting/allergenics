@@ -78,7 +78,7 @@ jQuery(document).ready(function(){
 </script>
 
 
-<?php if(is_singular('post')) { ?>
+<?php if( (is_singular('post')) || (is_page('learn-more')) ) { ?>
 <!-- SMOOTH SCROLL -->
 <script type="text/javascript">
 jQuery(document).ready(function(){

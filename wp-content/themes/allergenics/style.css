@@ -176,6 +176,15 @@ section,
 summary {
 	display: block;
 }
+
+hr {
+    border: none;
+    height: 1px;
+    /* Set the hr color */
+    color: #e4e4e4; /* old IE */
+    background-color: #e4e4e4; /* Modern Browsers */
+}
+
 body {
 	color: #00263c;
 	font: 400 16px/1.44 "Open Sans", "Arial", "Helvetica", sans-serif;
@@ -429,6 +438,13 @@ pre {
 	overflow: auto;
 }
 .order_now_element { text-align: center; height: auto; margin: 25px 0px; }
+
+.cont-right .order_now_element {
+    height: auto;
+    margin: 40px 0;
+    text-align: left;
+}
+
 .order_now_element a { padding: 10px; }
 .what_we_gap { margin-top:15px; }
 .widget {
@@ -1463,12 +1479,17 @@ img.avatar {
 }
 
 .widget_categories ul,
-ul#recentcomments  {
+ul#recentcomments,
+ul#menu-learn-more-menu  {
     padding-left: 0;
 }
 
+ul#menu-learn-more-menu {
+ margin-top:69px}
+
 .widget_categories ul li,
-ul#recentcomments li {
+ul#recentcomments li,
+ul#menu-learn-more-menu li {
     border-top: 1px solid #e4e4e4;
     font-size: 14px;
     list-style: outside none none;
@@ -1477,12 +1498,16 @@ ul#recentcomments li {
     color:grey
 }
 
+ul#menu-learn-more-menu li {
+ position:relative}
+
 ul#recentcomments li {
  font-size:13px}
 
 .widget_categories ul li a,
 ul#recentcomments li a,
-.rpwe-block a {
+.rpwe-block a,
+ul#menu-learn-more-menu a {
   text-decoration:none;
   transition: all 0.3s ease 0s;
 }
@@ -1492,11 +1517,13 @@ ul#recentcomments li a,
 
 .widget_categories ul li a:hover,
 ul#recentcomments li a:hover,
-.rpwe-block a:hover {
+.rpwe-block a:hover,
+ul#menu-learn-more-menu a:hover {
  color:#73C7AD}
 
 .widget_categories ul li:last-child,
-ul#recentcomments li:last-child {
+ul#recentcomments li:last-child,
+ul#menu-learn-more-menu li:last-child {
  border-bottom: 1px solid #e4e4e4;}
  
 .widget_categories ul li ul.children li:last-child {
@@ -2724,6 +2751,14 @@ font-style:normal}
 	top: 3px;
 	font-size: 10px;
 }
+
+ul#menu-learn-more-menu li a span {
+	position: absolute;
+	right: 0;
+	top: 17px;
+	font-size: 8px;
+}
+
 #footer .connect {
     float: left;
     padding: 0;
