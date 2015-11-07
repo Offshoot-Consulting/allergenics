@@ -165,6 +165,13 @@ function hook_css() {
 
 	echo $output;
 	}
+	
+	if(is_cart()) {
+
+     $output_cart ="<style> .nw-cart-drop-content { display:none !important; } </style>";
+  }
+ 
+  echo $output_cart;
 
 }
 add_filter( 'woocommerce_billing_fields', 'custom_woocommerce_billing_fields',-1 );
