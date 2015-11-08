@@ -1,4 +1,4 @@
-.nw-drop-cart { position: relative;display: block;min-width: 230px;min-height: 40px; }
+.nw-drop-cart { /* position: relative;display: */ block;min-width: 230px;min-height: 40px; }
 .nw-drop-cart ul { list-style: none;margin:0px; }
 .nw-drop-cart ul li { background: transparent;padding:4px 0;}
 .nw-drop-cart ul li:after { content: "";display: block;clear: both; }

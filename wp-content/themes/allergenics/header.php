@@ -147,8 +147,9 @@ jQuery(document).ready(function(){
                                     'items_wrap'     => '<ul class="parent_menu">%3$s</ul>'
                                     )); ?>
                                     
-                            <div class="hidden-search" id="hidden-search" style="display:none">
-                               <?php woocommerce_mini_cart(); ?>
+                            <div class="hidden-search" id="hidden-search">
+                                <?php dynamic_sidebar( 'mini-cart' ); ?>
+                               <?php //woocommerce_mini_cart(); ?>
                             </div>
 
                         </nav>
