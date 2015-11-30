@@ -138,7 +138,6 @@ jQuery(document).ready(function(){
 
                         <nav id="main-nav">
                             <a href="#" class="opener"><span><?php _e( 'Menu', 'allergenics' ); ?></span></a>
-                            <a href="#" class="carter"><span><?php _e( 'Cart', 'allergenics' ); ?></span></a>
 
                             <?php wp_nav_menu( array(
                                     'container_class' => 'drop header_menu',
@@ -146,11 +145,6 @@ jQuery(document).ready(function(){
 									                   'menu_class' => '',
                                     'items_wrap'     => '<ul class="parent_menu">%3$s</ul>'
                                     )); ?>
-                                    
-                            <div class="hidden-search" id="hidden-search">
-                                <?php dynamic_sidebar( 'mini-cart' ); ?>
-                               <?php //woocommerce_mini_cart(); ?>
-                            </div>
 
                         </nav>
 
