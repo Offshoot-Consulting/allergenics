@@ -26,6 +26,8 @@ $IsUrgent = false;
     if($data_submit != 'Y') {
     $myuser_id = (int)$order->user_id;
     $user_info = get_userdata($myuser_id);
+	 $billing_first_name = get_user_meta( $myuser_id, 'billing_first_name', true );
+    $billing_last_name = get_user_meta( $myuser_id, 'billing_last_name', true );
     
     $items = $order->get_items();
   $products = array();
@@ -54,8 +56,8 @@ $IsUrgent = false;
     $state = $Countries->states[$order->billing_country][$order->billing_state];
   foreach($products as $product) {
     $product_id =  $prd_array[$product];
-    $first_name = $order->billing_first_name;
-    $last_name = $order->billing_last_name;
+    $first_name = $billing_first_name;
+    $last_name = $billing_last_name;
     $phone = $order->billing_phone;
     $email = $order->billing_email;
     $postcode = $order->billing_postcode;
