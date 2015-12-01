@@ -343,14 +343,14 @@ wp_mail( $to, $subject, $message, $headers );
 
 /*Something below is breaking the  fly to cart plugin*/
 
-function remove_loop_button(){
+/*function remove_loop_button(){
 remove_all_actions('wp_ajax_nopriv_orak_add_to_cart');
     remove_all_actions('wp_ajax_orak_add_to_cart');
 }
 add_action('init','remove_loop_button');
 
 add_action('wp_ajax_orak_add_to_cart_fly',  'addToCartFly',10 );
-		add_action('wp_ajax_nopriv_orak_add_to_cart_fly', 'addToCartFly',10 );
+		add_action('wp_ajax_nopriv_orak_add_to_cart_fly', 'addToCartFly',10 );  */
 
 
 		
@@ -615,5 +615,20 @@ function remove_default_stylesheet() {
     wp_enqueue_style( 'new-style' );
 
 }
+
+
+// change add to cart url to /step-01/
+
+function add_special_payment_link( $link ) {
+    global $product;
+    $order_test_link = get_field( 'order_test_link' , 'option' );
+    $link = '<div class="add_to_cart_div"><a class="button add_to_cart_button product_type_simple" rel="nofollow" href="' . $order_test_link . '">Order test now</a></div>'; 
+    return $link;
+}
+
+add_filter( 'add_to_cart_url', 'add_special_payment_link' );
+add_filter( 'woocommerce_loop_add_to_cart_link', 'add_special_payment_link' );
+
+
 
 ?>

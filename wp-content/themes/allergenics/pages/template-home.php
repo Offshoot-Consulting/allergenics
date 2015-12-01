@@ -3,6 +3,10 @@
 Template Name: Home Template
 */
 get_header(); ?>
+
+<?php $learn_more_link = get_field( 'learn_more_link' , 'option' ); ?>
+<?php $order_test_link = get_field( 'order_test_link' , 'option' ); ?>
+
 	<section class="visual">
         <?php while ( have_posts()) : the_post(); ?>
             <?php if ( has_post_thumbnail()) : ?>
@@ -12,14 +16,12 @@ get_header(); ?>
                 <div class="holder-box">
                     <div class="wrap">
                         <?php the_title( '<h1>','</h1>' ); ?>
-                        <?php if ( $read_more_link = get_field( 'read_more_link' )): ?>
-                            <a href="<?php echo esc_url( $read_more_link ); ?>" class="btn"><?php _e( 'LEARN MORE', 'allergenics' ); ?></a>
+                        <?php if ( $order_test_link != ''): ?>
+                            <a href="<?php echo esc_url( $order_test_link ); ?>" class="btn"><?php _e( 'ORDER NOW', 'allergenics' ); ?></a>
                         <?php endif; ?>
-                        <!--
-                        <?php if ( $order_test_link = get_field( 'order_test_link' )): ?>
-                            <a href="<?php echo esc_url( $order_test_link ); ?>" class="more"><?php _e( 'Learn more and see pricing', 'allergenics' ); ?></a>
-                        <?php endif; ?>   
-                        -->
+                        <?php if ( $learn_more_link != '' ): ?>
+                            <a href="<?php echo esc_url( $learn_more_link ); ?>" class="more"><?php _e( 'Learn more &raquo;', 'allergenics' ); ?></a>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>
@@ -34,15 +36,13 @@ get_header(); ?>
                     <?php while ( $pract->have_posts()) : $pract->the_post(); ?>
                         <?php the_title( '<h2>','</h2>' ); ?>
                         <?php echo apply_filters('the_excerpt',get_the_excerpt())?>
-                        <p><a href="<?php echo get_permalink(); ?>"><?php echo __( 'Read More', 'allergenics' ) ?></a></p>
+                        <p><a href="<?php echo esc_url( $learn_more_link ); ?>"><?php echo __( 'Read More', 'allergenics' ) ?></a></p>
                     <?php endwhile; ?>
                 <?php wp_reset_postdata(); ?>
             </section>
         <?php endif; ?>
         
         <?php ///////// Services Section /////////// ?>
-        <?php $services_heading = get_field( 'services_heading' ); ?>
-        <?php $learn_more_link = get_field( 'learn_more_link' ); ?>
         <?php if ( $services_heading || have_rows( 'services' ) || $services_heading ) : ?>
             <section class="services-block desktopview">
                 <div class="container">
@@ -83,12 +83,7 @@ get_header(); ?>
                             <?php endwhile; ?>
                         </ul>
                     <?php endif; ?>
-                    <?php if ( $order_test_link = get_field( 'order_test_link','option' )): ?>
-                        <a href="<?php echo esc_url( $order_test_link ); ?>" class="btn"><?php _e( 'CHOOSE YOUR TEST', 'allergenics' ); ?></a>
-                    <?php endif; ?>
-                    <?php if ( $read_more_link = get_field( 'read_more_link' )): ?>
-                        <a href="<?php echo esc_url( $read_more_link ); ?>" class="more"><?php _e( 'Learn more &raquo;', 'allergenics' ); ?></a>
-                    <?php endif; ?>
+                    <a href="/hair-testing-services/" class="btn"><?php _e( 'SEE OUR HEAIR TESTS', 'allergenics' ); ?></a>
                 </div>
             </section>  
             <section class="services-block mobileview">
@@ -133,12 +128,7 @@ get_header(); ?>
                             <?php endwhile; ?>
                         </ul>
                     <?php endif; ?>
-                    <?php if ( $order_test_link = get_field( 'order_test_link','option' )): ?>
-                        <a href="<?php echo esc_url( $order_test_link ); ?>" class="btn"><?php _e( 'CHOOSE YOUR TEST', 'allergenics' ); ?></a>
-                    <?php endif; ?>
-                    <?php if ( $read_more_link = get_field( 'read_more_link' )): ?>
-                        <a href="<?php echo esc_url( $read_more_link ); ?>" class="more"><?php _e( 'Learn more &raquo;', 'allergenics' ); ?></a>
-                    <?php endif; ?>
+                    <a href="/hair-testing-services/" class="btn"><?php _e( 'SEE OUR HEAIR TESTS', 'allergenics' ); ?></a>
                 </div>
             </section>
         <?php endif; ?>   

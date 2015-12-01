@@ -1,46 +1,8 @@
 # FORCE HTTPS
 
-#RewriteRule ^dev/.*$ - [PT]
-
-#RewriteEngine On
-#RewriteCond %{HTTPS} !=on
-#RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-# ALLOW FONT FACE TO WORK ON SUBDOMAIN
-
-<FilesMatch "\.(ttf|ttc|otf|eot|woff)$">
-    <IfModule mod_headers.c>
-        Header set Access-Control-Allow-Origin "*"
-    </IfModule>
-</FilesMatch>
-
-# BEGIN W3TC Browser Cache
-<IfModule mod_deflate.c>
-    <IfModule mod_headers.c>
-        Header append Vary User-Agent env=!dont-vary
-    </IfModule>
-        AddOutputFilterByType DEFLATE text/css text/x-component application/x-javascript application/javascript text/javascript text/x-js text/html text/richtext image/svg+xml text/plain text/xsd text/xsl text/xml image/x-icon application/json
-    <IfModule mod_mime.c>
-        # DEFLATE by extension
-        AddOutputFilter DEFLATE js css htm html xml
-    </IfModule>
-</IfModule>
-# END W3TC Browser Cache
-# BEGIN WordPress
-<IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteBase /
-RewriteRule ^index\.php$ - [L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /index.php [L]
-</IfModule>
-
-# END WordPress
-#AuthType Basic
-#AuthName "Public website"
-#AuthUserFile "/home/allergen/.htpasswds/public_html/passwd"
-#require valid-user
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]  
 
 # compress text, html, javascript, css, xml:
 AddOutputFilterByType DEFLATE text/plain
@@ -57,6 +19,44 @@ AddOutputFilterByType DEFLATE application/x-javascript
 <files *.html>
 SetOutputFilter DEFLATE
 </files>
+
+# ALLOW FONT FACE TO WORK ON SUBDOMAIN
+
+<FilesMatch "\.(ttf|ttc|otf|eot|woff)$">
+    <IfModule mod_headers.c>
+        Header set Access-Control-Allow-Origin "*"
+    </IfModule>
+</FilesMatch> 
+
+# BEGIN W3TC Browser Cache
+<IfModule mod_deflate.c>
+    <IfModule mod_headers.c>
+        Header append Vary User-Agent env=!dont-vary
+    </IfModule>
+        AddOutputFilterByType DEFLATE text/css text/x-component application/x-javascript application/javascript text/javascript text/x-js text/html text/richtext image/svg+xml text/plain text/xsd text/xsl text/xml image/x-icon application/json
+    <IfModule mod_mime.c>
+        # DEFLATE by extension
+        AddOutputFilter DEFLATE js css htm html xml
+    </IfModule>
+</IfModule>
+# END W3TC Browser Cache
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On  
+RewriteBase /   
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# END WordPress
+#AuthType Basic
+#AuthName "Public website"
+#AuthUserFile "/home/allergen/.htpasswds/public_html/passwd"
+#require valid-user    
+
+
 
 ## EXPIRES CACHING ##
 <IfModule mod_expires.c>
@@ -75,6 +75,19 @@ ExpiresDefault "access 1 month"
 </IfModule>
 ## EXPIRES CACHING ##
 
+# BEGIN GZIP COMPRESSION
+<IfModule mod_gzip.c>
+mod_gzip_on Yes
+mod_gzip_dechunk Yes
+mod_gzip_item_include file \.(html?|txt|css|js|php|pl)$
+mod_gzip_item_include handler ^cgi-script$
+mod_gzip_item_include mime ^text/.*
+mod_gzip_item_include mime ^application/x-javascript.*
+mod_gzip_item_exclude mime ^image/.*
+mod_gzip_item_exclude rspheader ^Content-Encoding:.*gzip.*
+</IfModule>
+# END GZIP COMPRESSION
+
 Redirect 301 /SampleReports/OrganReportSample.htm http://allergenicstesting.com
 Redirect 301 /SampleReports/AllergyReportSample.htm http://allergenicstesting.com/testing-services/
 Redirect 301 /Why-Allergenics/Testimonials http://allergenicstesting.com/about-us/
@@ -82,7 +95,7 @@ Redirect 301 /Why-Allergenics/Terms-and-Conditions http://allergenicstesting.com
 Redirect 301 /Why-Allergenics/Your-Privacy http://allergenicstesting.com/privacy/
 Redirect 301 /Why-Allergenics/Our-History http://allergenicstesting.com/about-us/
 Redirect 301 /Why-Allergenics/Meet-the-Team http://allergenicstesting.com/about-us/
-Redirect 301 /Why-Allergenics/Your-lock-of-hair http://allergenicstesting.com/about-us/
+Redirect 301 /Why-Allergenics/Your-lock-of-hair http://allergenicstesting.com/about-us/  
 Redirect 301 /Practitioner-Service/Request-Information-Pack http://allergenicstesting.com/practitioners-area/
 Redirect 301 /Allergy-Test/Allergies http://allergenicstesting.com/testing-services/food-and-environmental-sensitivity-assessment/
 Redirect 301 /Allergy-Test/Results-you-can-expect http://allergenicstesting.com/testing-services/
@@ -90,7 +103,7 @@ Redirect 301 /Allergy-Test/What-we-test-for http://allergenicstesting.com/testin
 Redirect 301 /Allergy-Test/About-the-hair-test http://allergenicstesting.com/testing-services/
 Redirect 301 /Allergy-Test/Allergy-test-for-children http://allergenicstesting.com/testing-services/
 Redirect 301 /Organ-Assessment-Test/Order-Now http://allergenicstesting.com/order-your-test-now/
-Redirect 301 /Order-Hair-Test/Test-Your-Pet http://allergenicstesting.com/order-your-test-now/
+Redirect 301 /Order-Hair-Test/Test-Your-Pet http://allergenicstesting.com/hair-testing-services/
 Redirect 301 /Order-Hair-Test/Food-Allergies-Test http://allergenicstesting.com/order-your-test-now/
 Redirect 301 /Order-Hair-Test/Your-Lock-of-Hair http://allergenicstesting.com/order-your-test-now/
 Redirect 301 /Vitamin-and-Mineral-Test/Results-you-can-expect http://allergenicstesting.com/testing-services/vitamin-and-mineral-assessment/
@@ -99,7 +112,7 @@ Redirect 301 /Vitamin-and-Mineral-Test/Order-Now http://allergenicstesting.com/o
 Redirect 301 /Vitamin-and-Mineral-Test/7-great-reasons-to-test http://allergenicstesting.com/testing-services/vitamin-and-mineral-assessment/
 Redirect 301 /Organ-Assessment-Test/Results-you-can-expect http://allergenicstesting.com/testing-services/organ-stress-assesment/
 Redirect 301 /Organ-Assessment-Test/7-great-reasons-to-test http://allergenicstesting.com/testing-services/organ-stress-assesment/
-Redirect 301 /Contact http://allergenicstesting.com/
+Redirect 301 /Contact http://allergenicstesting.com/       
 Redirect 301 /Why-Allergenics http://allergenicstesting.com/about-us/
 Redirect 301 /Allergy-Test http://allergenicstesting.com/testing-services/
 Redirect 301 /Practitioner-Service http://allergenicstesting.com/practitioners-area/
@@ -108,4 +121,5 @@ Redirect 301 /Organ-Assessment-Test http://allergenicstesting.com/testing-servic
 Redirect 301 /Order-Hair-Test http://allergenicstesting.com/order-your-test-now/
 Redirect 301 /Vitamin-and-Mineral-Test http://allergenicstesting.com/testing-services/vitamin-and-mineral-assessment/
 Redirect 301 /Default.aspx?pageID=2145881912 http://allergenicstesting.com/order-your-test-now/
-Redirect 301 /Default.aspx?pageID=2145882592 http://allergenicstesting.com/order-your-test-now/
+Redirect 301 /Default.aspx?pageID=2145882592 http://allergenicstesting.com/order-your-test-now/     
+Redirect 301 /order-your-test-now/ http://allergenicstesting.com/hair-testing-services/    

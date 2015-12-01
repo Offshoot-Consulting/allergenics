@@ -27,6 +27,8 @@ if ( ! $product->is_purchasable() ) {
 	echo apply_filters( 'woocommerce_stock_html', $availability_html, $availability['availability'], $product );
 ?>
 
+<?php $order_test_link = get_field( 'order_test_link' , 'option' ); ?>
+
 <?php if ( $product->is_in_stock() ) : ?>
 
 	<?php do_action( 'woocommerce_before_add_to_cart_form' ); ?>
@@ -46,7 +48,7 @@ if ( ! $product->is_purchasable() ) {
 
 	 	<input type="hidden" name="add-to-cart" value="<?php echo esc_attr( $product->id ); ?>" />
 
-	 	<button type="submit" class="single_add_to_cart_button button alt"><?php echo esc_html( $product->single_add_to_cart_text() ); ?></button>
+	 	<a href="<?php echo $order_test_link; ?>" class="single_add_to_cart_button button alt test2">Order test now</a>
 
 		<?php do_action( 'woocommerce_after_add_to_cart_button' ); ?>
 	</form>

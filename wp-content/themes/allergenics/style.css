@@ -4070,7 +4070,10 @@ color:grey}
 button.single_add_to_cart_button.button.alt{ background-color:#f1632a; text-transform:uppercase; font-size:15px; border-radius:2px;
  font-weight:normal; }
 button.single_add_to_cart_button:hover {  background-color:#da490e !important; }
-a.button.add_to_cart_button.product_type_simple { background-color:#f1632a !important; text-transform:uppercase; color:#fff !important; border-radius:2px;
+
+a.button.add_to_cart_button.product_type_simple,
+a.single_add_to_cart_button 
+{ background-color:#f1632a !important; text-transform:uppercase; color:#fff !important; border-radius:2px;
  font-weight:normal; }
 /*.woocommerce .cart .button, .woocommerce .cart input.button { background-color:#f1632a !important; text-transform:uppercase; color:#fff !important; border-radius:2px;
  font-weight:normal;  }*/

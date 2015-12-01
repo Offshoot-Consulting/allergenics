@@ -1,4 +1,8 @@
 <?php get_header(); ?>
+
+<?php $learn_more_link = get_field( 'learn_more_link' , 'option' ); ?>
+<?php $order_test_link = get_field( 'order_test_link' , 'option' ); ?>
+
 	<div class="container">
         <div id="content">
             <?php while ( have_posts() ) : the_post(); ?>
@@ -51,7 +55,7 @@
                   <h2>Our Testing Services</h2>                  
                   
                   <ul class="services-list">
-                    <li class="" onclick="location.href='http://allergenicstesting.com/testing-services/food-and-environmental-sensitivity-assessment/'">
+                    <li class="">
                       <div class="holder">
                        <div class="front">
                         <div class="bg-stretch">
@@ -70,7 +74,7 @@
                         </div>
                       </li>
                       
-                      <li class="" onclick="location.href='http://allergenicstesting.com/testing-services/organ-stress-assesment/'">
+                      <li class="">
                         <div class="holder">
                           <div class="front">
                             <div class="bg-stretch"><img alt="img-03" class="attachment-thumbnail_246x246" src="/wp-content/uploads/2015/03/img-03.jpg" style="width: 246px; height: 246px; margin-top: 0px; margin-left: 0px;">
@@ -88,7 +92,7 @@
                       </div>
                     </li>
                     
-                    <li class="" onclick="location.href='http://allergenicstesting.com/testing-services/vitamin-and-mineral-assessment/'">
+                    <li class="">
                       <div class="holder">
                         <div class="front">
                           <div class="bg-stretch"><img alt="img-04" class="attachment-thumbnail_246x246" src="/wp-content/uploads/2015/03/img-04.jpg" style="width: 246px; height: 246px; margin-top: 0px; margin-left: 0px;"></div>
@@ -105,7 +109,7 @@
                           </div>
                         </li>
                         
-                        <li class="" onclick="location.href='http://allergenicstesting.com/testing-services/heavy-metal-and-toxic-element-assessment/'">
+                        <li class="">
                           <div class="holder">
                             <div class="front">
                               <div class="bg-stretch"><img alt="img-05" class="attachment-thumbnail_246x246" src="/wp-content/uploads/2015/03/img-05.jpg" style="width: 246px; height: 246px; margin-top: 0px; margin-left: 0px;"></div>
@@ -123,8 +127,9 @@
                         </li>
                       </ul>
                       
-                      <a class="btn" href="/hair-testing-services/">LEARN MORE</a>                      
-                    </div>
+                    <a href="/hair-testing-services/" class="btn"><?php _e( 'SEE OUR HAIR TESTS', 'allergenics' ); ?></a>
+                      
+                </div>
             </section>
     
 <?php get_footer(); ?>
