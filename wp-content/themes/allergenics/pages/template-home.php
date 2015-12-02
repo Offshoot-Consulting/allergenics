@@ -83,7 +83,7 @@ get_header(); ?>
                             <?php endwhile; ?>
                         </ul>
                     <?php endif; ?>
-                    <a href="/hair-testing-services/" class="btn"><?php _e( 'SEE OUR HEAIR TESTS', 'allergenics' ); ?></a>
+                    <a href="/hair-testing-services/" class="btn"><?php _e( 'SEE OUR HAIR TESTS', 'allergenics' ); ?></a>
                 </div>
             </section>  
             <section class="services-block mobileview">
@@ -128,7 +128,7 @@ get_header(); ?>
                             <?php endwhile; ?>
                         </ul>
                     <?php endif; ?>
-                    <a href="/hair-testing-services/" class="btn"><?php _e( 'SEE OUR HEAIR TESTS', 'allergenics' ); ?></a>
+                    <a href="/hair-testing-services/" class="btn"><?php _e( 'SEE OUR HAIR TESTS', 'allergenics' ); ?></a>
                 </div>
             </section>
         <?php endif; ?>   
