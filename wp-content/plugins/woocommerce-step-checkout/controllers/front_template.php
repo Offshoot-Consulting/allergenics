@@ -14,6 +14,8 @@ Class Frontpage {
 		add_filter('woocommerce_login_redirect', array( &$this, 'bryce_wc_login_redirect'));
 		add_filter( 'woocommerce_checkout_fields' , array( &$this, 'custom_wc_checkout_fields'),999 );
 		add_action( 'widgets_init', array( &$this,'theme_slug_widgets_init') );
+		add_filter( 'woocommerce_add_to_cart_redirect', array( &$this,'custom_add_to_cart_redirect') );
+		//add_filters( 'woocommerce_get_cart_url',  array( &$this,'cartUrl'));
 		
 		
     }
@@ -149,10 +151,10 @@ function wooc_extra_register_fields() {
 
 	
 
-	<p class="form-row form-row-last form-row-phone">
+	<!--<p class="form-row form-row-last form-row-phone">
 	<label for="reg_billing_phone"><?php _e( 'Phone', 'woocommerce' ); ?> <span class="required">*</span></label>
 	<input type="text" class="input-text" name="billing_phone" id="reg_billing_phone" value="<?php if ( ! empty( $_POST['billing_phone'] ) ) esc_attr_e( $_POST['billing_phone'] ); ?>" />
-	</p>
+	</p>-->
 	
 	<!--<div class="clear"></div>
 
@@ -291,7 +293,7 @@ function bryce_wc_login_redirect( $redirect ) {
 // Custom check for loggedin user
 public function checkLogin() {
 	global $wpdb, $session;
-
+	
 	if ( !is_user_logged_in() ) {
 		
 		$_SESSION['msg'] = "Please complete step1";
@@ -306,9 +308,16 @@ public function checkLogin() {
 
 public function step2() {
 	global $session;
+	
 	$user_ID = get_current_user_id();
 	$client_first_name = get_user_meta( $user_ID, 'client_first_name', true ); 
 	$client_last_name = get_user_meta( $user_ID, 'client_last_name', true ); 
+
+	if ( isset( $_SESSION['checkout'] ) && $_SESSION['checkout'] == 'Done' ) {
+		
+		unset($_SESSION['form_completed']);
+	}
+
 	if ( isset( $_SESSION['client_f_name'] ) ) {
 		// WooCommerce billing phone
 		update_user_meta( $user_ID, 'client_first_name', sanitize_text_field( $_SESSION['client_f_name'] ) );
@@ -464,13 +473,30 @@ function wcsAddToCart() {
 				//$product = new WC_Product( $product_id );				
 				$html .='<tr id="product_id_'.$product_id.'"><td class="item_name">'.$product->post->post_title.'</td><td class="item_price">'.$price.'</td></tr>';
     }
-	$html .='<tr><td class="item_name"><strong>Subtotal:</strong></td><td class="item_price"><span class="amount">'.$woocommerce->cart->get_cart_total().'</span></td></tr>';
+	$html .='<tr><td class="item_name"><strong>Subtotal:</strong></td><td class="item_price"><span class="amount">'.$woocommerce->cart->get_cart_subtotal().'</span></td></tr>';
+	foreach ( $woocommerce->cart->get_coupons() as $code => $coupon ) : 
+    		$code_cc = "'$code'";
+    				$label = apply_filters( 'woocommerce_cart_totals_coupon_label', esc_html( __( 'Coupon:', 'woocommerce' ) . ' ' . $coupon->code ), $coupon );
+ $html .='<tr class="cart-discount coupon-'.esc_attr( sanitize_title( $code ) ).'"><th>'.$label.'</th><td class="item_price">'.wc_custom_cart_totals_coupon_html($coupon).'</td></tr>';
+		endforeach; 
+	$html .='<tr><td class="item_name"><strong>Total:</strong></td><td class="item_price"><span class="amount">'.$woocommerce->cart->get_cart_total().'</span></td></tr>';
 	}
+	
 			else {
 				$html .= '<tr><td class="item_name">No product added</td></tr>';
 			}
 	//$html .= '<p class="total"><strong>Subtotal:</strong> <span class="amount">'.$woocommerce->cart->get_cart_total().'</span></p>';
     } // edn of if woocommerce cart
+
+
+      $coupon_code = 'test12'; 
+ 
+   // if ( $woocommerce->cart->has_discount( $coupon_code ) ) return;
+   // $woocommerce->cart->add_discount( $coupon_code );
+
+     //  $woocommerce->cart->remove_coupons( $coupon_code );
+   
+
 
    echo $html.'##'.$woocommerce->cart->get_cart_contents_count();
 	die;
@@ -578,7 +604,13 @@ function wcsAddToCart() {
 				//$product = new WC_Product( $product_id );				
 				$html .='<tr id="product_id_'.$product_id.'"><td class="item_name">'.$product->post->post_title.'</td><td class="item_price">'.$price.'</td></tr>';
     }
-	$html .='<tr><td class="item_name"><strong>Subtotal:</strong></td><td class="item_price"><span class="amount">'.$woocommerce->cart->get_cart_total().'</span></td></tr>';
+	$html .='<tr><td class="item_name"><strong>Subtotal:</strong></td><td class="item_price"><span class="amount">'.$woocommerce->cart->get_cart_subtotal().'</span></td></tr>';
+	foreach ( $woocommerce->cart->get_coupons() as $code => $coupon ) : 
+    		$code_cc = "'$code'";
+    				$label = apply_filters( 'woocommerce_cart_totals_coupon_label', esc_html( __( 'Coupon:', 'woocommerce' ) . ' ' . $coupon->code ), $coupon );
+ $html .='<tr class="cart-discount coupon-'.esc_attr( sanitize_title( $code ) ).'"><th>'.$label.'</th><td class="item_price">'.wc_custom_cart_totals_coupon_html($coupon).'</td></tr>';
+		endforeach; 
+	$html .='<tr><td class="item_name"><strong>Total:</strong></td><td class="item_price"><span class="amount">'.$woocommerce->cart->get_cart_total().'</span></td></tr>';
 	}
 			else {
 				$html .= '<tr><td class="item_name">No product added</td></tr>';
@@ -602,6 +634,37 @@ function wcsAddToCart() {
 function wcsCart() {
     global $woocommerce;
 	
+	
+
+       
+   
+	if(isset($_POST['remove_coupn']) && $_POST['remove_coupn'] != '') {
+		$coupon_code = $_POST['remove_coupn'];
+
+       // Coupon is no longer valid, based on date.  Remove it.
+            if ($woocommerce->cart->has_discount(sanitize_text_field($coupon_code))) {
+
+                if ($woocommerce->cart->remove_coupons(sanitize_text_field($coupon_code))) {
+
+                    $woocommerce->clear_messages();
+
+                }
+
+                // Manually recalculate totals.  If you do not do this, a refresh is required before user will see updated totals when discount is removed.
+                $woocommerce->cart->calculate_totals();
+
+            }
+
+	}
+	if(isset($_POST['add_coupon']) && $_POST['add_coupon'] != '') {
+		$coupon_code = $_POST['add_coupon'];
+				//if ( $woocommerce->cart->has_discount( $coupon_code ) ) return;
+			 $woocommerce->cart->add_discount( $coupon_code );
+			// $woocommerce->clear_messages();
+			$woocommerce->cart->calculate_totals();
+			  
+	}
+
     if( $woocommerce->cart ) {
     
     $items_in_cart = $woocommerce->cart->cart_contents_count;
@@ -686,7 +749,15 @@ function wcsCart() {
 				//$html .='<li class="mini_cart_item" id="product_id_'.$product_id.'"><a href="javascript:void(0);">'.$product->post->post_title.' ( '. $price.')	</a>							</li>';
 							$html .='<tr id="product_id_'.$product_id.'"><td class="item_name">'.$product->post->post_title.'</td><td class="item_price">'.$price.'</td></tr>';
     }
-	$html .='<tr><td class="item_name"><strong>Subtotal:</strong></td><td class="item_price"><span class="amount">'.$woocommerce->cart->get_cart_total().'</span></td></tr>';
+    	
+
+	$html .='<tr><td class="item_name"><strong>Subtotal:</strong></td><td class="item_price"><span class="amount">'.$woocommerce->cart->get_cart_subtotal().'</span></td></tr>';
+	foreach ( $woocommerce->cart->get_coupons() as $code => $coupon ) : 
+    		$code_cc = "'$code'";
+    				$label = apply_filters( 'woocommerce_cart_totals_coupon_label', esc_html( __( 'Coupon:', 'woocommerce' ) . ' ' . $coupon->code ), $coupon );
+ $html .='<tr class="cart-discount coupon-'.esc_attr( sanitize_title( $code ) ).'"><th>'.$label.'</th><td class="item_price">'.wc_custom_cart_totals_coupon_html($coupon).'</td></tr>';
+		endforeach; 
+	$html .='<tr><td class="item_name"><strong>Total:</strong></td><td class="item_price"><span class="amount">'.$woocommerce->cart->get_cart_total().'</span></td></tr>';
     //$html .= '</ul>';
 			}
 			else {
@@ -757,6 +828,7 @@ public function get_image($id) {
 	return $img_array[$id];	
 }
 
+
 }
 
 function wcs_plugins_loaded_register(){
@@ -765,3 +837,41 @@ function wcs_plugins_loaded_register(){
 add_action( 'plugins_loaded', 'wcs_plugins_loaded_register' ); 
 
 
+function wc_custom_cart_totals_coupon_html( $coupon ) {
+  if ( is_string( $coupon ) ) {
+    $coupon = new WC_Coupon( $coupon );
+    }
+
+  $value  = array();
+
+  if ( $amount = WC()->cart->get_coupon_discount_amount( $coupon->code, WC()->cart->display_cart_ex_tax ) ) {
+    $discount_html = '-' . wc_price( $amount );
+  } else {
+    $discount_html = '';
+  }
+
+  $value[] = apply_filters( 'woocommerce_coupon_discount_amount_html', $discount_html, $coupon );
+
+  if ( $coupon->enable_free_shipping() ) {
+    $value[] = __( 'Free shipping coupon', 'woocommerce' );
+    }
+
+    // get rid of empty array elements
+    $value = array_filter( $value );
+    $code_cc = "'$coupon->code'";
+  $value = implode( ', ', $value ) . ' <a href="javascript:void(0);" class="woocommerce-remove-coupon" data-coupon="' . esc_attr( $coupon->code ) . '" onclick="remove_coupon('.$code_cc.')">' . __( '[X]', 'woocommerce' ) . '</a>';
+
+  return apply_filters( 'woocommerce_cart_totals_coupon_html', $value, $coupon );
+}
+
+
+/**
+ * Changes the redirect URL for the Return To Shop button in the cart.
+ *
+ * @return string
+ */
+function wc_empty_cart_redirect_url() {
+	$redirect = home_url('/step-3');
+	return $redirect;
+}
+add_filter( 'woocommerce_return_to_shop_redirect', 'wc_empty_cart_redirect_url' );

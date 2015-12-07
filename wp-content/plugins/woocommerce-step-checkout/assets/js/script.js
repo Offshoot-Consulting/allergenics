@@ -301,11 +301,76 @@ function setPrdDes(id) {
 function step4_js(form) {
 
 		var html = '<p>Please note we cannot process your test until your hair sample have been received so please send it in as soon as you can. We will email you when your hair sample has been received and when your test results are ready.</p>';
-      			html += '<p>Please don\'t hesitate to contact us if you have any questions.</p>';
+      			html += "<p>Please don't hesitate to contact us if you have any questions.</p> <p>You can send your hair sample by post to</p><p>PO BOX 60 156, Titirangi, Auckland<br>or by courier to c/o Titirangi Pharmacy 408 Titirangi Rd<br></p>";
 
       			jQuery('.order-one .order-right').html(html);
       			jQuery('.step01').remove();
       			
       	
       		
+}
+/*
+function step4_js_box() {
+
+	var html = '<p style="margin-top:10px;">You can send your hair sample by post to</p><p>PO BOX 60 156, Titirangi, Auckland<br>or by courier to c/o Titirangi Pharmacy 408 Titirangi Rd<br></p>';
+
+      			jQuery('.order-one .order-right').append(html);
+  
+}
+*/
+
+function apply_coupon() {
+
+	var code = jQuery('#cpn_code').val();
+	if(code != '') {
+	jQuery.ajax({
+         type : "post",
+         url : myAjax.ajaxurl,
+         data : {action: "wcs_cart",add_coupon : code},
+         success: function(response) {
+			 response = response.split('##');
+			 if(response[1] > 0) {
+			// jQuery('#no_prpduct').hide();
+			 jQuery('#next_move').show();
+			 jQuery('#next_blank').hide();
+			 }
+			 else if(response[1] == 0) {
+			//	jQuery('#no_prpduct').show();
+				jQuery('#next_move').hide();
+			 jQuery('#next_blank').show();
+			 }
+            jQuery('#product_list_order_summary').html(response[0]);
+			//jQuery('.amount').remove();
+			//jQuery('.amount').html(response[1]);
+         }
+      });
+}
+}
+
+function remove_coupon(code) {
+
+	
+	if(code != '') {
+	jQuery.ajax({
+         type : "post",
+         url : myAjax.ajaxurl,
+         data : {action: "wcs_cart",remove_coupn : code},
+         success: function(response) {
+			 response = response.split('##');
+			 if(response[1] > 0) {
+			// jQuery('#no_prpduct').hide();
+			 jQuery('#next_move').show();
+			 jQuery('#next_blank').hide();
+			 }
+			 else if(response[1] == 0) {
+			//	jQuery('#no_prpduct').show();
+				jQuery('#next_move').hide();
+			 jQuery('#next_blank').show();
+			 }
+            jQuery('#product_list_order_summary').html(response[0]);
+			//jQuery('.amount').remove();
+			//jQuery('.amount').html(response[1]);
+         }
+      });
+}
 }

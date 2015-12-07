@@ -3,7 +3,7 @@ include_once('front_template.php');
 $obj= new Frontpage();
 $obj->checkLogin();
 $obj->steps();
-$obj->step2();
+$obj->step2(); 
 	global $wpdb,$current_user;
 	get_header();
     get_currentuserinfo();

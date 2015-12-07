@@ -9,12 +9,20 @@ $obj->step3();
 
 	
 ?>
+
+
 <?php $product_array = $obj->check_product_exist(); ?>
 <?php while ( have_posts()) : the_post(); ?>
+
                 <section class="form-section innerpage woocommerce-page woocommerce">
-                  <div class="container clearfix">
+                    
+                
+                    <div class="container clearfix">
+
+                 
                     <div class="cont-left steps_left">
                     <h1><?php //the_title(); ?>Order your test now</h1>
+
                     <div id="msform">
 <!-- progressbar -->
 	<ul id="progressbar">
@@ -164,6 +172,9 @@ $obj->step3();
                     
                     </div>
                     <div class="cont-right step_3">
+                        <div class="step3_right">
+                     
+
                         <div class="order_summery_sidebar">
                     <h3 id="order_review_heading">Order summary</h3>
 <table style="width:100%;" id="product_list_order_summary" class="product_list_order_summary">
@@ -171,12 +182,19 @@ $obj->step3();
 
 </table>
 </div>
+<?php if ( WC()->cart->coupons_enabled() ) { ?>
+<div class="coupon">
+<input type="text" name="coupon_code" class="input-text" id="cpn_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" /> &nbsp;&nbsp;<input type="submit" class="button apply_coupn" name="apply_coupon" value="<?php esc_attr_e( 'Apply Coupon', 'woocommerce' ); ?>" onclick="apply_coupon()" />
+</div>
+ <?php } ?>
 <div class="step-pagination"><a href="<?php echo home_url('/step-2'); ?>" style="float:left;" class=""><< back</a><a href="javascript:void(0)" class="btn" onclick="alert('Your cart is empty.');" style="float:right; <?php if ( $woocommerce->cart->get_cart_contents_count() == 0 ) { ?> display:block; <?php } else { ?> display:none; <?php } ?>" id="next_blank">Go to payment</a> <a id="next_move" href="<?php echo home_url('/step-4'); ?>" class="btn" style="float:right;<?php if ( $woocommerce->cart->get_cart_contents_count() > 0 ) { ?>display:block; <?php } else { ?> display:none; <?php } ?> ">Go to payment</a></div> 
 						<!--<div class="widget order_summery_sidebar"><h3>Order summary</h3>
 						<div id="product_list_order_summary1">
 
 						</div>
 						</div>-->
+
+                    </div>
 
                     </div>
 
