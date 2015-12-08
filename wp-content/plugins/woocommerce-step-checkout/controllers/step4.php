@@ -12,7 +12,7 @@ $obj->step4();
 
 	global $wpdb;
 	get_header();
-   
+ 
 ?>
 <?php if(isset($_SESSION["form_completed"]) && $_SESSION["form_completed"] == 'true') { ?>
 <script type="text/javascript">

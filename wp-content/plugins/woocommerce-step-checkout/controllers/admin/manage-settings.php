@@ -1,13 +1,17 @@
 <?php
-if(isset($_POST['_skip_step_2']) && $_POST['_skip_step_2'] == 1) {
 
 
+
+
+if(isset($_POST['save']) && $_POST['save'] != '') {
 
 
 	update_option( '_skip_step_2', $_POST['_skip_step_2'] );
+	update_option( '_skip_step_2_admin', $_POST['_skip_step_2_admin'] );
 } 
 else {
 	update_option( '_skip_step_2', 0 );
+	update_option( '_skip_step_2_admin', 0 );
 }
 
 ?>
@@ -30,6 +34,16 @@ else {
 <legend class="screen-reader-text"><span>Allow user to skip form</span></legend>
 <label for="skip_step_2">
 <input name="_skip_step_2" id="skip_step_2" type="checkbox" value="1" <?php if(get_option( '_skip_step_2') == 1) { echo 'checked'; } ?>> Allow user to skip form</label>
+</fieldset>
+</td>
+</tr>
+<tr valign="top" class="">
+<th scope="row" class="titledesc">Store Notice</th>
+<td class="forminp forminp-checkbox">
+<fieldset>
+<legend class="screen-reader-text"><span>Allow admin user to skip form</span></legend>
+<label for="_skip_step_2_admin">
+<input name="_skip_step_2_admin" id="_skip_step_2_admin" type="checkbox" value="1" <?php if(get_option( '_skip_step_2_admin') == 1) { echo 'checked'; } ?>> Allow admin user to skip form</label>
 </fieldset>
 </td>
 </tr>

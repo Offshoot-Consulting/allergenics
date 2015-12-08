@@ -635,7 +635,7 @@ function wcsCart() {
     global $woocommerce;
 	
 	
-
+    $message = '';
        
    
 	if(isset($_POST['remove_coupn']) && $_POST['remove_coupn'] != '') {
@@ -647,9 +647,10 @@ function wcsCart() {
                 if ($woocommerce->cart->remove_coupons(sanitize_text_field($coupon_code))) {
 
                     $woocommerce->clear_messages();
+                    
 
                 }
-
+                $message = $coupon_code." code remove succesfully";
                 // Manually recalculate totals.  If you do not do this, a refresh is required before user will see updated totals when discount is removed.
                 $woocommerce->cart->calculate_totals();
 
@@ -660,7 +661,14 @@ function wcsCart() {
 		$coupon_code = $_POST['add_coupon'];
 				//if ( $woocommerce->cart->has_discount( $coupon_code ) ) return;
 			 $woocommerce->cart->add_discount( $coupon_code );
-			// $woocommerce->clear_messages();
+			 if( $woocommerce->cart->applied_coupons) {
+			 	$message = $coupon_code." code successfully applied";
+			 }
+			 else {
+			 	$message = $coupon_code." code does not exist";
+			 }
+
+			
 			$woocommerce->cart->calculate_totals();
 			  
 	}
@@ -765,8 +773,8 @@ function wcsCart() {
 			}
 	//$html .= '<p class="total"><strong>Subtotal:</strong> <span class="amount">'.$woocommerce->cart->get_cart_total().'</span></p>';
     } // edn of if woocommerce cart
-
-   echo $html.'##'.$woocommerce->cart->get_cart_contents_count();
+	//wc_clear_notices();
+   echo $html.'##'.$woocommerce->cart->get_cart_contents_count().'##'.wc_print_notices();
 	die;
 }
 	

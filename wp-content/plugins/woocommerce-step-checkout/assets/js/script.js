@@ -340,10 +340,14 @@ function apply_coupon() {
 			 jQuery('#next_blank').show();
 			 }
             jQuery('#product_list_order_summary').html(response[0]);
+            jQuery('.cpn_message').html(response[2]);
 			//jQuery('.amount').remove();
 			//jQuery('.amount').html(response[1]);
          }
       });
+}
+else {
+	jQuery('.cpn_message').html('Please enter coupon code');
 }
 }
 
@@ -368,6 +372,7 @@ function remove_coupon(code) {
 			 jQuery('#next_blank').show();
 			 }
             jQuery('#product_list_order_summary').html(response[0]);
+            jQuery('.cpn_message').html(response[2]);
 			//jQuery('.amount').remove();
 			//jQuery('.amount').html(response[1]);
          }

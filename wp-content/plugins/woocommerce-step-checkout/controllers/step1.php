@@ -5,7 +5,7 @@ $obj= new Frontpage();
 
 $obj->check_step1();
 $obj->steps();
- 
+
 	get_header();
 	if(isset($_POST['login']) && $_POST['login'] == 'Login') {
 		$form_name = $_POST['login'];

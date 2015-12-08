@@ -3,7 +3,7 @@ include_once('front_template.php');
 $obj= new Frontpage();
 $obj->checkLogin();
 $obj->steps();
-$obj->step2(); 
+$obj->step2();
 	global $wpdb,$current_user;
 	get_header();
     get_currentuserinfo();
@@ -55,6 +55,9 @@ $obj->step2();
 </div>
 <?php } ?>
                     <?php the_content(); ?>
+                    <?php if(get_option( '_skip_step_2') == 0 && get_option( '_skip_step_2_admin') == 1 &&  current_user_can( 'manage_options' ) ) { ?>
+                        <div class="step-pagination" style="margin-top:50px;"><a href="<?php echo home_url('/step-3'); ?>" class="skip_link">Skip this step</a></div> 
+                    <?php } ?>
                     <div class="step-pagination" style="margin-top:50px;"><?php if(!isset($_SESSION["form_completed"]) && get_option( '_skip_step_2') == 1)  { ?><a href="<?php echo home_url('/step-3'); ?>" class="skip_link">Skip this step</a><?php } ?><?php if(isset($_SESSION["form_completed"]) && $_SESSION["form_completed"] == 'true') { ?><a href="<?php echo home_url('/step-3'); ?>"" style="float:right;" class="btn">Next</a><?php } ?></div> 
                     </div>
                     <div class="cont-right">

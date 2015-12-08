@@ -183,6 +183,7 @@ $obj->step3();
 </table>
 </div>
 <?php if ( WC()->cart->coupons_enabled() ) { ?>
+<p class="cpn_message"></p>
 <div class="coupon">
 <input type="text" name="coupon_code" class="input-text" id="cpn_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" /> &nbsp;&nbsp;<input type="submit" class="button apply_coupn" name="apply_coupon" value="<?php esc_attr_e( 'Apply Coupon', 'woocommerce' ); ?>" onclick="apply_coupon()" />
 </div>
