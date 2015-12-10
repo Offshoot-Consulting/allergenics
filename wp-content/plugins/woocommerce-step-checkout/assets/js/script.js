@@ -24,6 +24,12 @@ jQuery(window).load(function() {
   	jQuery('.col-1 .login p:eq(1)').addClass('form-row-wide form-row-username');
   	jQuery('.col-1 .login p:eq(1)').after('<p class="form-row form-row-wide form-row-middle"></p>');
   	jQuery('.col-1 .login p:eq(3)').addClass('form-row-password');
+  	/*jQuery('#billing_state_field label').html('City <abbr title="required" class="required">*</abbr>');
+  	jQuery('#billing_city_field label').html('Suburb <abbr title="required" class="required">*</abbr>');
+  	jQuery('#billing_city').attr('placeholder','Suburb');
+  	jQuery('#billing_address_2').attr('placeholder','');*/
+  	
+  	
   	
 });
 

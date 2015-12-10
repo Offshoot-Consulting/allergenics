@@ -12,10 +12,11 @@ Class Frontpage {
     public function __construct(){
         add_action( 'init', array( &$this, 'init' ) );
 		add_filter('woocommerce_login_redirect', array( &$this, 'bryce_wc_login_redirect'));
-		add_filter( 'woocommerce_checkout_fields' , array( &$this, 'custom_wc_checkout_fields'),999 );
+		add_filter( 'woocommerce_checkout_fields' , array( &$this, 'wcs_checkout_fields'),999 );
 		add_action( 'widgets_init', array( &$this,'theme_slug_widgets_init') );
 		add_filter( 'woocommerce_add_to_cart_redirect', array( &$this,'custom_add_to_cart_redirect') );
 		//add_filters( 'woocommerce_get_cart_url',  array( &$this,'cartUrl'));
+		add_filter( 'woocommerce_default_address_fields' , array( &$this, 'wpse_120741_wc_def_state_label') );
 		
 		
     }
@@ -35,30 +36,28 @@ Class Frontpage {
 
  
 // Change order comments placeholder and label, and set billing phone number to not required.
-function custom_wc_checkout_fields( $fields ) {
-  /*
-$fields['billing']['billing_first_name']['placeholder'] = 'First Name *';
-//$fields['billing']['billing_first_name']['label'] = '';
-$fields['billing']['billing_last_name']['placeholder'] = 'Last Name *';
-//$fields['billing']['billing_last_name']['label'] = '';
-$fields['billing']['billing_email']['placeholder'] = 'Email Address *';
-//$fields['billing']['billing_email']['label'] = '';
-$fields['billing']['billing_phone']['placeholder'] = 'Phone *';
-//$fields['billing']['billing_phone']['label'] = '';
-$fields['billing']['billing_country']['placeholder'] = 'Country *';
-$fields['billing']['billing_country']['label'] = '';
-$fields['billing']['billing_address_1']['label'] = '';
-$fields['billing']['billing_state']['label'] = '';
-$fields['billing']['billing_postcode']['label'] = '';
-$fields['billing']['billing_city']['label'] = '';
-//$fields['account']['account_password']['label'] = '';*/
+function wcs_checkout_fields( $fields ) {
+
+unset($fields['billing']['billing_company']);
 unset($fields['billing']['billing_first_name']);
 unset($fields['billing']['billing_last_name']);
 unset($fields['billing']['billing_email']);
 unset($fields['billing']['billing_phone']);
 
-
 return $fields;
+
+}
+
+
+function wpse_120741_wc_def_state_label( $address_fields ) {
+
+     $address_fields['state']['label'] = 'City';
+	// $address_fields['city']['label'] = 'Suburb';
+	 //$address_fields['city']['placeholder'] = 'Suburb';
+	 $address_fields['address_2']['placeholder'] = '';
+	
+
+     return $address_fields;
 }
 
     /**
@@ -871,7 +870,18 @@ function wc_custom_cart_totals_coupon_html( $coupon ) {
 
   return apply_filters( 'woocommerce_cart_totals_coupon_html', $value, $coupon );
 }
-
+add_filter('woocommerce_get_country_locale', 'wpse_120741_wc_change_state_label_locale');
+function wpse_120741_wc_change_state_label_locale($locale){
+  
+    $locale['NZ']['state']['label'] = __('City', 'woocommerce');
+    $locale['NZ']['city']['label'] = __('Suburb', 'woocommerce');
+    $locale['NZ']['city']['placeholder'] = __('Suburb', 'woocommerce');
+    $locale['NZ']['address_2']['placeholder'] = __('', 'woocommerce');
+    $locale['NZ']['postcode']['label'] = __('Postcode', 'woocommerce');
+    $locale['NZ']['postcode']['placeholder'] = __('Postcode', 'woocommerce');
+ 
+    return $locale;
+}
 
 /**
  * Changes the redirect URL for the Return To Shop button in the cart.
@@ -883,3 +893,11 @@ function wc_empty_cart_redirect_url() {
 	return $redirect;
 }
 add_filter( 'woocommerce_return_to_shop_redirect', 'wc_empty_cart_redirect_url' );
+
+/*
+add_filter( 'woocommerce_get_country_locale', 'use_only_default_locale' );
+function use_only_default_locale( $locale ) {
+  return array();
+}*/
+
+
