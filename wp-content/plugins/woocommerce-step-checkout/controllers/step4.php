@@ -122,7 +122,7 @@ step4_js('<?php echo $_SESSION["form_completed"]; ?>');
 <?php } else { ?>
 <script type="text/javascript">
 jQuery(window).load(function() {
-var html = '<p style="margin-top:10px;font-weight: bold;">You can send your hair sample by post to</p><p style="font-weight: bold;">PO BOX 60 156, Titirangi, Auckland<br>or by courier to c/o Titirangi Pharmacy 408 Titirangi Rd<br></p>';
+var html = '<p style="margin-top:10px;font-weight: bold;">Where to send your hair sample:</p><p style="font-weight: bold;">By post: PO BOX 60 156, Titirangi, Auckland<br>By courier: c/o Titirangi Pharmacy 408 Titirangi Rd<br></p>';
 
                 jQuery('.order-one .order-right').append(html);
 });
