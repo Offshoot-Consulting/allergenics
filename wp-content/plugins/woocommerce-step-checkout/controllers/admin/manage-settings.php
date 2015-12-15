@@ -11,9 +11,9 @@ if(isset($_POST['save']) && $_POST['save'] != '') {
 	update_option( '_skip_ga_ecommerce', $_POST['_skip_ga_ecommerce'] );
 } 
 else {
-	update_option( '_skip_step_2', 0 );
-	update_option( '_skip_step_2_admin', 0 );
-	update_option( '_skip_ga_ecommerce', 0 );
+	//update_option( '_skip_step_2', 0 );
+	//update_option( '_skip_step_2_admin', 0 );
+	//update_option( '_skip_ga_ecommerce', 0 );
 }
 
 ?>
@@ -50,12 +50,12 @@ else {
 </td>
 </tr>
 <tr valign="top" class="">
-<th scope="row" class="titledesc">Ecommerce analytics</th>
+<th scope="row" class="titledesc">Ecommerce analytics:</th>
 <td class="forminp forminp-checkbox">
 <fieldset>
-<legend class="screen-reader-text"><span>Allow skip on dev and staging</span></legend>
+<legend class="screen-reader-text"><span>Activate</span></legend>
 <label for="_skip_ga_ecommerce">
-<input name="_skip_ga_ecommerce" id="_skip_ga_ecommerce" type="checkbox" value="1" <?php if(get_option( '_skip_ga_ecommerce') == 1) { echo 'checked'; } ?>> Allow skip on dev and staging</label>
+<input name="_skip_ga_ecommerce" id="_skip_ga_ecommerce" type="checkbox" value="1" <?php if(get_option('_skip_ga_ecommerce') == 1) { echo 'checked'; } ?>> Activate</label>
 </fieldset>
 </td>
 </tr>

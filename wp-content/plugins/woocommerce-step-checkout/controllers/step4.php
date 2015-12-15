@@ -5,7 +5,7 @@ $obj->checkLogin();
 
 if(isset($_GET['key']) && $_GET['key'] !='') {
 $_SESSION['checkout'] = 'Done';
-if(get_option( '_skip_ga_ecommerce') != 1) {
+if(get_option( '_skip_ga_ecommerce') == 1) {
   $url = $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
     $template_name = strpos($url,'/order-received/') === false ? '/view-order/' : '/order-received/';
     if (strpos($url,$template_name) !== false) {
