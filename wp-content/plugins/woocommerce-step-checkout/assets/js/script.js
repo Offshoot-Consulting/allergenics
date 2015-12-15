@@ -208,6 +208,7 @@ jQuery('#someone').click(function() {
 	
 	jQuery('#client_first_name').show();
 	jQuery('#client_last_name').show();
+	jQuery('#client_info_save').show();
 });
 
 jQuery('#myself').click(function() {
@@ -221,6 +222,7 @@ jQuery('#myself').click(function() {
 	
 	jQuery('#client_first_name').hide();
 	jQuery('#client_last_name').hide();
+	jQuery('#client_info_save').hide();
 });
 
 function show_form(form_name) {
@@ -384,4 +386,20 @@ function remove_coupon(code) {
          }
       });
 }
+}
+
+function change_client_info() {
+	var client_first_name = jQuery('#reg_client_first_name').val();
+	var client_last_name = jQuery('#reg_client_last_name').val();
+
+	jQuery.ajax({
+         type : "post",
+         url : myAjax.ajaxurl,
+         data : {action: "change_client_info",client_first_name : client_first_name, client_last_name : client_last_name},
+         success: function(response) {
+         	if(response == true) {
+         		jQuery('#step_client_info').hide();
+         	}	
+         }
+      });
 }

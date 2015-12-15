@@ -22,7 +22,7 @@ $obj->step2();
    
 ?>
 <?php while ( have_posts()) : the_post(); ?>
-                <section class="form-section innerpage">
+                <section class="form-section innerpage woocommerce">
                   <div class="container clearfix">
                     <div class="cont-left steps_left">
                     <h1><?php //the_title(); ?>Order your test now</h1>
@@ -47,6 +47,31 @@ $obj->step2();
                    
 					$url = 'https://allergenics.typeform.com/to/fSPsMs?wcuserid='.$user_ID.'&client_first_name='.$client_first_name.'&client_last_name='.$client_last_name.'&customer_first_name='.$customer_first_name.'&customer_last_name='.$customer_last_name;  
 				?>
+                <?php if($_SESSION['checkout'] == 'Done') { ?>
+                <div class="selection_step1 woocommerce" id="step_client_info">
+                        <form>
+                        <p class="form-row form-row-wide first_p">
+                        <label for="for_whome">Who is this test for? <span class="required">*</span></label>
+                        </p>
+                        <p class="form-row form-row-wide second_p">
+                        <input type="radio" checked="checked" value="0" id="myself" name="for_whome"> <label for="myself">Myself</label> &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" value="1" id="someone" name="for_whome"> <label for="someone">Someone else <span class="spouse">(spouse: family member)</span></label>
+                        </p>
+                        <p id="client_first_name" class="form-row form-row-first client_field" style="display: none;">
+                        <label for="reg_billing_first_name">Client First name <span class="required">*</span></label>
+                        <input type="text" value="" id="reg_client_first_name" name="client_first_name" class="input-text">
+                        </p>
+
+
+                        <p id="client_last_name" class="form-row form-row-last client_field" style="display: none;">
+                        <label for="reg_billing_last_name">Client Last name <span class="required">*</span></label>
+                        <input type="text" value="" id="reg_client_last_name" name="client_last_name" class="input-text">
+                        </p>
+                        <p class="form-row form-row-first" id="client_info_save" style="display: none;">
+                            <a href="javascript:void(0);" class="btn" onclick="change_client_info()">Save</a>
+                        </p>
+                        </form>
+                    </div>
+                <?php } ?>
                 <div class="assesment_form">
                 <h3>Please fill out Health Assessment questionnaire which will give us a better picture of your state of health.</h3>
                 <h4>Questions should be answered for the person the test is being done for.</h4>

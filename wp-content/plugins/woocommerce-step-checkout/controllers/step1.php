@@ -19,7 +19,7 @@ $obj->steps();
 		$form_name = '';
 		$for_whome_text = '';
 	}
-	echo $_POST['for_whome_text'];
+	
 ?>
 <script type="text/javascript">
 jQuery(window).load(function() {

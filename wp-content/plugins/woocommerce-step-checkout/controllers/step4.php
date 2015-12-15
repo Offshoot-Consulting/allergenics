@@ -2,8 +2,103 @@
 include_once('front_template.php');
 $obj= new Frontpage();
 $obj->checkLogin();
+
 if(isset($_GET['key']) && $_GET['key'] !='') {
 $_SESSION['checkout'] = 'Done';
+if(get_option( '_skip_ga_ecommerce') != 1) {
+  $url = $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+    $template_name = strpos($url,'/order-received/') === false ? '/view-order/' : '/order-received/';
+    if (strpos($url,$template_name) !== false) {
+        $start = strpos($url,$template_name);
+        $first_part = substr($url, $start+strlen($template_name));
+        $order_id = substr($first_part, 0, strpos($first_part, '/'));
+       
+
+        //yes, I can retrieve the order via the order id
+        $order = new WC_Order($order_id);
+        $items_details = $order->get_items();
+        $items = array();
+        $i = 0;
+        foreach ( $items_details as $item ) {
+
+            //print_r($item);
+            $product = $order->get_product_from_item( $item ); 
+          $product_id = $item['product_id'];
+          $term_list = wp_get_post_terms($product_id,'product_cat',array('fields'=>'ids'));
+$cat_id = (int)$term_list[0];
+$category = get_term ($cat_id, 'product_cat');
+         
+          $items[$i]['name'] = $item['name'];
+          
+          $items[$i]['quantity'] = $item['qty'];
+          
+          $items[$i]['sku'] = $product->get_sku();
+         
+          $items[$i]['price'] = $product->get_price();
+
+          $items[$i]['category'] = $category->name;
+         
+         
+          $product_variation_id = $item['variation_id'];
+          // etc
+       $i++; }
+        
+        $amount = $order->get_total();
+        
+        $affliation = 'Order '.$order_id.' details';
+        
+        $order_shipping_total = $order->get_total_shipping();
+        
+        $order_cart_tax = $order->get_cart_tax();
+        //echo '<pre>'; print_r($order);
+         // Transaction Data
+        $trans = array('id'=>$order_id, 'affiliation'=>$affliation,'revenue'=>$amount, 'shipping'=>$order_shipping_total, 'tax'=>$order_cart_tax);
+       
+        // Function to return the JavaScript representation of a TransactionData object.
+function getTransactionJs(&$trans) {
+  return <<<HTML
+ga('ecommerce:addTransaction', {
+  'id': '{$trans['id']}',
+  'affiliation': '{$trans['affiliation']}',
+  'revenue': '{$trans['revenue']}',
+  'shipping': '{$trans['shipping']}',
+  'tax': '{$trans['tax']}'
+});
+HTML;
+}
+
+// Function to return the JavaScript representation of an ItemData object.
+function getItemJs(&$transId, &$item) {
+  return <<<HTML
+ga('ecommerce:addItem', {
+  'id': '$transId',
+  'name': '{$item['name']}',
+  'sku': '{$item['sku']}',
+  'category': '{$item['category']}',
+  'price': '{$item['price']}',
+  'quantity': '{$item['quantity']}'
+});
+HTML;
+}
+    }
+ 
+?>
+<!-- Begin HTML -->
+<script>
+ga('require', 'ecommerce');
+
+<?php
+echo getTransactionJs($trans);
+
+foreach ($items as &$item) {
+  echo getItemJs($trans['id'], $item);
+}
+?>
+
+ga('ecommerce:send');
+</script>
+<?php
+}
 }
 else {
 $obj->steps();

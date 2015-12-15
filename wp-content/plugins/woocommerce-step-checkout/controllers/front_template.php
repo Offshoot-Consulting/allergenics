@@ -74,6 +74,7 @@ function wpse_120741_wc_def_state_label( $address_fields ) {
 		add_action('wp_ajax_nopriv_wcs_remove_from_cart', array( &$this, 'removeToCart'));
 		add_action('wp_ajax_wcs_cart',  array( &$this, 'wcsCart') );
 		add_action('wp_ajax_nopriv_wcs_cart',  array( &$this, 'removeToCart'));
+		add_action('wp_ajax_change_client_info',  array( &$this, 'change_client_info') );
 		
 		add_action( 'template_redirect', array( &$this, 'wc_custom_redirect_after_purchase' ));
 		
@@ -628,7 +629,19 @@ function wcsAddToCart() {
     die;
 		
 	}
-	
+
+function change_client_info() {
+	global $wpdb, $session;
+
+	$user_ID = get_current_user_id();
+	$client_first_name = $_POST['client_first_name'];
+	$client_last_name = $_POST['client_last_name'];
+	$client_first_name = update_user_meta( $user_ID, 'client_first_name', $client_first_name ); 
+	$client_last_name = update_user_meta( $user_ID, 'client_last_name', $client_last_name );
+	unset($_SESSION['checkout']);
+	echo true;
+	die;
+}	
 	
 function wcsCart() {
     global $woocommerce;
