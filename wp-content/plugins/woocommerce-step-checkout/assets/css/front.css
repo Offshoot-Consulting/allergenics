@@ -577,7 +577,7 @@ color: #999 !important;
 }
 
 @media screen and (min-width:768px) {
-.woocommerce-remove-coupon {  bottom: 24px;
+.shop_table .woocommerce-remove-coupon {  bottom: 24px;
     float: right;
     margin-left: 10px;
     position: relative; }

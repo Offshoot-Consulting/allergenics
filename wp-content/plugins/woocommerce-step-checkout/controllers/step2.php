@@ -21,6 +21,11 @@ $obj->step2();
     $customer_last_name = $current_user->user_lastname ;
    
 ?>
+<script type="text/javascript">
+jQuery(window).load(function() {
+    __insp.push(['identify', '<?php echo $current_user->user_email; ?>']);
+});
+</script>
 <?php while ( have_posts()) : the_post(); ?>
                 <section class="form-section innerpage woocommerce">
                   <div class="container clearfix">
