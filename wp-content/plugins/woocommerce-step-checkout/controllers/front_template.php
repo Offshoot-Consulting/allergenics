@@ -914,3 +914,19 @@ function use_only_default_locale( $locale ) {
 }*/
 
 
+add_action('init','return_to_order');
+function return_to_order() {
+	if(!isset($_SESSION['checkout']) && $_SESSION['step4'] == 'visit' && $_SESSION['step3'] == 'visit' && $_SESSION['checkout'] == '') {
+		add_filter( 'wp_nav_menu_items', 'your_custom_menu_item', 10, 2 );
+	}
+	
+}
+
+function your_custom_menu_item ( $items, $args ) {
+	$menu = $items;
+    if ($args->theme_location == 'primary') {
+        $items = '<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-584 return_to_order" id="menu-item-1170"><a href="'.get_permalink(1170).'" class="btn">Return to Order</a></li>';
+    }
+    $items .= $menu;
+    return $items;
+}

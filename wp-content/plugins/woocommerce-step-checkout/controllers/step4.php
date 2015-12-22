@@ -2,9 +2,11 @@
 include_once('front_template.php');
 $obj= new Frontpage();
 $obj->checkLogin();
-
+wc_clear_notices();
 if(isset($_GET['key']) && $_GET['key'] !='') {
 $_SESSION['checkout'] = 'Done';
+
+
 if(get_option( '_skip_ga_ecommerce') == 1) {
   $url = $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
     $template_name = strpos($url,'/order-received/') === false ? '/view-order/' : '/order-received/';
@@ -105,8 +107,9 @@ $obj->steps();
 }
 $obj->step4();
 
-	global $wpdb;
+	global $wpdb,$woocommerce;
 	get_header();
+
  
 ?>
 <?php if(isset($_SESSION["form_completed"]) && $_SESSION["form_completed"] == 'true') { ?>
