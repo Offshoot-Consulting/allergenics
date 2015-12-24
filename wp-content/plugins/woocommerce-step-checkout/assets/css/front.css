@@ -320,6 +320,11 @@ li.product a {
 .personel_consultant { margin-top: 40px !important;}
 
 /* step 4*/
+
+@media screen and (min-width:767px) {
+n-steps4 { 
+  bottom: 0x;
+    }
 .step-pagination-steps4 { 
   bottom: 70px;
     position: relative;
@@ -451,9 +456,10 @@ ul#menu-learn-more-menu { margin-top:0px !important; }
 }
 
 .step_3 .step-pagination { margin-top: 10px; float: left; }
-@media screen and (min-width:768px) {
+@media screen and (min-width:768px) and (max-width:1024px) {
 .cont-right.step_3 {
-    width: 32.4%;
+    width: 50%;
+     margin-top: 0px;
 }
 .form-row.form-row-wide.form-row-username {
     width: 50%;
@@ -525,13 +531,14 @@ ul#menu-learn-more-menu { margin-top:0px !important; }
 .assesment_form h4 {
     color: #a7a7a7;
 }
-
-/*.step3_right {
+@media screen and (min-width:1024px) {
+.step3_right {
     position: fixed;
     width: 358px;
     z-index: 99;
     margin-bottom: 30px;
-}*/
+}
+}
 .cart-discount th { padding: 0px  !important;; text-align: left  !important; border: 0px !important;}
 .coupon {
     border-bottom: 1px dotted #ccc;
@@ -541,7 +548,7 @@ ul#menu-learn-more-menu { margin-top:0px !important; }
 }
 #cpn_code {
     float: left;
-    width: 50%;
+    width: 47%;
     height: 40px;
 }
 .apply_coupn {
@@ -582,8 +589,3 @@ color: #999 !important;
     margin-left: 10px;
     position: relative; }
 }
-
-.return_to_order {  padding: 28px 21px; }
-.return_to_order a { color: #fff !important;
-    padding: 10px !important; }
-.return_to_order:hover { background: none !important; }
