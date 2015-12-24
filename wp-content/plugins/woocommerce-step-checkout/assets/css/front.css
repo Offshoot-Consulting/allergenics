@@ -390,7 +390,7 @@ ul#menu-learn-more-menu { margin-top:0px !important; }
 .wcs_products .right {
     float: left;
     padding-left: 20px;
-    width: 80%;
+    width: 70%;
 }
 .wcs_products .right > h3 {
     margin-bottom: 5px;
@@ -532,12 +532,12 @@ ul#menu-learn-more-menu { margin-top:0px !important; }
 }
 
 @media screen and (min-width:1024px) {
-.step3_right {
+/*.step3_right {
     position: fixed;
     width: 358px;
     z-index: 99;
     margin-bottom: 30px;
-}
+}*/
 }
 .cart-discount th { padding: 0px  !important;; text-align: left  !important; border: 0px !important;}
 .coupon {
