@@ -631,4 +631,23 @@ add_filter( 'woocommerce_loop_add_to_cart_link', 'add_special_payment_link' );
 
 
 
+// customise wc css for emails
+
+add_action('woocommerce_email_header', 'add_css_to_email');
+ 
+function add_css_to_email() {
+echo '
+<style type="text/css">
+h1,h2,h3,h4 { color:#00263c !important; margin-top:0 !important; margin-bottom:10px !important }
+h1 {font-size:20px !important; font-weight:normal !important; margin-top: 0 !important; margin-bottom:0 !important}
+h2 {font-size:15px !important; font-weight:normal !important}
+h3 {font-size:15px !important; font-weight:normal !important}
+p { color:#00263c !important; font-size:12px !important }
+table { margin-bottom: 20px !important }
+
+th, td { color:#00263c !important; font-size:12px !important }
+</style>
+';
+}
+
 ?>

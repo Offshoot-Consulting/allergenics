@@ -37,7 +37,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                                 	<table border="0" cellpadding="0" cellspacing="0" width="600" id="template_header">
                                         <tr>
                                             <td id="header_wrapper">
-                                            	<h1><?php echo $email_heading; ?></h1>
+                                            	<h1 style="margin-bottom:-50px; padding-bottom:0; font-size:20px; color:#00263c; margin-bottom:0"><?php echo $email_heading; ?></h1>
                                             </td>
                                         </tr>
                                     </table>
