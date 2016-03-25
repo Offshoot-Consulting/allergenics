@@ -522,7 +522,7 @@ function theme_slug_widgets_init() {
 
 
 
-add_action('init','remove_cart_ajax');
+//add_action('init','remove_cart_ajax');
 
 
     add_action('wp_ajax_woocommerce_remove_from_cart','removeCartToFly',99999);
